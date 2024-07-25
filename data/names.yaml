@@ -1,0 +1,518 @@
+people:
+    Benoît Pasquier:
+        affiliation: "University of New South Wales, Sydney, Australia"
+        github: briochemc
+        name:
+            full: "Benoît Pasquier"
+            short: "B. Pasquier"
+            bib: "Pasquier, B."
+        orcid: 0000-0002-3838-5976
+        title: "Dr."
+        # url: "http://www.bpasquier.com"
+
+    Mark Holzer:
+        affiliation: "University of New South Wales, Sydney, Australia"
+        name:
+            full: "Mark Holzer"
+            short: "M. Holzer"
+            bib: "Holzer, M."
+        orcid: 0000-0002-9568-1763
+        title: "Associate Professor"
+        url: "https://web.maths.unsw.edu.au/~markholzer/"
+
+    François W. Primeau:
+        affiliation: "University of California, Irvine (UCI), Irvine, California, USA"
+        name:
+            full: "François W. Primeau"
+            short: "F. W. Primeau"
+            bib: "Primeau, F. W."
+        orcid: 0000-0001-7452-9415
+        title: "Professor"
+        url: "https://faculty.sites.uci.edu/primeau/"
+
+    Eun Young Kown:
+        affiliation: "IBS Climate Center for Climate Physics, Busan, South Korea"
+        name:
+            full: "Eun Young Kown"
+            short: "E. Y. Kown"
+            bib: "Kown, E. Y."
+        orcid: 0000-0001-9165-4111
+        title: "Dr."
+        url: "https://ibsclimate.org/people/%EA%B6%8C%EC%9D%80%EC%98%81-eun-young-kwon/"
+
+    Timothy DeVries:
+        affiliation: "University of California, Santa Barbara, CA, USA"
+        name:
+            full: "Timothy DeVries"
+            short: "T. DeVries"
+            bib: "DeVries, T."
+        orcid: 0000-0002-7771-9430
+        title: "Professor"
+        url: "https://tdevries.eri.ucsb.edu/"
+
+    Mark Brzezinski:
+        affiliation: "University of California, Santa Barbara, CA, USA"
+        name:
+            full: "Mark Brzezinski"
+            short: "M. Brzezinski"
+            bib: "Brzezinski, M."
+        orcid: 0000-0003-3432-2297
+        title: "Professor"
+        url: "https://msi.ucsb.edu/people/faculty/mark-brzezinski"
+
+    Sophia K. V. Hines:
+        affiliation: "Woods Hole Oceanographic Institution (WHOI), Woods Hole, MA, USA"
+        name:
+            full: "Sophia K. V. Hines"
+            short: "S. K. V. Hines"
+            bib: "Hines, S. K. V."
+        orcid: 0000-0001-9357-6399
+        title: "Dr."
+        url: "https://hineslab.whoi.edu/"
+
+    Hengdi Liang:
+        affiliation: "DEAPS, Massachusetts Institute of Technology (MIT), Cambridge, MA, USA"
+        name:
+            full: "Hengdi Liang"
+            short: "H. Liang"
+            bib: "Liang, H."
+        orcid: 0000-0001-8975-4201
+        title: "Dr."
+        url: "https://hengdiliang.github.io/"
+
+    Yingzhe Wu:
+        affiliation: "Pacific Northwest National Laboratory (PNNL), Richland, WA, USA"
+        name:
+            full: "Yingzhe Wu"
+            short: "Y. Wu"
+            bib: "Wu, Y."
+        orcid: 0000-0002-3975-1368
+        title: "Dr."
+        url: "https://www.linkedin.com/in/yingzhe-wu-b4b08944"
+
+    Steven L. Goldstein:
+        affiliation: "Lamont-Doherty Earth Observatory (LDEO), Palisades, NY, USA"
+        name:
+            full: "Steven L. Goldstein"
+            short: "S. L. Goldstein"
+            bib: "Goldstein, S. L."
+        orcid: 0000-0001-7252-8064
+        title: "Professor"
+        url: "https://lamont.columbia.edu/directory/steven-l-goldstein"
+
+    Seth G. John:
+        affiliation: "University of Southern California (USC), Los Angeles, CA, USA"
+        name:
+            full: "Seth G. John"
+            short: "S. G. John"
+            bib: "John, S. G."
+        orcid: 0000-0002-8257-626X
+        title: "Professor"
+        url: "http://www.mtel.rocks/people.html"
+
+    Matthew A. Chamberlain:
+        affiliation: "Commonwealth Scientific and Industrial Research Organisation (CSIRO), Hobart, TAS, Australia "
+        name:
+            full: "Matthew A. Chamberlain"
+            short: "M. A. Chamberlain"
+            bib: "Chamberlain, M. A."
+        orcid: 0000-0002-3287-3282
+        title: "Dr."
+        url: "https://research.csiro.au/bluelink/about/people/"
+
+    Richard J. Matear:
+        affiliation: "Commonwealth Scientific and Industrial Research Organisation (CSIRO), Hobart, TAS, Australia "
+        name:
+            full: "Richard J. Matear"
+            short: "R. J. Matear"
+            bib: "Matear, R. J."
+        orcid: 0000-0002-3225-0800
+        title: "Dr."
+        url: "https://people.csiro.au/M/R/Richard-Matear"
+
+    Nathaniel L. Bindoff:
+        affiliation: "University of Tasmania (UTAS), Tasmania, Australia"
+        name:
+            full: "Nathaniel L. Bindoff"
+            short: "N. L. Bindoff"
+            bib: "Bindoff, N. L."
+        orcid: 0000-0001-5662-9519
+        title: "Professor"
+        url: "https://discover.utas.edu.au/N.Bindoff"
+
+    Gregory L. Britten:
+        affiliation: "Department of Biology, Woods Hole Oceanographic Institution (WHOI), Woods Hole, MA, USA"
+        name:
+            full: "Gregory L. Britten"
+            short: "G. L. Britten"
+            bib: "Britten, G. L."
+        orcid: 0000-0003-1391-9086
+        title: "Dr."
+        url: "https://sites.google.com/view/pemlab/people"
+
+    Yara Mohajerani:
+        affiliation: "University of Washington, Seattle, WA, USA"
+        name:
+            full: "Yara Mohajerani"
+            short: "Y. Mohajerani"
+            bib: "Mohajerani, Y."
+        orcid: 0000-0002-4292-2367
+        title: "Dr."
+        url: "https://uw-cryo.github.io/authors/yara/"
+
+    Louis Primeau:
+        affiliation: "University of Tennessee at Knoxville, Knoxville, USA"
+        name:
+            full: "Louis Primeau"
+            short: "L. Primeau"
+            bib: "Primeau, L."
+        orcid: 0009-0007-1562-3496
+        title: ""
+        url: "http://www.phys.utk.edu/people/grad-students/index.html"
+
+    Murat Aydin:
+        affiliation: "University of California, Irvine (UCI), Irvine, CA, USA"
+        name:
+            full: "Murat Aydin"
+            short: "M. Aydin"
+            bib: "Aydin, M."
+        orcid: 0000-0002-1558-3881
+        title: "Dr."
+        url: "https://sites.uci.edu/saltzman/murat-aydin-2/"
+
+    Catherine Garcia:
+        affiliation: "University of Hawaii at Manoa, Honolulu, Hawaii, USA"
+        name:
+            full: "Catherine Garcia"
+            short: "C. Garcia"
+            bib: "Garcia, C."
+        orcid: 0000-0001-6192-4539
+        title: "Dr."
+        url: "https://www.soest.hawaii.edu/oceanography/profile/Garcia-Catherine/"
+
+    Weilei Wang:
+        affiliation: "Xiamen University: Xiamen, Fujian, China"
+        name:
+            full: "Weilei Wang"
+            short: "C. Wang"
+            bib: "Wang, C."
+        orcid: 0000-0002-3201-7224
+        title: "Professor"
+        url: "https://mel2.xmu.edu.cn/faculty/WeileiWang/"
+
+    Christopher Rackauckas:
+        affiliation: "Massachusetts Institue of Technology (MIT), Boston, MA, USA"
+        name:
+            full: "Christopher Rackauckas"
+            short: "C. Rackauckas"
+            bib: "Rackauckas, C."
+        orcid: 0000-0001-5850-0663
+        title: "Dr."
+        url: "https://www.chrisrackauckas.com/"
+
+    Viral B. Shah:
+        affiliation: "Julia Computing, Inc., Cambridge, MA, USA"
+        name:
+            full: "Viral B. Shah"
+            short: "V. B. Shah"
+            bib: "Shah, V. B."
+        orcid: 0000-0001-9602-4012
+        title: "Dr."
+        url: "https://www.linkedin.com/in/viralbshah"
+
+    Emily A. Seelen:
+        affiliation: "University of Southern California (USC), Los Angeles, CA, USA"
+        name:
+            full: "Emily A. Seelen"
+            short: "E. A. Seelen"
+            bib: "Seelen, E. A."
+        orcid: 0000-0003-3782-9341
+        title: "Dr."
+        url: "https://dornsife.usc.edu/profile/emily-seelen/"
+
+    Xiaopeng Bian:
+        affiliation: "University of Southern California (USC), Los Angeles, CA, USA"
+        name:
+            full: "Xiaopeng Bian"
+            short: "X. Bian"
+            bib: "Bian, X."
+        orcid: 0000-0002-6098-7324
+        title: "Dr."
+        url: "https://dornsife.usc.edu/profile/Xiaopeng-Bian/"
+
+    Tim M. Conway:
+        affiliation: "University of South Florida, Tampa, FL, USA"
+        name:
+            full: "Tim M. Conway"
+            short: "T. M. Conway"
+            bib: "Conway, T. M."
+        orcid: 0000-0002-3069-9786
+        title: "Associate Professor"
+        url: "https://www.tconway.co.uk/people.html"
+
+    David A. Hutchins:
+        affiliation: "University of Southern California (USC), Los Angeles, CA, USA"
+        name:
+            full: "David A. Hutchins"
+            short: "D. A. Hutchins"
+            bib: "Hutchins, D. A."
+        orcid: 0000-0002-6637-756X
+        title: "Professor"
+        url: "https://dornsife.usc.edu/profile/david-hutchins/"
+
+    Rachel L. Kelly:
+        affiliation: "University of Southern California (USC), Los Angeles, CA, USA"
+        name:
+            full: "Rachel L. Kelly"
+            short: "R. L. Kelly"
+            bib: "Kelly, R. L."
+        orcid: 0000-0002-3459-5159
+        title: ""
+        url: "http://www.mtel.rocks/people.html"
+
+    Laura Wasylenki:
+        affiliation: "Northern Arizona University, Flagstaff, AZ, USA"
+        name:
+            full: "Laura Wasylenki"
+            short: "L. Wasylenki"
+            bib: "Wasylenki, L."
+        orcid: 0000-0003-0333-3567
+        title: "Associate Professor"
+        url: "https://geochemlaura.wordpress.com/"
+
+    Nathan T. Lanning:
+        affiliation: "Michigan State University, East Lansing, MI, USA"
+        name:
+            full: "Nathan T. Lanning"
+            short: "N. T. Lanning"
+            bib: "Lanning, N. T."
+        orcid: 0000-0003-3534-8587
+        title: "Associate Professor"
+        url: "https://directory.natsci.msu.edu/Directory/Profiles/Person/104109"
+
+    Shun-Chung Yang:
+        affiliation: "University of Southern California (USC), Los Angeles, CA, USA"
+        name:
+            full: "Shun-Chung Yang"
+            short: "S.-C. Yang"
+            bib: "Yang, S.-C."
+        orcid: 0000-0001-5355-5411
+        title: "Dr."
+        url: "https://ocean.tamu.edu/people/profiles/faculty/fitzsimmonsjessica.html"
+
+    Jessica N. Fitzsimmons:
+        affiliation: "Department of Oceanography, Texas A&M University, TX, USA"
+        name:
+            full: "Jessica N. Fitzsimmons"
+            short: "J. N. Fitzsimmons"
+            bib: "Fitzsimmons, J. N."
+        orcid: 0000-0002-9829-2464
+        title: "Associate Professor"
+        url: "https://ocean.tamu.edu/people/profiles/faculty/fitzsimmonsjessica.html"
+
+    Timothy Holy:
+        affiliation: "Washington University in St. Louis, MO, USA"
+        name:
+            full: "Timothy Holy"
+            short: "T. Holy"
+            bib: "Holy, T."
+        orcid: 0000-0002-2429-1071
+        title: "Professor"
+        url: "https://sites.wustl.edu/holylab/"
+
+    Barry B. Cael:
+        affiliation: "National Oceanography Centre, Southampton, UK"
+        name:
+            full: "Barry B. Cael"
+            short: "B. B. Cael"
+            bib: "Cael, B. B."
+        orcid: 0000-0002-3201-7224
+        title: "Associate Professor"
+        url: "https://www.cael.earth/"
+
+    Marina Frants:
+        affiliation: "Scripps Institution of Oceanography, UC San Diego, CA, USA"
+        name:
+            full: "Marina Frants"
+            short: "M. Frants"
+            bib: "Frants, M."
+        orcid: 0000-0002-3838-5976
+        title: "Dr."
+        url: "https://scripps.ucsd.edu/profiles/mfrants"
+
+    Nicholas Meskhidze:
+        affiliation: "Georgia Institute of Technology, North Carolina State University"
+        name:
+            full: "Nicholas Meskhidze"
+            short: "N. Meskhidze"
+            bib: "Meskhidze, N."
+        orcid: 0000-0001-5628-8777
+        title: "Professor"
+        url: "https://nicholasmeskhidze.com/"
+
+    Christoph Völker:
+        affiliation: "Alfred Wegener Institut Helmholz Zentrum für Polar und Meeresforschung: Bremerhaven, Bremen, DE"
+        name:
+            full: "Christoph Völker"
+            short: "C. Völker"
+            bib: "Völker, C."
+        orcid: 0000-0003-3032-114X
+        title: "Dr"
+        url: "https://www.awi.de/en/about-us/organisation/staff/single-view/christoph-voelker.html"
+
+    Hind A. Al-Abadleh:
+        affiliation: "Department of Chemistry and Biochemistry, Wilfrid Laurier University, Ontario, Canada"
+        name:
+            full: "Hind A. Al-Abadleh"
+            short: "H. A. Al-Abadleh"
+            bib: "Al-Abadleh, H. A."
+        orcid: 0000-0002-9425-0646
+        title: "Professor"
+        url: "https://www.wlu-science-chem-halabadleh.ca/"
+
+    Katherine Barbeau:
+        affiliation: "Scripps Institution of Oceanography, UC San Diego, CA, USA"
+        name:
+            full: "Katherine Barbeau"
+            short: "K. Barbeau"
+            bib: "Barbeau, K."
+        orcid: 0000-0002-2132-7219
+        title: "Professor"
+        url: "https://kbarbeau.scrippsprofiles.ucsd.edu/"
+
+    Matthieu Bressac:
+        affiliation: "Laboratoire d'océanographie de Villefranche (LOV), Villefranche-sur-Mer, France"
+        name:
+            full: "Matthieu Bressac"
+            short: "M. Bressac"
+            bib: "Bressac, M."
+        orcid: 0000-0003-3075-3137
+        title: "Dr."
+        url: "https://lov.imev-mer.fr/web/member/matthieu-bressac/"
+
+    Clifton Buck:
+        affiliation: "University of Georgia Skidaway Institute of Oceanography: Savannah, GA, US "
+        name:
+            full: "Clifton Buck"
+            short: "C. Buck"
+            bib: "Buck, C."
+        orcid: 0000-0002-5691-9636
+        title: "Associate Professor"
+        url: "https://www.skio.uga.edu/people/faculty/clifton-buck/"
+
+    Randelle M. Bundy:
+        affiliation: "School of Oceanography, University of Washington, Seattle, WA, USA"
+        name:
+            full: "Randelle M. Bundy"
+            short: "R. M. Bundy"
+            bib: "Bundy, R. M."
+        orcid: 0000-0002-0600-3953
+        title: "Assistant Professor"
+        url: "https://www.bundylab.com/"
+
+    Peter Croot:
+        affiliation: "University of Galway, Galway, Ireland"
+        name:
+            full: "Peter Croot"
+            short: "P. Croot"
+            bib: "Croot, P."
+        orcid: 0000-0003-1396-0601
+        title: "Professor"
+        url: "https://www.universityofgalway.ie/our-research/people/natural-sciences/petercroot/"
+
+    Yan Feng:
+        affiliation: "Argonne National Laboratory, Lemont, IL, USA"
+        name:
+            full: "Yan Feng"
+            short: "Y. Feng"
+            bib: "Feng, Y."
+        orcid: 0000-0001-6464-0785
+        title: "Dr."
+        url: "https://www.anl.gov/profile/yan-feng"
+
+    Akinori Ito:
+        affiliation: "Japan Agency for Marine-Earth Science and Technology, Yokosuka, Kanagawa Prefecture, Japan"
+        name:
+            full: "Akinori Ito"
+            short: "A. Ito"
+            bib: "Ito, A."
+        orcid: 0000-0002-4937-2927
+        title: "Dr."
+        url: "https://www.jamstec.go.jp/souran/html/Akinori_Ito_09c54-e.html"
+
+    Anne M. Johansen:
+        affiliation: "National Science Foundation (NSF), Alexandria, VA, USA"
+        name:
+            full: "Anne M. Johansen"
+            short: "A. M. Johansen"
+            bib: "Johansen, A. M."
+        # orcid: ?
+        title: "Professor"
+        url: "https://www.nsf.gov/staff/staff_bio.jsp?lan=ajohanse&from_org=ENG"
+
+    William M. Landing:
+        affiliation: "Florida State University, Tallahassee, FL, USA"
+        name:
+            full: "William M. Landing"
+            short: "W. M. Landing"
+            bib: "Landing, W. M."
+        orcid: 0000-0002-7514-3247
+        title: "Professor"
+        url: "https://opda.fsu.edu/mentors/dr-william-landing"
+
+    Jingqiu Mao:
+        affiliation: "Geophysical Institute and Department of Chemistry, University of Alaska Fairbanks, Fairbanks, AK, USA"
+        name:
+            full: "Jingqiu Mao"
+            short: "J. Mao"
+            bib: "Mao, J."
+        orcid: 0000-0002-4774-9751
+        title: "Associate Professor"
+        url: "https://atmoschem.community.uaf.edu/"
+
+    Stelios Myriokefalitakis:
+        affiliation: "National Observatory of Athens, Athens, Greece"
+        name:
+            full: "Stelios Myriokefalitakis"
+            short: "S. Myriokefalitakis"
+            bib: "Myriokefalitakis, S."
+        orcid: 0000-0002-1541-7680
+        title: "Dr."
+        url: "https://www.iersd.noa.gr/en/staff/researchers/dr-myriokefalitakis-stelios/"
+
+    Daniel Ohnemus:
+        affiliation: "University of Georgia Skidaway Institute of Oceanography: Savannah, GA, USA"
+        name:
+            full: "Daniel C. Ohnemus"
+            short: "D. C. Ohnemus"
+            bib: "Ohnemus, D. C."
+        orcid: 0000-0001-6362-4134
+        title: "Dr."
+        url: "https://www.skio.uga.edu/people/faculty/daniel-ohnemus/"
+
+    Ying Ye:
+        affiliation: "Alfred-Wegener-Institut für Polar und Meeresforschung: Bremerhaven, Bremen, DE"
+        name:
+            full: "Ying Ye"
+            short: "Y. Ye"
+            bib: "Ye, Y."
+        orcid: 0000-0002-0929-6392
+        title: "Dr."
+        url: "https://www.awi.de/en/about-us/organisation/staff/single-view/ying-ye.html"
+
+
+
+
+institutes:
+    'UCI':
+        name: University of California, Irvine
+        short: UCI
+        url: https://uci.edu/
+    'USC':
+        name: University of Southern California
+        short: USC
+        url: https://usc.edu/
+    'UNSW':
+        name: University of New South Wales
+        short: UNSW
+        url: https://www.unsw.edu.au/

@@ -1,0 +1,272 @@
+# TODO update with my own students
+
+#
+# PhD Students
+#
+- name: XXXX
+  title: XXXX
+  type: phd
+  # or master/bachelor/studentproject/specialisationproject
+  start: 2025-01-01
+  finished: 2025-01-02
+  with:
+    - XXXX
+    - XXXX
+  note: XXXX
+  pdf: XXXX
+  link: XXX
+# #
+# # Master theses
+# #
+# - name: Veronique Lenaerts
+#   title: Regression of Time Series Data on Manifolds
+#   type: master
+#   with:
+#     - Daan Huybrechs
+#     - Brynjulf Owren
+#   note: This thesis started during an exchange stay and is a master thesis at KU Leuven
+# - name: Mathias Ravn Munkvold
+#   finished: 2023-06-20
+#   title: Adaptive Regularization with Cubics
+#   type: master
+#   note: The code of this thesis is the Lanczos sub solver variant of
+#     <a href="https://manoptjl.org/stable/solvers/adaptive-regularization-with-cubics/">
+#     the ARC solver
+#     </a> available within <a href="https://manoptjl.org">Manopt.jl</a>.
+# - name: Solvor Sevland
+#   finished: 2023-06-15
+#   title: Multivariate Periodic Wavelets on the Pattern
+#   type: master
+#   pdf: https://ntnuopen.ntnu.no/ntnu-xmlui/bitstream/handle/11250/3081825/no.ntnu%3ainspera%3a142441053%3a35172213.pdf?sequence=1&isAllowed=y
+#   link: https://ntnuopen.ntnu.no/ntnu-xmlui/handle/11250/3081825
+# - name: Sebastian Bruhn Jensen
+#   finished: 2023-06-01
+#   title: 'The nearest $\Omega$-stable matrix vir Riemannian Optimization'
+#   type: master
+#   with:
+#     - Ralf Zimmermann
+#   note: |
+#     This thesis was conducted at SDU Odense.
+#     Sebastian was staying at NTNU for two weeks to conduct his numerical experiments in Julia.
+# - name: Renée Dornig
+#   finished: 2022-09-26
+#   title: Constraint Optimization on Manifolds
+#   type: master
+#   with:
+#     - Roland Herzog
+#   note: |
+#     The code of this thesis was the main basis for
+#     <a href="https://manoptjl.org/stable/solvers/augmented_Lagrangian_method/">
+#     The Augmented Lagrangian Method
+#     </a> and
+#     <a href="https://manoptjl.org/stable/solvers/exact_penalty_method/">
+#     The Exact Penalty Method
+#     </a>
+#     available within <a href="https://manoptjl.org">Manopt.jl</a>.
+# - name: Even Stephansen Kjemsås
+#   finished: 2022-07-12
+#   title: The Riemannian Frank-Wolfe Algorithm
+#   type: master
+#   note: |
+#     The code of this thesis was the basis for
+#     <a href="https://manoptjl.org/stable/solvers/FrankWolfe/">
+#     The Frank-Wolfe Algorithm
+#     </a>
+#     available within <a href="https://manoptjl.org">Manopt.jl</a>.
+#   pdf: https://ntnuopen.ntnu.no/ntnu-xmlui/bitstream/handle/11250/3019960/no.ntnu%3ainspera%3a104646180%3a20910798.pdf?sequence=1&isAllowed=y
+#   link: https://ntnuopen.ntnu.no/ntnu-xmlui/handle/11250/3019960
+# - name: Johannes Voll Kolstø
+#   finished: 2022-06-24
+#   title: Support Vector Machines on Riemannian Manifolds
+#   type: master
+#   link: https://hdl.handle.net/11250/3030014
+#   pdf: https://ntnuopen.ntnu.no/ntnu-xmlui/bitstream/handle/11250/3030014/no.ntnu%3ainspera%3a104646180%3a37160080.pdf?sequence=1&isAllowed=y
+#   note: |
+#     This thesis was awarded the <a href="https://www.ntnu.no/nrprisen/2021-22">NR Prisen</a>
+#     for the best master thesis in mathematics at NTNU within the study year 2021/2022.
+#     <br>Congratulations Johannes!
+# - finished: 2021-06-01
+#   name: Manuel Weiß
+#   title: The Chambolle-Pock Algorithm for Geometry Labeling and Segmentation based on the Normal Vector Field
+#   type: master
+#   with:
+#     - Roland Herzog
+# - finished: 2019-07-16
+#   name: Felix Maschke
+#   title: Geodätische Regression auf Mannigfaltigkeiten mit Nebenbedingungen
+#   type: master
+#   with:
+#     - Roland Herzog
+# - finished: 2015-09-01
+#   name: Markus Löckel
+#   title: Variational Models and Primal-Dual Algorithms for Manifold-Valued Image Restoration
+#   type: master
+#   with:
+#     - Gabriele Steidl
+# - finished: 2015-03-01
+#   name: Johannes Persch
+#   title: Analysis of Local Anisotropies and Denoising of $\mathbb S^1$-Valued Data
+#   type: master
+#   with:
+#     - Gabriele Steidl
+# #
+# # Bachelor theses
+# #
+# - finished: 2022-03-07
+#   name: Jan-Philipp Pfaue
+#   title: Constrained optimization on Riemannian manifolds using geodesic polygonal sets
+#   type: bachelor
+#   with:
+#     - Roland Herzog
+# - finished: 2020-12-18
+#   name: Tom-Christian Riemer
+#   title: The Riemannian BFGS Method and its Implementation in Julia
+#   type: bachelor
+#   with:
+#     - Roland Herzog
+#   note: |
+#     The code is available at within <a href="https://manoptjl.org">Manopt.jl</a>,
+#     see <a href="https://manoptjl.org/stable/solvers/quasi_Newton/">Riemannian quasi Newton Methods</a>.
+# - finished: 2019-11-07
+#   name: Renée Dornig
+#   title: Regularized Clustering of Manifold-Valued Data
+#   type: bachelor
+#   with:
+#     - Roland Herzog
+# - finished: 2019-05-29
+#   name: Erik Wünsche
+#   title: $L^1$-TV-Regularisierung von rotationswertigen Daten
+#   type: bachelor
+#   with:
+#   - Ralf Hielscher
+# - finished: 2018-03-22
+#   name: Rozan Rosandi
+#   title: "Optimization of Composite Bézier Curves on Riemannian Manifolds"
+#   type: bachelor
+# - finished: 2018-03-19
+#   name: Jeremias Arf
+#   title: An Alternating Gradient Descent Method for Geodesic Regression on symmetric Riemannian manifolds
+#   type: bachelor
+# - finished: 2017-06-01
+#   name: Henning Huth
+#   title: Congruence classes of anisotropic patterns on the torus and application in the FFT-based homogenization
+#   type: bachelor
+#   with:
+#     - Dennis Merkert
+#     - Bernd Simeon
+#     - Gabriele Steidl
+# - finished: 2017-05-01
+#   name: Leif Goebel
+#   title: Segmentation of Manifold-valued images
+#   type: bachelor
+#   with:
+#     - Gabriele Steidl
+# - finished: 2017-01-01
+#   name: Benedikt Schmitt
+#   title: Anisotropic Structures and Sampling Patterns for the FFT-based Numerical Homogenization
+#   type: bachelor
+#   with:
+#     - Dennis Merkert
+#     - Bernd Simeon
+#     - Gabriele Steidl
+# - finished: 2016-06-01
+#   name: Marcel Brusius
+#   title: Unsupervised Co-Segmentation with Histogram Priors
+#   type: bachelor
+#   with:
+#     - Gabriele Steidl
+# - finished: 2016-06-01
+#   name: Sebastian Neumayer
+#   title: Entropy Regularized Wasserstein Distances and an Application in Image Segmentation
+#   type: bachelor
+#   with:
+#     - Gabriele Steidl
+# - finished: 2013-12-01
+#   name: Johannes Persch
+#   title: Directional Information via Structure Tensors
+#   type: bachelor
+#   with:
+#     - Gabriele Steidl
+# - finished: 2012-07-01
+#   name: Lisa Kausch
+#   title: Multivariate anisotrope Dirichlet-Wavelets zur Kantendetektion auf dem Torus
+#   type: bachelor
+#   with:
+#     - Jürgen Prestin
+# - finished: 2011-10-01
+#   name: Inga Stolz
+#   title: Die multivariate periodische Fourier- und Wavelet-Transformation auf anisotropen Mustern
+#   type: bachelor
+#   with:
+#    - Jürgen Prestin
+# #
+# # specialisation projects
+# #
+# - name: Markus A. Stokkenes
+#   finished: 2024-01-12
+#   title: Convolutional Neural Network Layers Equivariant Under Affine Lie Group Actions
+#   type: specialisationproject
+# - name: Jo Stokke
+#   finished: 2023-10-16
+#   title: Manifold-Valued Graph Learning and Embedding Graphs
+#   type: specialisationproject
+#   with:
+#     - Christoph von Tychowicz
+#     - Martin Hanik
+# - name: Mathias Ravn Munkvold
+#   finished: 2023-01-12
+#   title: Low Rank Matrix Completion
+#   type: specialisationproject
+# - name: Solvor Sevland
+#   finished: 2023-01-12
+#   title: The Multivariate Fast Fourier Transform on the Pattern
+#   type: specialisationproject
+# - name: Even Stephansen Kjemsås
+#   finished: 2022-01-07
+#   title: Convolutions on Manifolds for Deep Learning
+#   type: specialisationproject
+# - name: Johannes Voll Kolstø
+#   finished: 2022-01-04
+#   title: Optimization on the symplectic and the symplectic Stiefel manifold
+#   type: specialisationproject
+#   note: |
+#     The code is available at within <a href="https://juliamanifolds.github.io/Manifolds.jl/stable/">Manifolds.jl</a>,
+#     see <a href="https://juliamanifolds.github.io/Manifolds.jl/stable/manifolds/symplectic.html">The symplectic Manifold</a>
+#     and the <a href="https://juliamanifolds.github.io/Manifolds.jl/stable/manifolds/symplecticstiefel.html">The symplectic Stiefel Manifold</a>.
+# #
+# # student projects
+# #
+# - finished: 2017-10-01
+#   name:
+#     - Jeremias Arf
+#     - Rozan Rosandi
+#   title: Bézier curves in Riemannian manifolds
+#   type: studentproject
+# - finished: 2017-10-01
+#   name: Jens Settelmeier
+#   title: Semantic Segmentation using Fully Convolutional Networks
+#   type: studentproject
+#   with:
+#     - Ali Moghiseh
+# - finished: 2016-11-01
+#   name:
+#     - Annika Engel
+#     - Leif Goebel
+#   title: Segmentation of Colour Images Using a Regularised Fuzzy C-Means Algorithm
+#   type: studentproject
+# - finished: 2016-09-01
+#   name:
+#     - Henning Huth
+#     - Benedikt Schmitt
+#   title: Lösung der statischen Wärmeleitungsgleichung in der Homogenisierung auf anisotropen Gittern
+#   type: studentproject
+#   with:
+#     - Dennis Merkert
+# - finished: 2016-04-01
+#   name:
+#     - Marcel Brusius
+#     - Sebastian Neumayer
+#   title: An Algorithm for Image Segmentation based on Optimal Transport Distances
+#   type: studentproject
+#   with:
+#     - Gabriele Steidl

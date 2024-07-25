@@ -1,0 +1,185 @@
+# TODO update with my own lectures when I have them
+
+lectures:
+  - term: Høst 2021, 2022, and 2023
+    date: 2023-08-24
+    name: TMA4215 Numerisk matematikk
+    note: Numerical Mathematics
+    university: NTNU
+    link: https://www.ntnu.edu/studies/courses/TMA4215
+  - term: Vår 2022, 2023, and 2024
+    date: 2023-01-09
+    name: TMA4125 Matematikk 4N
+    note: Differential equations and Fourier analysis
+    university: NTNU
+    link: https://www.ntnu.edu/studies/courses/TMA4125
+  - term: Høst 2022
+    date: 2021-08-24
+    name: TMA4310 Mathematical Subjects, Advanced Course
+    note: Reading Course, “<a href="https://www.nicolasboumal.net/book/index.html">An introduction to optimization on smooth manifolds</a>”
+    university: NTNU
+    link: https://www.ntnu.edu/studies/courses/TMA4310
+  - term: WS&nbsp;2017/18
+    date: 2017-10-01
+    name: Höhere Mathematik III – Vektoranalysis
+    note: Vector Calculus for Engineering students
+    university: TUK
+  - term: WS&nbsp;2016/17
+    date: 2016-10-01
+    name: Höhere Mathematik III – Vektoranalysis
+    note: Vector Calculus for Engineering students
+    university: TUK
+  - term: SS&nbsp;2016
+    date: 2016-04-01
+    name: Foundations of Image Processing
+    note: (second half on Fourier Analysis)
+    with:
+      - Gabriele Steidl
+    university: TUK
+  - term: SS&nbsp;2015
+    date: 2015-04-01
+    name: Foundations of Image Processing
+    university: TUK
+exercises:
+  - term: WS&nbsp;2020/21
+    date: 2020-10-01
+    name: Computer-oriented Mathematics
+    note: covering e.g. reproducible research, debugging, coding style, and git
+    with:
+      - Roland Herzog
+    university: TUC
+    link: https://www.tu-chemnitz.de/mathematik/part_dgl/teaching/WS2020_computer-orientierte_Mathematik/index.en.php
+  - term: WS&nbsp;2020/21
+    date: 2020-10-01
+    name: Computerpraktikum
+    note: Including coordination for the faculty
+    university: TUC
+  - term: WS&nbsp;2020/21
+    date: 2020-10-01
+    name: Optimization for Non-Mathematicians
+    note: Exercises including programming in Matlab
+    university: TUC
+  - term: SS&nbsp;2020
+    date: 2020-04-01
+    name: Optimization on Manifolds
+    university: TUC
+  - term: SS&nbsp;2020
+    date: 2020-04-01
+    name: Computerpraktikum
+    note: Including coordination for the faculty
+    university: TUC
+  - term: SS&nbsp;2020
+    date: 2020-04-01
+    name: Mathematics for Chemists and Economics II
+    note: Exercise and Practicals
+    university: TUC
+  - term: WS&nbsp;2019/20
+    date: 2019-10-01
+    name: Mathematics for Chemists and Economics I
+    note: Exercise and Practicals
+    university: TUC
+  - term: WS&nbsp;2019/20
+    date: 2019-10-01
+    name: Optimization for Non-Mathematicians
+    note: Exercises including programming in Matlab
+    university: TUC
+  - term: SS&nbsp;2019
+    name: Modelling Seminar
+    date: 2019-04-01
+    note: Modelling and solving problems posed by companies,  within the data science study program
+    university: TUC
+  - term: WS&nbsp;2018/19
+    date: 2018-10-01
+    name: Computer-oriented Mathematics
+    note: covering e.g. reproducible research, debugging, git
+    with:
+      - Roland Herzog
+    university: TUC
+  - term: WS&nbsp;2018/19
+    date: 2018-10-01
+    name: "Höhere Mathematik III (If, Ph, ET)"
+    note: Exercises and Tutorials for computer scientists , covering vector calculus.
+    university: TUC
+  - term: SS&nbsp;2019
+    date: 2019-04-01
+    name: Computerpraktikum
+    note: Including coordination for the whole Faculty
+    university: TUC
+  - term: WS&nbsp;2018/19
+    date: 2018-10-01
+    name: Computerpraktikum
+    note: Including coordination for the whole Faculty
+    university: TUC
+  - term: WS&nbsp;2017/18
+    date: 2017-10-01
+    name: Seminar Learning
+    with:
+     - Gabriele Steidl
+    university: TUK
+  - term: WS&nbsp;2017/18
+    date: 2017-10-01
+    name: Lecture Exercise for “Höhere Mathematik III – Vektoranalysis”
+    note: Vector Calculus for Engineering students
+    university: TUK
+  - term: SS&nbsp;2017
+    date: 2017-04-01
+    name: Tutor and Organizer of the Tutorials for “Foundations of Image Processing”
+    university: TUK
+  - term: SS&nbsp;2017
+    date: 2017-04-01
+    name: Tutor and Organizer of the Tutorials for “Optimization on Manifolds”
+    university: TUK
+  - term: SS&nbsp;2016
+    date: 2016-04-01
+    name: Tutor and Organizer of the Tutorials for “Methoden der konvexen Analysis in der Bildverarbeitung”
+    text: (Convex Analysis in Image Processing)
+    university: TUK
+  - term: WS&nbsp;2015/16
+    date: 2015-10-01
+    name: Seminar “Mathematical Image Processing”
+    with:
+     - Gabriele Steidl
+    university: TUK
+  - term: WS&nbsp;2015/16
+    date: 2015-10-01
+    name: Organizer of the Tutorials “Höhere Mathematik III”
+    note: Vector Calculus and Differential Equations for engineering students
+    university: TUK
+  - term: WS&nbsp;2014/15 and WS&nbsp;2016/17
+    date: 2014-10-01
+    name: Internships accompanying the “Lecture Introduction to Numerical Methods”
+    university: TUK
+  - term: SS&nbsp;2014
+    date: 2014-04-01
+    name: Lecture Exercise “Höhere Mathematik II”
+    note: Linear Algebra for engineering students
+    university: TUK
+  - term: WS&nbsp;2013/14
+    date: 2013-10-01
+    name: Tutor “Höhere Mathematik III”
+    note: Vector Calculus and Differential Equations for engineering students
+    university: TUK
+  - term: WT 2011/12
+    date: 2011-10-01
+    name: Seminar “Wavelets – Theory and Applications“
+    university: UzL
+  - term: SS&nbsp;2011, SS&nbsp;2012 and SS&nbsp;2013
+    date: 2011-04-01
+    name: Tutorial “Computational Analysis – Introduction to Mathematica“
+    text: for Bachelor students of “Computational Life Science”
+    university: UzL
+  - term: WS&nbsp;2010/11 and WS&nbsp;2011/12
+    name: "Additional Lecture of Analysis I on “Introduction to linear Algebra”"
+    text: "for Bachelor Students “Molecular Life Science“"
+    date: 2010-10-01
+    university: UzL
+  - term: WS&nbsp;2009/10 until SS&nbsp;2013
+    date: 2009-10-01
+    name: Tutor and Tutorial Organizer
+    text: of the Tutorials for “Analysis I“ (winter terms) und “Analysis II“ (summer terms)
+    university: UzL
+  - term: WS&nbsp;2005/06 until SS&nbsp;2009
+    date: 2005-10-01
+    name: Student Tutor
+    text: for correction assignments and Tutorials within “Linear Algebra und discrete Structures I“ (winter terms) and “Linear Algebra und discrete Structures II“ (summer terms)
+    university: UzL
