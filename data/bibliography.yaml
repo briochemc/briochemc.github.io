@@ -1,0 +1,678 @@
+"John_etal_GBC_2024":
+    abstract: >
+        Nickel (Ni) is a micronutrient that plays a role in nitrogen uptake and fixation in the modern ocean
+        and may have affected rates of methanogenesis on geological timescales. Here, we present the results of a
+        diagnostic model of global ocean Ni fluxes which addresses key questions about marine Ni cycling. Sparsely
+        available observations of Ni concentration are first extrapolated into a global gridded climatology using tracers
+        with better observational coverage such as macronutrients, and testing three different machine learning
+        techniques. The physical transport of Ni is then estimated using the ocean circulation inverse model (OCIM2),
+        revealing regions of net convergence or divergence. These diagnostics are not based on any assumption about Ni
+        biogeochemical cycling, but their spatial patterns can be used to infer where biogeochemical processes such as
+        biological Ni uptake and regeneration take place. Although Ni and silicate (Si) have similar concentration
+        patterns in the ocean, we find that the spatial pattern of Ni uptake in the surface ocean is similar to phosphate (P)
+        uptake but not to silicate (Si) uptake. This suggests that their similar distributions arise from different
+        biogeochemical mechanisms, consistent with other evidence showing that Ni is not incorporated into diatom
+        frustules. We find that Ni:P ratios at uptake do not decrease as Ni concentrations approach 2 nM, which
+        challenges the hypothesis of a ~2 nM pool of non-bioavailable Ni in the surface ocean. Finally, we find that the
+        net regeneration of Ni occurs deeper in the ocean than for P, though not as deeply as for Si.
+    author:
+        - Seth G. John
+        - Hengdi Liang
+        - Benoît Pasquier
+        - Mark Holzer
+        - Sam Silva
+    doi: 10.1029/2023GB008018
+    pdf: /pdfs/John_etal_NatureGeoscience_2024.pdf
+    issn: 1944-9224
+    # image: ?
+    journaltitle: "Global Biogeochemical Cycles"
+    number: 5
+    pages: e2023GB008018
+    title: "Biogeochemical Fluxes of Nickel in the Global Oceans Inferred From a Diagnostic Model"
+    biblatextype: article
+    volume: 38
+    year: 2024
+    expecteddate: 2024-05-13
+
+
+
+"Pasquier_etal_JGRO_2024":
+    abstract: >
+        The deoxygenation of the ocean is an important consequence of climate change that poses an imminent threat to marine life and global food security.
+        However, our understanding of the complex interactions between changes in circulation, solubility, and respiration that drive global-scale deoxygenation is incomplete.
+        Here, we consider idealized biogeochemical steady states in equilibrium with perpetually slower and warmer oceans constructed from climate-model simulations of the 2090s that we hold constant in time.
+        In contrast to simulations of the end-of-century transient state, our idealized states are intensely deoxygenated in the abyss, consistent with perpetually reduced ventilation and Antarctic Bottom Water formation.
+        We disentangle the effects of the deoxygenation drivers on preformed oxygen and true oxygen utilization (TOU) using the novel concept of upstream exposure time, which precisely connects TOU to oxygen utilization rates and preformed oxygen to ventilation.
+        For our idealized steady states, deoxygenation below 2000\,m depth is due to increased TOU, driven dominantly by the slower circulations that allow respiration to act roughly 2--3 times longer thereby overwhelming the effects of reduced respiration rates.
+        Above 500\,m depth, decreased respiration and slower circulation closely compensate, resulting in little expansion of upper-ocean hypoxia.
+        The bulk of preformed oxygen loss is driven by ventilation shifting equatorward to where warmer surface waters hold less oxygen.
+        Warming-driven declines in solubility account for less than 10\,\% of the total oxygen loss.
+        Although idealized, our analysis suggests that long-term changes in the marine oxygen cycle could be driven dominantly by changes in circulation rather than by thermodynamics or biology.
+    author:
+        - Benoît Pasquier
+        - Mark Holzer
+        - Matthew A. Chamberlain
+        - Richard J. Matear
+        - Nathaniel L. Bindoff
+    # doi: ?
+    pdf: /pdfs/Pasquier_etal_JGRO_2024_preprint.pdf
+    # issn: ?
+    image: O2minjl.pd
+    journaltitle: "Journal of Geophysical Research: Oceans"
+    # link: ?
+    # number: ?
+    # pages: ?
+    title: "Deoxygenation and its drivers analyzed in steady state for perpetually slower and warmer oceans"
+    biblatextype: online
+    # volume: ?
+    year: under review
+    expecteddate: 2024-09-01
+
+"Pasquier_etal_BG_2024":
+    abstract: >
+        The marine carbon cycle is vitally important for climate and the fertility of the oceans. However, predictions of future biogeochemistry are challenging because a myriad of processes need parameterization and the future evolution of the physical ocean state is uncertain. Here, we embed a data-constrained model of the carbon cycle in slower and warmer ocean states as simulated under the RCP4.5 and RCP8.5 (RCP: Representative Concentration Pathway) scenarios for the 2090s and frozen in time for perpetuity. Focusing on steady-state changes from preindustrial conditions allows us to capture the response of the system integrated over all the timescales of the steady-state biogeochemistry, as opposed to typical transient simulations that capture only sub-centennial timescales. We find that biological production experiences only modest declines (of 8 %–12 %) because the reduced nutrient supply due to a more sluggish circulation and strongly shoaled mixed layers is counteracted by warming-stimulated growth. Organic-matter export declines by 15 %–25 % due to reductions in both biological production and export ratios, the latter being driven by warming-accelerated shallow respiration and reduced subduction of dissolved organic matter. The perpetual-2090s biological pump cycles a 30 %–70 % larger regenerated inventory accumulated over longer sequestration times, while preformed DIC is shunted away from biological utilization to outgassing. The regenerated and preformed DIC inventories both increase by a similar magnitude. We develop a conceptually new partitioning of preformed DIC to quantify the ocean's preformed carbon pump and its changes. Near-surface paths of preformed DIC are more important in the slower circulations, as weakened ventilation isolates the deep ocean. Thus, while regenerated DIC cycling becomes slower, preformed DIC cycling speeds up.
+    author:
+        - Benoît Pasquier
+        - Mark Holzer
+        - Matthew A. Chamberlain
+    doi: 10.5194/bg-21-3373-2024
+    pdf: /pdfs/Pasquier_etal_BG_2024.pdf
+    link: https://bg.copernicus.org/articles/21/3373/2024/bg-21-3373-2024.html
+    issn: 1726-4170
+    image: Creg_ZAVG_jl.png
+    journaltitle: "Biogeosciences"
+    number: 14
+    pages: 3373–3400
+    title: "The biological and preformed carbon pumps in perpetually slower and warmer oceans"
+    biblatextype: article
+    volume: 21
+    year: 2024
+    expecteddate: 2024-07-25
+
+
+
+"Holzer_etal_GRL_2024":
+    abstract: >
+        The ocean's organic carbon export is a key control on atmospheric pCO2 and stimulating this export could potentially mitigate climate change. We use a data-constrained model to calculate the sensitivity of atmospheric pCO2 to local changes in export using an adjoint approach. A perpetual enhancement of the biological pump's export by 0.1 PgC/yr could achieve a roughly 1% reduction in pCO2 at average sensitivity. The sensitivity varies roughly 5-fold across different ocean regions and is proportional to the difference between the mean sequestration time τseq of regenerated carbon and the response time τpre of performed carbon, which is the reduction in the preformed carbon inventory per unit increase in local export production. Air-sea CO2 disequilibrium modulates the geographic pattern of τpre, causing particularly high sensitivities (2–3 times the global mean) in the Antarctic Divergence region of the Southern Ocean.
+    author:
+        - Mark Holzer
+        - Timothy DeVries
+        - Benoît Pasquier
+    doi: 10.1029/2024GL108462
+    pdf: /pdfs/Holzer_etal_GRL_2024.pdf
+    link: https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2024GL108462
+    issn: 1944-8007
+    image: Holzer_etal_GRL_2024_diagram.jpg
+    journaltitle: "Geophysical Research Letters"
+    number: 12
+    pages: e2024GL108462
+    title: "Atmospheric pCO₂ Response to Stimulated Organic Carbon Export: Sensitivity Patterns and Timescales"
+    biblatextype: article
+    volume: 51
+    year: 2024
+    expecteddate: 2024-06-12
+
+
+
+
+"Pasquier_Primeau_SISC_2021":
+    abstract: >
+        Steady-state systems of nonlinear partial differential equations (PDEs) are common in engineering and the biogeosciences.
+        These systems are typically controlled by parameters that can be estimated efficiently using second-order optimization algorithms.
+        However, computing the gradient vector and Hessian matrix of a given objective function defined implicitly by the solution of large PDE systems is seldom economical.
+        Here we present a fast and easy-to-use algorithm for computing the gradient and Hessian of an objective function implicitly constrained by a steady-state PDE system.
+        We call the new algorithm, which is based on the use of hyperdual numbers, the F-1 algorithm, because it requires only one factorization of the constraint-equation Jacobian.
+        Careful examination of the relationships that arise from differentiating the PDE system reveal analytical shortcuts that the F-1 algorithm leverages.
+        We benchmark the F-1 algorithm against five numerical differentiation schemes in the context of optimizing a global steady-state model of the marine phosphorus cycle that depends explicitly on $m = 6$ parameters.
+        In this context, the F-1 algorithm computes the Hessian to 100 times faster than other algorithms, allowing for the entire optimization procedure to be performed 4 to 26 times faster.
+        This is because other algorithms require O($m$) to O($m^2$) factorizations, which suggests even greater speedups for larger problems.
+        To facilitate reproducibility and future benchmarks, all the code developed for this study was implemented as open-source Julia packages
+    author:
+        - Benoît Pasquier
+        - François W. Primeau
+        - et al.
+    # doi:
+    pdf: /pdfs/Pasquier_Primeau_SISC_draft.pdf
+        # - /pdfs/Pasquier_Primeau_SISC_draft_supp.pdf
+    # issn: ?
+    image: F1Methodpaper.png
+    journaltitle: TBD
+    # number: ?
+    # pages: ?
+    title: "The F-1 algorithm for efficient computation of the Hessian matrix of an objective function defined implicitly by the solution of a steady-state problem"
+    biblatextype: online
+    # volume: ?
+    year: in preparation
+    expecteddate: 2023-05-02
+
+
+"Pasquier_etal_BG_2023":
+    abstract: >
+        Accurate predictive modeling of the ocean's global carbon and oxygen cycles is challenging because of uncertainties in both biogeochemistry and ocean circulation. Advances over the last decade have made parameter optimization feasible, allowing models to better match observed biogeochemical fields. However, does fitting a biogeochemical model to observed tracers using a circulation with known biases robustly capture the inner workings of the biological pump? Here we embed a mechanistic model of the ocean's coupled nutrient, carbon, and oxygen cycles into two circulations for the current climate. To assess the effects of biases, one circulation (ACCESS-M) is derived from a climate model and the other from data assimilation of observations (OCIM2). We find that parameter optimization compensates for circulation biases at the expense of altering how the biological pump operates. Tracer observations constrain pump strength and regenerated inventories for both circulations, but ACCESS-M export production optimizes to twice that of OCIM2 to compensate for ACCESS-M having lower sequestration efficiencies driven by less efficient particle transfer and shorter residence times. Idealized simulations forcing complete Southern Ocean nutrient utilization show that the response of the optimized system is sensitive to the embedding circulation. In ACCESS-M, Southern Ocean nutrient and dissolved inorganic carbon (DIC) trapping is partially short circuited by unrealistically deep mixed layers. For both circulations, intense Southern Ocean production deoxygenates Southern-Ocean-sourced deep waters, muting the imprint of circulation biases on oxygen. Our findings highlight that the biological pump's plumbing needs careful assessment to predict the biogeochemical response to ecological changes, even when optimally matching observations.
+    author:
+        - Benoît Pasquier
+        - Mark Holzer
+        - Matthew A. Chamberlain
+        - Richard J. Matear
+        - Nathaniel L. Bindoff
+        - François W. Primeau
+    doi: 10.5194/bg-20-2985-2023
+    link: https://bg.copernicus.org/articles/20/2985/2023/
+    pdf: /pdfs/Pasquier_etal_BG_2023.pdf
+    # issn: ?
+    image: OCIMvsACCESSregpipes.png
+    journaltitle: Biogeosciences
+    number: 14
+    pages: 2985–3009
+    title: "Optimal parameters for the ocean's nutrient, carbon, and oxygen cycles compensate for circulation biases but replumb the biological pump"
+    biblatextype: article
+    volume: 20
+    year: 2023
+
+"Pasquier_etal_JOSS_2022":
+    # abstract: N/A
+    author:
+        - Benoît Pasquier
+        - François W. Primeau
+        - Seth G. John
+    doi: 10.21105/joss.03814
+    link: https://doi.org/10.21105/joss.03814
+    # issn: ?
+    image: AIBECS.png
+    pdf: /pdfs/Pasquier_etal_JOSS_2022.pdf
+    journaltitle: Journal of Open Source Software
+    number: 69
+    pages: "3814"
+    title: "AIBECS.jl: A tool for exploring global marine biogeochemical cycles"
+    biblatextype: article
+    volume: 7
+    year: 2022
+
+
+"John_etal_NatureGeoSci_2022":
+    abstract: >
+        Nickel is a biologically essential element for marine life, with the potential to influence diverse processes, including methanogenesis, nitrogen uptake and coral health, in both modern and past oceans. However, an incomplete view of oceanic Ni cycling has stymied understanding of how Ni may impact marine life in these modern and ancient oceans. Here we combine data-constrained global biogeochemical circulation modelling with culture experiments and find that Ni in oligotrophic gyres is both chemically and biologically labile and only minimally incorporated into diatom frustules. We then develop a framework for understanding oceanic Ni distributions, and in particular the two dominant features of the global marine Ni distribution: the deep concentration maximum and the residual pool of approximately 2 nM Ni in subtropical gyres. We suggest that slow depletion of Ni relative to macronutrients in upwelling regions can explain the residual Ni pool, and reversible scavenging or slower regeneration of Ni compared with macronutrients contributes to the distinct Ni vertical distribution. The strength of these controls may have varied in the past ocean, impacting Ni bioavailability and setting a fine balance between Ni feast and famine for phytoplankton, with implications for both ocean chemistry and climate state.
+    author:
+        - Seth G. John
+        - Rachel L. Kelly
+        - Xiaopeng Bian
+        - Feixue Fu
+        - M. Isabel Smith
+        - Nathan T. Lanning
+        - Hengdi Liang
+        - Benoît Pasquier
+        - Emily A. Seelen
+        - Mark Holzer
+        - Laura Wasylenki
+        - Tim M. Conway
+        - Jessica N. Fitzsimmons
+        - David A. Hutchins
+        - Shun-Chung Yang
+    doi: 10.1038/s41561-022-01045-7
+    link: https://www.nature.com/articles/s41561-022-01045-7
+    # issn: ?
+    image: NiControls.png
+    pdf: /pdfs/John_etal_NatureGeoSci_2022.pdf
+    journaltitle: Nature Geoscience
+    number: 11
+    pages: 906–912
+    title: "The biogeochemical balance of oceanic nickel cycling"
+    biblatextype: article
+    volume: 15
+    year: 2022
+
+"Pasquier_etal_GMD_2022":
+    abstract: >
+        Spatially distant sources of neodymium (Nd) to the ocean that carry different isotopic signatures ($\epsilon_\mathrm{Nd}$) have been shown to trace out major water masses and have thus been extensively used to study large-scale features of the ocean circulation both past and current. While the global marine Nd cycle is qualitatively well understood, a complete quantitative determination of all its components and mechanisms, such as the magnitude of its sources and the paradoxical conservative behavior of $\epsilon_\mathrm{Nd}$, remains elusive. To make sense of the increasing collection of observational Nd and $\epsilon_\mathrm{Nd}$ data, in this model description paper we present and describe the Global Neodymium Ocean Model (GNOM) v1.0, the first inverse model of the global marine biogeochemical cycle of Nd. The GNOM is embedded in a data-constrained steady-state circulation that affords spectacular computational efficiency, which we leverage to perform systematic objective optimization, allowing us to make preliminary estimates of biogeochemical parameters. Owing to its matrix representation, the GNOM model is additionally amenable to novel diagnostics that allow us to investigate open questions about the Nd cycle with unprecedented accuracy. This model is open-source and freely accessible, is written in Julia, and its code is easily understandable and modifiable for further community developments, refinements, and experiments.
+    author:
+        - Benoît Pasquier
+        - Sophia K. V. Hines
+        - Hengdi Liang
+        - Yingzhe Wu
+        - Steven L. Goldstein
+        - Seth G. John
+    doi: 10.5194/gmd-15-4625-2022
+    link: https://gmd.copernicus.org/articles/15/4625/2022/
+    # issn: ?
+    image: Nd_model.png
+    pdf: /pdfs/Pasquier_etal_GMD_2022.pdf
+    journaltitle: Geoscientific Model Development
+    number: 11
+    pages: 4625–4656
+    title: "GNOM v1.0: an optimized steady-state model of the modern marine neodymium cycle"
+    biblatextype: article
+    volume: 15
+    year: 2022
+
+"Holzer_etal_GBC_2021":
+    abstract: >
+        We develop novel locally defined diagnostics for the efficiency of the ocean's biological pump by tracing carbon throughout its lifetime in the ocean from gas injection to outgassing and counting the number of passages through the soft-tissue and carbonate pumps. These diagnostics reveal that the biological pump's key controls on atmospheric $p\mathrm{CO}_2$ are the mean number of lifetime pump passages per dissolved inorganic carbon (DIC) molecule at the surface and the mean aphotic sequestration time of regenerated DIC. We apply our diagnostics to an observationally constrained carbon-cycle model that features spatially varying stoichiometric ratios and is embedded in a data-assimilated global ocean circulation. We find that for the present-day ocean an average of 44±4% of DIC in a given water parcel makes at least one lifetime passage through the soft tissue pump, and about 4% makes at least one passage through the carbonate pump. The global mean number of lifetime pump passages per molecule, including the fraction with zero passages, is $N_\mathrm{soft}$=0.65±0.08 and $N_\mathrm{carb}$≈0.04 for the soft-tissue and carbonate pumps. Using idealized perturbations to sweep out a sequence of states ranging from zero biological activity ($p\mathrm{CO}_2^\mathrm{atm}$=493±1 ppmv) to complete surface nutrient depletion ($p\mathrm{CO}_2^\mathrm{atm}$=207±1 ppmv), we find that fractional changes in $p\mathrm{CO}_2^\mathrm{atm}$ are dominated by fractional changes in the number of soft-tissue pump passages. At complete surface nutrient depletion, the mean fraction of DIC that has at least one lifetime passage through the soft-tissue pump increases to 69±5% with $N_\mathrm{soft}$=1.6±0.3.
+    author:
+        - Mark Holzer
+        - Eun Young Kown
+        - Benoît Pasquier
+    doi: 10.1029/2020GB006863
+    link: https://www.frontiersin.org/articles/10.3389/fenvs.2021.491636/full
+    issn: 2296-665X
+    image: meanCpumppassages.png
+    pdf: /pdfs/Holzer_etal_GBC_2021.pdf
+    journaltitle: Global Biogeochemical Cycles
+    number: 6
+    pages: 2020GB006863
+    title: "A New Metric of the Biological Carbon Pump: Number of Pump Passages and Its Control on Atmospheric <i>p</i>CO<sub>2</sub>"
+    biblatextype: article
+    volume: 35
+    year: 2021
+
+"Britten_etal_FrontiersEnvSci_2021":
+    abstract: >
+        Large compilations of heterogeneous environmental observations are increasingly available as public databases, allowing researchers to test hypotheses across datasets.
+        Statistical complexities arise when analyzing compiled data due to unbalanced spatial sampling, variable environmental context, mixed measurement techniques, and other reasons.
+        Hierarchical Bayesian modeling is increasingly used in environmental science to describe these complexities, however few studies explicitly compare the utility of hierarchical Bayesian models to simpler and more commonly applied methods.
+        Here we demonstrate the utility of the hierarchical Bayesian approach with application to a large compiled environmental dataset consisting of 5,741 marine vertical organic carbon flux observations from 407 sampling locations spanning eight biomes across the global ocean.
+        We fit a global scale Bayesian hierarchical model that describes the vertical profile of organic carbon flux with depth.
+        Profile parameters within a particular biome are assumed to share a common deviation from the global mean profile.
+        Individual station-level parameters are then modeled as deviations from the common biome-level profile.
+        The hierarchical approach is shown to have several benefits over simpler and more common data aggregation methods.
+        First, the hierarchical approach avoids statistical complexities introduced due to unbalanced sampling and allows for flexible incorporation of spatial heterogeneitites in model parameters.
+        Second, the hierarchical approach uses the whole dataset simultaneously to fit the model parameters which shares information across datasets and reduces the uncertainty up to 95% in individual profiles.
+        Third, the Bayesian approach incorporates prior scientific information about model parameters; for example, the non-negativity of chemical concentrations or mass-balance, which we apply here.
+        We explicitly quantify each of these properties in turn.
+        We emphasize the generality of the hierarchical Bayesian approach for diverse environmental applications and its increasing feasibility for large datasets due to recent developments in Markov Chain Monte Carlo algorithms and easy-to-use high-level software implementations.
+    author:
+        - Gregory L. Britten
+        - Yara Mohajerani
+        - Louis Primeau
+        - Murat Aydin
+        - Catherine Garcia
+        - Weilei Wang
+        - Benoît Pasquier
+        - Barry B. Cael
+        - François W. Primeau
+    doi: 10.3389/fenvs.2021.491636
+    link: https://www.frontiersin.org/articles/10.3389/fenvs.2021.491636/full
+    issn: 2296-665X
+    image: HierarchicalModel.png
+    pdf: /pdfs/Britten_etal_FrontiersEnvSci_2021.pdf
+    journaltitle: Frontiers in Environmental Science
+    # number: 12
+    pages: "28"
+    title: "Evaluating the Benefits of Bayesian Hierarchical Methods for Analyzing Heterogeneous Environmental Datasets: A Case Study of Marine Organic Carbon Fluxes"
+    biblatextype: article
+    volume: 9
+    year: 2021
+
+"Meskhidze_etal_MarChem_2019":
+    abstract: >
+        We explore how the iron dependence of the Si:P uptake ratio $R^\mathrm{Si:P}$ of diatoms controls the response of the global silicon cycle and phytoplankton community structure to Southern Ocean iron fertilization.
+        We use a data-constrained model of the coupled Si–P–Fe cycles that features a mechanistic representation of nutrient colimitations for three phytoplankton classes and that is embedded in a data-assimilated global ocean circulation model.
+        We consider three parameterizations of the iron dependence of $R^\mathrm{Si:P}$, all of which are consistent with the available field data and allow equally good fits to the observed nutrient climatology but result in very different responses to iron fertilization: Depending on how sharply $R^\mathrm{Si:P}$ decreases with increasing iron concentration, iron fertilization can either cause enhanced silicic acid leakage from the Southern Ocean or strengthened Southern Ocean silicon trapping.
+        Enhanced silicic acid leakage occurs if decreases in $R^\mathrm{Si:P}$ win over increases in diatom growth, while the converse causes strengthened Southern Ocean silicon trapping.
+        Silicic acid leakage drives a floristic shift in favor of diatoms in the subtropical gyres and stimulates increased low-latitude opal export.
+        The diatom contribution to global phosphorus export increases, but the lower diatom silicon requirement under iron-replete conditions reduces the global opal export.
+        Regardless of $R^\mathrm{Si:P}$ parameterization, the global response of the biological phosphorus and silicon pumps is dominated by the Southern Ocean.
+        The Si isotope signature of opal flux becomes systematically lighter with increasing iron-induced silicic acid leakage, consistent with sediment records from iron-rich glacial periods.
+    author:
+        - Nicholas Meskhidze
+        - Christoph Völker
+        - Hind A. Al-Abadleh
+        - Katherine Barbeau
+        - Matthieu Bressac
+        - Clifton Buck
+        - Randelle M. Bundy
+        - Peter Croot
+        - Yan Feng
+        - Akinori Ito
+        - Anne M. Johansen
+        - William M. Landing
+        - Jingqiu Mao
+        - Stelios Myriokefalitakis
+        - Daniel Ohnemus
+        - Benoît Pasquier
+        - Ying Ye
+    doi: 10.1016/j.marchem.2019.103704
+    link: https://www.sciencedirect.com/science/article/pii/S0304420319302117
+    issn: 0304-4203,
+    image: IronAirSea.jpg
+    pdf: /pdfs/Meskhidze_etal_MarChem_2019.pdf
+    journaltitle: Marine Chemistry
+    number: 12
+    pages: "103704"
+    title: Perspective on identifying and characterizing the processes controlling iron speciation and residence time at the atmosphere-ocean interface
+    biblatextype: article
+    volume: 217
+    year: 2019
+
+"Holzer_etal_BGC_2019":
+    abstract: >
+        We explore how the iron dependence of the Si:P uptake ratio $R^\mathrm{Si:P}$ of diatoms controls the response of the global silicon cycle and phytoplankton community structure to Southern Ocean iron fertilization.
+        We use a data-constrained model of the coupled Si–P–Fe cycles that features a mechanistic representation of nutrient colimitations for three phytoplankton classes and that is embedded in a data-assimilated global ocean circulation model.
+        We consider three parameterizations of the iron dependence of $R^\mathrm{Si:P}$, all of which are consistent with the available field data and allow equally good fits to the observed nutrient climatology but result in very different responses to iron fertilization: Depending on how sharply $R^\mathrm{Si:P}$ decreases with increasing iron concentration, iron fertilization can either cause enhanced silicic acid leakage from the Southern Ocean or strengthened Southern Ocean silicon trapping.
+        Enhanced silicic acid leakage occurs if decreases in $R^\mathrm{Si:P}$ win over increases in diatom growth, while the converse causes strengthened Southern Ocean silicon trapping.
+        Silicic acid leakage drives a floristic shift in favor of diatoms in the subtropical gyres and stimulates increased low-latitude opal export.
+        The diatom contribution to global phosphorus export increases, but the lower diatom silicon requirement under iron-replete conditions reduces the global opal export.
+        Regardless of $R^\mathrm{Si:P}$ parameterization, the global response of the biological phosphorus and silicon pumps is dominated by the Southern Ocean.
+        The Si isotope signature of opal flux becomes systematically lighter with increasing iron-induced silicic acid leakage, consistent with sediment records from iron-rich glacial periods.
+    author:
+        - Mark Holzer
+        - Benoît Pasquier
+        - Timothy DeVries
+        - Mark Brzezinski
+    doi: 10.1029/2019GB006460
+    link: https://onlinelibrary.wiley.com/doi/abs/10.1029/2019GB006460
+    issn: 1944-9224,
+    image: SOtrappingvsFe.png
+    pdf: /pdfs/Holzer_etal_GBC_2019.pdf
+    journaltitle: Global Biogeochemical Cycles
+    number: 12
+    pages: 1631–1653
+    title: Diatom Physiology Controls Silicic Acid Leakage in Response to Iron Fertilization
+    biblatextype: article
+    volume: 33
+    year: 2019
+
+"Pasquier_Holzer_BG_2018":
+    abstract: >
+        Iron fertilization is explored by tracking dissolved iron (DFe) through its life cycle from injection by aeolian, sedimentary, and hydrothermal sources (birth) to burial in the sediments (death).
+        We develop new diagnostic equations that count iron and phosphate regenerations with each passage through the biological pump and partition the ocean's DFe concentration according to the number of its past or future regenerations.
+        We apply these diagnostics to a family of data-constrained estimates of the iron cycle with sources $\sigma_\mathrm{tot}$ in the range 1.9–41 Gmol yr$^{-1}$.
+        We find that for states with $\sigma_\mathrm{tot}$ > 7 Gmol yr$^{-1}$, 50 % or more of the DFe inventory has not been regenerated in the past and 85 % or more will not be regenerated in the future.
+        The globally averaged mean number of past or future regenerations scales with the bulk iron lifetime $\tau \sim \sigma_\mathrm{tot}^{-1}$ and has a range of 0.05–2.2 for past and 0.01–1.4 for future regenerations.
+        Memory of birth location fades rapidly with each regeneration, and DFe regenerated more than approximately five times is found in a pattern shaped by Southern Ocean nutrient trapping.
+        We quantify the intrinsic fertilization efficiency of the unperturbed system at any point $\boldsymbol{r}$ in the ocean as the global export production resulting from the DFe at $\boldsymbol{r}$ per iron molecule.
+        We show that this efficiency is closely related to the mean number of future regenerations that the iron will experience.
+        At the surface, the intrinsic fertilization efficiency has a global mean in the range 0.7–7 mol P (mmol Fe)$^{-1}$ across our family of state estimates and is largest in the central tropical Pacific, with the Southern Ocean having comparable importance only for high-iron-source scenarios.
+    author:
+        - Benoît Pasquier
+        - Mark Holzer
+    doi: 10.5194/bg-15-7177-2018
+    link: https://bg.copernicus.org/articles/15/7177/2018/
+    # issn: "",
+    image: IronLife.png
+    pdf: /pdfs/Pasquier_Holzer_BG_2018.pdf
+    journaltitle: Biogeosciences
+    number: 23
+    pages: 7177–7203
+    title: The number of past and future regenerations of iron in the ocean and its intrinsic fertilization efficiency
+    biblatextype: article
+    volume: 15
+    year: 2018
+
+"Pasquier_Holzer_BG_2017":
+    abstract: >
+        The ocean's nutrient cycles are important for the carbon balance of the climate system and for shaping the ocean's distribution of dissolved elements. Dissolved iron (dFe) is a key limiting micronutrient, but iron scavenging is observationally poorly constrained, leading to large uncertainties in the external sources of iron and hence in the state of the marine iron cycle.
+
+        Here we build a steady-state model of the ocean's coupled phosphorus, silicon, and iron cycles embedded in a data-assimilated steady-state global ocean circulation. The model includes the redissolution of scavenged iron, parameterization of subgrid topography, and small, large, and diatom phytoplankton functional classes. Phytoplankton concentrations are implicitly represented in the parameterization of biological nutrient utilization through an equilibrium logistic model. Our formulation thus has only three coupled nutrient tracers, the three-dimensional distributions of which are found using a Newton solver. The very efficient numerics allow us to use the model in inverse mode to objectively constrain many biogeochemical parameters by minimizing the mismatch between modeled and observed nutrient and phytoplankton concentrations. Iron source and sink parameters cannot jointly be optimized because of local compensation between regeneration, recycling, and scavenging. We therefore consider a family of possible state estimates corresponding to a wide range of external iron source strengths. All state estimates have a similar mismatch with the observed nutrient concentrations and very similar large-scale dFe distributions. However, the relative contributions of aeolian, sedimentary, and hydrothermal iron to the total dFe concentration differ widely depending on the sources.
+
+        Both the magnitude and pattern of the phosphorus and opal exports are well constrained, with global values of 8.1 ± 0.3 Tmol P yr$^{-1}$ (or, in carbon units, 10.3 ± 0.4 Pg C yr$^{-1}$) and 171. ± 3. Tmol Si yr$^{-1}$. We diagnose the phosphorus and opal exports supported by aeolian, sedimentary, and hydrothermal iron. The geographic patterns of the export supported by each iron type are well constrained across the family of state estimates. Sedimentary-iron-supported export is important in shelf and large-scale upwelling regions, while hydrothermal iron contributes to export mostly in the Southern Ocean. The fraction of the global export supported by a given iron type varies systematically with its fractional contribution to the total iron source. Aeolian iron is most efficient in supporting export in the sense that its fractional contribution to export exceeds its fractional contribution to the total source. Per source-injected molecule, aeolian iron supports 3.1 ± 0.8 times more phosphorus export and 2.0 ± 0.5 times more opal export than the other iron types. Conversely, per injected molecule, sedimentary and hydrothermal iron support 2.3 ± 0.6 and 4. ± 2. times less phosphorus export, and 1.9 ± 0.5 and 2. ± 1. times less opal export than the other iron types.
+    author:
+        - Benoît Pasquier
+        - Mark Holzer
+    doi: 10.5194/bg-14-4125-2017
+    link: https://bg.copernicus.org/articles/14/4125/2017/
+    issn: 1726-4189,
+    image: ironsupportedPexport.png
+    pdf: /pdfs/Pasquier_Holzer_BG_2017.pdf
+    journaltitle: Biogeosciences
+    number: 18
+    pages: 4125–4159
+    title: Inverse-model estimates of the ocean's coupled phosphorus, silicon, and iron cycles
+    biblatextype: article
+    volume: 14
+    year: 2017
+    month: 9
+
+"Pasquier_Holzer_JGRO_2016":
+    abstract: >
+        We systematically quantify the pathways and time scales that set the efficiency, $E_\mathrm{bio}$, of the global biological pump by applying Green-function-based diagnostics to a data-assimilated phosphorus cycle embedded in a jointly assimilated ocean circulation. We consider "bio pipes" that consist of phosphorus paths that connect specified regions of last biological utilization with regions where regenerated phosphate first reemerges into the euphotic zone. The bio pipes that contribute most to $E_\mathrm{bio}$ connect the Eastern Equatorial Pacific (EEqP) and Equatorial Atlantic to the Southern Ocean ((21 ± 3)% of $E_\mathrm{bio}$), as well as the Southern Ocean to itself ((15 ± 3)% of $E_\mathrm{bio}$). The bio pipes with the largest phosphorus flow rates connect the EEqP to itself and the subantarctic Southern Ocean to itself. The global mean sequestration time of the biological pump is 130 ± 70 years, while the sequestration time of the bio pipe from anywhere to the Antarctic region of the Southern Ocean is 430 ± 30 years. The distribution of phosphorus flowing within a given bio pipe is quantified by its transit-time partitioned path density. For the largest bio pipes, ~1/7 of their phosphorus is carried by thermocline paths with transit times less than ~300–400 years, while ~4/7 of their phosphorus is carried by abyssal paths with transit times exceeding ~700 years. The path density reveals that Antarctic Intermediate Water carries about a third of the regenerated phosphate last utilized in the EEqP that is destined for the Southern Ocean euphotic zone. The Southern Ocean is where (62 ± 2)% of the regenerated inventory and (69 ± 1)% of the preformed inventory first reemerge into the euphotic zone.
+    author:
+        - Benoît Pasquier
+        - Mark Holzer
+    doi: 10.1002/2016JC011821
+    link: https://agupubs.onlinelibrary.wiley.com/doi/10.1002/2016JC011821
+    issn: 2169-9291,
+    image: PumpSourcesAndSinks.png
+    pdf: /pdfs/Pasquier_Holzer_JGRO_2016.pdf
+    journaltitle: "Journal of Geophysical Research: Oceans"
+    number: 8
+    pages: 6367–6388
+    title: "The plumbing of the global biological pump: Efficiency control through leaks, pathways, and time scales"
+    biblatextype: article
+    volume: 121
+    year: 2016
+
+"Holzer_etal_GBC_2016":
+    abstract: >
+        We use tracers to partition dissolved iron (dFe) into the contributions from each source within a numerical model of the iron cycle without perturbing the system.
+        These contributions are further partitioned according to the time since injection into the ocean, which defines their iron-age spectrum and mean iron age.
+        The utility of these diagnostics is illustrated for a family of inverse model estimates of the iron cycle, constrained by a data-assimilated circulation and available dFe measurements.
+        The source contributions are compared with source anomalies defined as the differences between solutions with and without the source in question.
+        We find that in the Southern Ocean euphotic zone, the hydrothermal and sediment contributions range from 15% to 30% of the total each, which the anomalies underestimate by a factor of ~2 because of the nonlinearity of scavenging.
+        The iron age is only reset by scavenging and attains a mean of several hundred years in the Southern Ocean euphotic zone, revealing that aeolian iron there is supplied primarily from depth as regenerated dFe.
+        Tagging iron according to source region and pathways shows that 70–80% of the aeolian dFe in the euphotic zone near Antarctica is supplied from north of 46°S via paths that reach below 1 km depth.
+        Hydrothermal iron has the oldest surface mean ages on the order of middepth ventilation times.
+        A measure of uncertainty is provided by the systematic variations of our diagnostics across the family of iron cycle estimates, each member of which has a different aeolian source strength.
+    author:
+        - Mark Holzer
+        - Marina Frants
+        - Benoît Pasquier
+    doi: 10.1002/2016GB005418
+    link: https://agupubs.onlinelibrary.wiley.com/doi/pdf/10.1002/2016GB005418
+    issn: 1944-9224,
+    image: ironage.png
+    pdf: /pdfs/Holzer_etal_GBC_2016.pdf
+    journaltitle: Global Biogeochemical Cycles
+    number: 10
+    pages: 1454–1474
+    title: The age of iron and iron source attribution in the ocean
+    biblatextype: article
+    volume: 30
+    year: 2016
+
+#
+# Conference Proceedings
+#
+
+# "XXX":
+#     abstract: >
+#         XXX
+#     author:
+#         - A
+#         - B
+#     booktitle: XXX
+#     doi: XXX
+#     editor:
+#         - A
+#         - B
+#     image: XXX.png
+#     publisher: XXX
+#     title: XXX
+#     biblatextype: inproceedings
+#     year: XXX
+
+#
+# Book Chapter
+#
+# "XXX":
+#     author:
+#         - A
+#         - B
+#     biblatextype: incollection
+#     booktitle: "XXX"
+#     doi: XXX
+#     editor:
+#         - A
+#         - B
+#     chapter: XX
+#     pages: X–X
+#     title: XXX
+#     year: XXXX
+#     series: XXX
+#     volume: XX
+#     publisher: XXX
+#     image: XXX.png
+
+#
+# Theses
+#
+# "XXX":
+#     abstract: >
+#         XXX
+#     author:
+#         - A
+#         - B
+#     biblatextype: thesis
+#     school: XXX
+#     type: XXX
+#     title: XXX
+#     year: XXX
+#     image: XXX.png
+
+
+#
+# Software
+#
+
+"AIBECS.jl":
+    author:
+        - Benoît Pasquier
+        - François W. Primeau
+        - Seth G. John
+    biblatextype: software
+    copyright: MIT License
+    doi: 10.5281/zenodo.2864051
+    github: JuliaOcean/AIBECS.jl
+    image: AIBECS.png
+    link: https://juliaocean.github.io/AIBECS.jl/stable/
+    journaltitle: Zenodo
+    title: "AIBECS.jl: A tool for exploring global marine biogeochemical cycles"
+    year: 2019
+
+"GNOM":
+    author:
+        - Benoît Pasquier
+        - Sophia K. V. Hines
+        - Hengdi Liang
+        - Yingzhe Wu
+        - Steven L. Goldstein
+        - Seth G. John
+    biblatextype: software
+    copyright: MIT License
+    doi: 10.5281/zenodo.5651295
+    github: MTEL-USC/GNOM
+    image: Nd_model.png
+    # link: N/A
+    journaltitle: Zenodo
+    title: "GNOM: An optimized steady-state model of the modern global marine neodymium cycle"
+    year: 2021
+
+"WorldOceanAtlasTools.jl":
+    author:
+        - Benoît Pasquier
+    biblatextype: software
+    copyright: MIT License
+    doi: 10.5281/zenodo.2677666
+    github: briochemc/WorldOceanAtlasTools.jl
+    image: WOAT.png
+    # link: N/A
+    journaltitle: Zenodo
+    title: "WorldOceanAtlasTools.jl: Download and process World Ocean Data in Julia"
+    year: 2019
+
+"F1Method.jl":
+    abstract: This package implements the F-1 algorithm described in Pasquier and Primeau (in preparation). It allows for efficient quasi-auto-differentiation of an objective function defined implicitly by the solution of a steady-state problem.
+    author:
+        - Benoît Pasquier
+    biblatextype: software
+    copyright: MIT License
+    doi: 10.5281/zenodo.2667835
+    github: briochemc/F1Method.jl
+    image: F1Method.png
+    # link: N/A
+    journaltitle: Zenodo
+    title: "F1Method.jl: A julia package to autodifferentiate through a steady-state solver"
+    year: 2019
+
+"HyperDualNumbers.jl":
+    abstract: Julia implementation of HyperDualNumbers.
+    author:
+        - Rob J. Goedman
+        - Nicola
+        - Benoît Pasquier
+        - Timothy Holy
+        - Alexander Ronald Altman
+        - Christopher Rackauckas
+        - Tony Kelman
+        - Viral B. Shah
+        - Jishnu Bhattacharya
+    biblatextype: software
+    copyright: MIT License
+    doi: 10.5281/zenodo.1660762
+    github: JuliaDiff/HyperDualNumbers.jl
+    image: JuliaDiff.png
+    link: https://juliadiff.org/HyperDualNumbers.jl/stable/
+    journaltitle: Zenodo
+    title: "HyperDualNumbers.jl"
+    year: 2018
+
+"DualMatrixTools.jl":
+    abstract: A little Julia module to allow factorization and backslash to work with dual-valued arrays and sparse arrays.
+    author:
+        - Benoît Pasquier
+    biblatextype: software
+    copyright: MIT License
+    doi: 10.5281/zenodo.1493571
+    github: briochemc/DualMatrixTools.jl
+    image: DualMatrixTools.png
+    link: https://briochemc.github.io/DualMatrixTools.jl/stable/
+    journaltitle: Zenodo
+    title: "DualMatrixTools.jl"
+    year: 2018
+
+"HyperDualMatrixTools.jl":
+    abstract: A little Julia module to allow factorization and backslash to work with hyperdual-valued arrays and sparse arrays.
+    author:
+        - Benoît Pasquier
+    biblatextype: software
+    copyright: MIT License
+    doi: 10.5281/zenodo.1670841
+    github: briochemc/HyperDualMatrixTools.jl
+    image: HyperDualMatrixTools.png
+    link: https://briochemc.github.io/HyperDualMatrixTools.jl/stable/
+    journaltitle: Zenodo
+    title: "HyperDualMatrixTools.jl"
+    year: 2018
+
+# "XXX":
+#     author:
+#         - A
+#         - B
+#     biblatextype: software
+#     copyright: XXX
+#     doi: XXX
+#     image: XXX.png
+#     link: XXX
+#     publication_date: XXXX-XX-XX
+#     publisher: XXX
+#     title: XXX
+#     year: since XXXX
+#     github: XXX
+
+#
+# Misc
+#
+
+# "XXX":
+#     author:
+#         - A
+#         - B
+#     biblatextype: misc
+#     image: XXX.png
+#     journaltitle: XXX
+#     link: XXX
+#     number: XXX
+#     pages: XX
+#     publication_date: XXXX-XX-XX
+#     title: XXX
+#     volume: XXX
+#     year: XXXX

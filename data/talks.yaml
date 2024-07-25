@@ -1,0 +1,205 @@
+# - title:
+#  conference:
+# name:
+#    name:
+#    place:
+#    url:
+#    start:
+#    end:
+#  seminar:
+#    name:
+#    institute:
+#    university:
+#    place:
+#  abstract:
+#  literature-reference:
+#  date:-01
+#  key:
+#  link:
+#  slides:
+#  video:
+#  with:
+#  highlight:
+- title: Plumbing of the biological pump
+  seminar:
+    name: Postgrad Conference
+    place: Sydney, Australia
+  # author       = {Pasquier, Beno\^{i}t and Holzer, Mark},
+  # howpublished = {talk},
+  date: 2014-10-01
+  key: PostGrad2014
+
+- title: An efficient inverse model of the ocean's coupled nutrient cycles
+  seminar:
+    name: Postgrad Conference
+    place: Sydney, Australia
+  # author       = {Pasquier, Beno\^{i}t and Holzer, Mark},
+  # howpublished = {talk},
+  date: 2015-06-01
+  key: Postgrad2015
+
+- title: The plumbing of the global biological pump
+  seminar:
+    name: AMOS National Conference
+    place: Brisbane, Australia
+  # author       = {Pasquier, Beno\^{i}t and Holzer, Mark},
+  # howpublished = {poster},
+  date: 2015-07-01
+  key: AMOS2015
+
+- title: >
+    Iron control on global productivity: an efficient inverse model of the ocean's coupled phosphate, silicon, and iron cycles
+  seminar:
+    name: Ocean Sciences Meeting
+    place: New Orleans, Louisiana, USA
+  # author       = {Pasquier, Beno\^{i}t and Holzer, Mark},
+  # howpublished = {poster},
+  date: 2016-02-01
+  key: OSM2016
+
+- title: >
+    Exploring iron control on global productivity: "FePSi", an inverse model of the ocean's coupled phosphate, silicon and iron cycles
+  seminar:
+    name: Postgrad Conference
+    place: Sydney, Australia
+  # author       = {Pasquier, Beno\^{i}t and Holzer, Mark},
+  # howpublished = {talk},
+  date: 2016-06-01
+  key: PostGrad2016
+
+
+
+
+- title: >
+    Response of the biological pump to perturbations in the iron supply: Global teleconnections diagnosed using an inverse model of the coupled phosphorus-silicon-iron nutrient cycles
+  seminar:
+    name: AMOS National Conference
+    place: Canberra, Australia
+  # author       = {Pasquier, Beno\^{i}t and Holzer, Mark},
+  # howpublished = {poster},
+  date: 2017-02-01
+  key: AMOS2017
+
+- title: The efficiency of different iron sources in supporting the ocean's global biological pump
+  seminar:
+    name: Half-baked seminar, Department of Earth System Science
+    place: University of California, Irvine, USA
+  # author       = {Pasquier, Beno\^{i}t and Holzer, Mark},
+  # howpublished = {talk},
+  date: 2017-11-01
+  key: UCI2017
+
+- title: Inverse-model estimates of the ocean's coupled phosphorus, silicon, and iron cycles.
+  seminar:
+    name: Ocean Sciences Meeting
+    place: Portland, Oregon, USA
+  # author       = {Pasquier, Beno\^{i}t and Holzer, Mark},
+  # howpublished = {poster},
+  date: 2018-02-02
+  key: OSM2018
+
+
+- title: Offline parameter optimization for global marine biogeochemical models
+  seminar:
+    name: Primeau Lab Group Meeting
+    place: University of California, Irvine, USA
+  # author       = {Pasquier, Beno\^{i}t},
+  # howpublished = {talk},
+  date: 2018-02-01
+  key: UCI2018
+
+
+
+
+- title: Developing a new, open-source, user-friendly, fast, modular, global marine biogeochemistry model (in Julia)
+  seminar:
+    name: Sack-lunch seminar
+    place: MIT, USA
+  # author       = {Pasquier, Beno\^{i}t},
+  # howpublished = {talk},
+  date: 2019-01-01
+  key: MITSLS2019
+
+- title: The number of past and future regenerations of iron in the ocean and its intrinsic fertilization efficiency
+  seminar:
+    name: Follows Lab Group Meeting
+    place: MIT, USA
+  # author       = {Pasquier, Beno\^{i}t and Holzer, Mark},
+  # howpublished = {talk},
+  date: 2019-01-02
+  key: MITFollows2019
+
+- title: Introducing AIBECS.jl, a Julia package for creating global marine biogeochemistry models
+  seminar:
+    name: CCRC Seminars
+    place: Climate Change Research Centre (CCRC), UNSW, Australia
+  # author       = {Pasquier, Beno\^{i}t and Primeau, François and J. Keith Moore},
+  # howpublished = {talk},
+  date: 2019-08-01
+  key: UNSWCCRC2019
+
+- title: >
+    F-1 algorithm: Efficient differentiation through large steady-state problems
+  seminar:
+    name: Applied Maths Seminar
+    place: School of Mathematics and Statistics, UNSW, Australia
+  # author       = {Pasquier, Beno\^{i}t and Primeau, François},
+  # howpublished = {talk},
+  date: 2019-08-02
+  key: UNSWAMS2019
+
+- title: >
+    AIBECS.jl: the ideal tool for marine biogeochemistry modelling
+  seminar:
+    name: Ocean Sciences Meeting
+    place: San Diego Convention Center, San Diego, California, USA
+  # author       = {Pasquier, Beno\^{i}t and Primeau, François},
+  # howpublished = {poster},
+  date: 2020-02-01
+  key: OSM2020
+
+- title: Julia users and tools for oceanography
+  seminar:
+    name: Ocean Sciences Meeting
+    place: San Diego Convention Center, San Diego, California, USA
+  # author       = {Forget, Gaël and Pasquier, Beno\^{i}t and Barth, Alexander and Klöwer, Milan and Ramadan, Ali and Wagner, Gregory L. and Constantinou Navid and others},
+  # howpublished = {workshop},
+  date: 2020-02-02
+  key: OSMJuliaWorkshop2020
+
+- title: Modeling Marine Ecosystems At Multiple Scales Using Julia
+  seminar:
+    name: JuliaCon
+    place: Online
+  # author       = {Forget, Gaël and Pasquier, Beno\^{i}t and Wu, Zhen},
+  # howpublished = {Workshop},
+  date: 2021-07-01
+  key: JuliaCon2021
+
+- title: >
+    PCO2: A simple biogeochemistry model embedded in a simple ocean circulation model in matrix form
+  seminar:
+    name: UNSW Ocean Research Carnival
+    place: UNSW, Sydney, Australia
+  # author       = {Pasquier, Beno\^{i}t},
+  # howpublished = {talk},
+  date: 2023-02-01
+  key: UNSWORC2023
+
+- title: Optimal parameters for the ocean's nutrient, carbon, and oxygen cycles compensate for circulation biases but replumb the biological pump
+  seminar:
+    name: AMOS National Conference
+    place: Canberra, Australia
+  # author       = {Pasquier, Beno\^{i}t and Holzer, Mark and Chamberlain, Matthew A. and Matear, Richard J. and Bindoff, Nathaniel L. and Primeau, François W.},
+  # howpublished = {talk},
+  date: 2024-02-02
+  key: AMOS2024
+
+- title: The Ocean's Carbon and Oxygen Cycles in Future Steady-State Climate Scenarios
+  seminar:
+    name: Ocean Sciences Meeting
+    place: New Orleans, Louisiana, USA
+  # author       = {Pasquier, Beno\^{i}t and Holzer, Mark and Chamberlain, Matthew A. and Matear, Richard J. and Bindoff, Nathaniel L. and Primeau, François W.},
+  # howpublished = {talk},
+  date: 2024-02-03
+  key: OSM2024
