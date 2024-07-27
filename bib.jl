@@ -119,7 +119,7 @@ function bibentry2dict2(bibentry, NAMES)
     # for names I use BibInternal.names_to_strings
     if hasproperty(bibentry, :authors) && !isempty(bibentry.authors)
         # @show bibentry.authors
-        # @show names = [replace(a.last, NAMES...) for a in bibentry.authors]
+        names = [replace(a.last, NAMES...) for a in bibentry.authors]
         d["author"] = names
     end
     hasproperty(bibentry, :editors) && !isempty(bibentry.editors) && (d["editor"] = names_to_strings(bibentry.editors))
