@@ -103,7 +103,7 @@ function format_talk(talk::Dict)
             """
         end
     # pdf
-    if haskey(talk, "pdf") && (@show talk["pdf"]; isfile(talk["pdf"][2:end]))
+    if haskey(talk, "pdf") && isfile(talk["pdf"][2:end])
         ts = """$(ts)$(entry_to_list_icon(talk,"pdf"; iconstyle="fas fa-md", icon="fa-download"))"""
     end
     # pdf (slides)

@@ -42,14 +42,14 @@ function bibentry2dict(bibentry)
     for f in fields
         f ∈ [:fields] && continue
         v = string(getproperty(bibentry, f))
-        println("$f => $v")
+        # println("$f => $v")
         d[f] = v
     end
     if hasproperty(bibentry, :fields)
         for (f,v) in bibentry.fields
             v = string(v)
             f = Symbol(f)
-            println("$f => $v")
+            # println("$f => $v")
             d[f] = v
         end
     end
@@ -118,8 +118,8 @@ function bibentry2dict2(bibentry, NAMES)
     d = Dict()
     # for names I use BibInternal.names_to_strings
     if hasproperty(bibentry, :authors) && !isempty(bibentry.authors)
-        @show bibentry.authors
-        @show names = [replace(a.last, NAMES...) for a in bibentry.authors]
+        # @show bibentry.authors
+        # @show names = [replace(a.last, NAMES...) for a in bibentry.authors]
         d["author"] = names
     end
     hasproperty(bibentry, :editors) && !isempty(bibentry.editors) && (d["editor"] = names_to_strings(bibentry.editors))
@@ -347,7 +347,7 @@ pagesprefix(entry) = haskey(entry,"pages") && contains(entry["pages"], "–") ? 
 
 formatlazyspan(entry,field; kwargs...) = haskey(entry,field) ? formatspan(entry,field; kwargs...) : ""
 function format_bibtex_entry(entry, key; list_style="number")
-    @show entry["author"]
+    # @show entry["author"]
     names = join( [ "<nobr>$(has_name(name) ? hfun_person([name,"fullname_link_fnorcid"]) : """<span class="person unknown">$name</span>""")" for name ∈ entry["author"] ], ",</nobr> ") * "</nobr>"
     s = """<a name="$(key)"></a>"""
     # if haskey(entry,"image") && get(entry, "biblatextype", "") == "software" #image in assets
