@@ -16,3 +16,4 @@
 - DONE (ish) Change format of talks to match the style of papers (does not need be the same, just look with similar style)
 - WONTDO Add years display in bibliography
     Actually I shouldn't do this: Don't want to bring attention to the 2020 gap in papers.
+- TODO Add Abstract button to publications?
