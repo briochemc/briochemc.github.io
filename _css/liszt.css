@@ -10,6 +10,7 @@ span.institute {
     text-decoration: none;
 }
 
+
 .no-number .katex-display::after {
     counter-increment: nothing;
     content: "";
@@ -63,7 +64,7 @@ ol.literature > li {
     margin-bottom:2rem;
     padding-left:1rem;
     clear: both;
-    border-left: 5px solid #ddd;
+    /* border-left: 5px solid #ddd; */
 }
 ol.bibliography > li {
     counter-increment: bibitem -1;
@@ -268,9 +269,12 @@ ul.talks li {
     padding-top:1rem;
     padding-bottom:1rem;
 }
-/* ul.talks span.title {
+ul.talks span.title {
     font-weight: bold;
-} */
+}
+ul.talks span.name {
+    font-style: italic;
+}
 ul.talks span.title:after,
 ul.talks span.dates:before
 {
@@ -278,10 +282,13 @@ ul.talks span.dates:before
     white-space: pre;
 }
 ul.talks span.name:after,
-ul.talks span.institute:after,
+ul.talks span.institute:after
+{
+    content: "\A";
+}
 ul.talks span.dates:after
 {
-    content: ",\00a0";
+    content: ",";
 }
 ul.talks span.note:before {
     content: "\A";
@@ -318,6 +325,7 @@ ul.talks span.info {
 /* conferences below */
 ul.conferences li {
     margin-top: 0.25rem;
+    font-style: italic;
 }
 ul.conferences li span.name:after {
     content: "\A";
@@ -547,3 +555,11 @@ span.highlight {
     color:rgb(16, 71, 102);
     font-style: italic;
 }
+
+
+
+.navicons {
+    text-align: center;
+    font-size: 1.25rem;
+}
+

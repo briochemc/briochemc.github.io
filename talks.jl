@@ -42,9 +42,12 @@ function hfun_talks(params::Vector{String}=String[])
             if group_by_year==true
                 (lastyear != 0) && (s = "$s\n</ul>") # close old list
                 s = """$s
-                       <h3 class="year">$(newyear)</h3>
                        <ul class="talks fa-ul">
                 """
+                # s = """$s
+                #        <h3 class="year">$(newyear)</h3>
+                #        <ul class="talks fa-ul">
+                # """
             else
                 if lastyear==0
                     s = """$s
@@ -56,8 +59,11 @@ function hfun_talks(params::Vector{String}=String[])
         end
         haskey(talk,"conference") && push!(exclude_conf,talk["conference"])
         s = """$s
-            <li><span class="fa-li"><i class="fas fa-chalkboard-teacher"></i></span>$(format_talk(talk))</li>
+            <li>$(format_talk(talk))</li>
             """
+        # s = """$s
+        #     <li><span class="fa-li"><i class="fas fa-chalkboard-teacher"></i></span>$(format_talk(talk))</li>
+        #     """
     end
     s = "$s \n</ul>" # close old list
     return s
@@ -84,24 +90,42 @@ function format_talk(talk::Dict)
     ts = """$ts
             <ul class="nav nav-icons">
         """
-    # abstract
-    if haskey(talk,"abstract") #abstract icon
-        ts = """$ts
-        <li>
-            <a data-toggle="collapse" href="#$key-abstract" title="toggle visibility of the abstract for $key">
-                <i class="fas fa-md fa-file-alt"></i>
-            </a>
-        </li>"""
+        # abstract
+        if haskey(talk,"abstract") #abstract icon
+            # ts = """$ts
+            # <li>
+            #     <a data-toggle="collapse" href="#$key-abstract" title="toggle visibility of the abstract for $key">
+            #         <i class="fas fa-lg fa-file-alt"></i>
+            #     </a>
+            # </li>"""
+            ts = """$ts
+            <button onclick="myFunction('$key-abstract')">Abstract</button>
+            """
+        end
+    # pdf
+    if haskey(talk, "pdf") && (@show talk["pdf"]; isfile(talk["pdf"][2:end]))
+        ts = """$(ts)$(entry_to_list_icon(talk,"pdf"; iconstyle="fas fa-md", icon="fa-download"))"""
     end
     # pdf (slides)
     ts = """$(ts)$(entry_to_list_icon(talk,"slides"; iconstyle="fas fa-md", icon="fa-file-pdf"))"""
     # video
-    ts = """$(ts)$(entry_to_list_icon(talk,"video"; iconstyle="fas fa-md", icon="fa-file-video"))"""
+    ts = """$(ts)$(entry_to_list_icon(talk,"video"; iconstyle="fa-brands fa-md", icon="fa-youtube"))"""
     # ref
     ts = """$(ts)$(entry_to_list_icon(talk,"literature-reference"; linkprefix="/publications/#", iconstyle="fas fa-md", icon="fa-book"))"""
     # link
     ts = """$(ts)$(entry_to_list_icon(talk,"doi"; linkprefix="http://dx.doi.org/", iconstyle="ai ai-lg", icon="ai-doi"))"""
     ts = """$(ts)$(entry_to_list_icon(talk,"link"; iconstyle="fas fa-md", icon="fa-link"))"""
+        # # abstract
+        # if haskey(talk,"abstract") # abstract details/summary
+        #     ts = """$ts
+        #         <details>
+        #             <summary>Abstract</summary>
+        #             <blockquote>
+        #                 $(talk["abstract"])
+        #             </blockquote>
+        #         </details>
+        #     """
+        # end
     # link
     # (2) link
     # end nav pills
@@ -112,10 +136,15 @@ function format_talk(talk::Dict)
     if haskey(talk,"abstract") # abstract content
         abstract = strip(talk["abstract"])
         abstract = replace(abstract, "\n" => "\n\n")
+        # ts = """$ts
+        # <div id="$key-abstract" class="blockicon abstract collapse fas fa-lg fa-file-alt">
+        # <div class="content">$(fd2html(abstract; internal=true))</div>
+        # </div>
+        # """
         ts = """$ts
-        <div id="$key-abstract" class="blockicon abstract collapse fas fa-md fa-file-alt">
-            <div class="content">$(fd2html(abstract; internal=true))</div>
-        </div>
+            <div id="$key-abstract" style="display:none">
+                <blockquote>$abstract</blockquote>
+            </div>
         """
     end
     return ts
@@ -168,7 +197,7 @@ end
 function fomat_conference(conf::Dict)
     s = """
            $(entry_to_html(conf,"name"; link="url"))
-           $(format_duratuion(conf["start"],get(conf,"end",conf["start"])))
+           $(format_duration(conf["start"],get(conf,"end",conf["start"])))
            $(entry_to_html(conf,"place"; class="place end"))
            $(entry_to_html(conf,"note"; class="note"))
         """
@@ -176,11 +205,11 @@ function fomat_conference(conf::Dict)
 end
 function fomat_seminar(seminar::Dict, date::Date)
     s = """
-           $(entry_to_html(seminar,"name";link="url"))$(entry_to_html(seminar,"institute"))$(entry_to_html(seminar,"university"))$(format_duratuion(date))$(entry_to_html(seminar,"place"))
+           $(entry_to_html(seminar,"name";link="url"))$(entry_to_html(seminar,"institute"))$(entry_to_html(seminar,"university"))$(format_duration(date))$(entry_to_html(seminar,"place"))
         """
     return s
 end
-function format_duratuion(s::Date, e::Date=s)
+function format_duration(s::Date, e::Date=s)
     d = ""
     if year(s) == year(e) && month(s)==month(e)
         if day(s) == day(e)

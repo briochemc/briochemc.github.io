@@ -350,7 +350,7 @@ input[type=checkbox]:checked ~ #side-menu { display: block; }
     width: 135px;
     padding-right: 2rem;
     padding-left: 2rem;
-    padding-top: 3rem;
+    padding-top: 1rem;
     padding-bottom: 1rem;
     overflow-y: auto;
     flex: 1 1 auto;
@@ -470,7 +470,7 @@ Franklin SPECIFICS
 .franklin-content a {
   overflow: hidden;
   text-overflow: ellipsis;
-  white-space: nowrap;
+  /* white-space: nowrap; */
 }
 
 .franklin-content ul,
@@ -526,11 +526,13 @@ td {
 }
 
 .franklin-content blockquote {
-  background: lemonchiffon;
-  border-left: 7px solid #a8a8a8;
+  background: #eeeeee;
+  border-left: 7px solid #06D6A0;
   margin: 1.5em 10px;
+  line-height: 1.2em;
+  font-size: smaller;
   padding: 0.5em 10px;
-  font-style: italic;
+  /* font-style: italic; */
 }
 
 .franklin-content blockquote p {
@@ -647,4 +649,4 @@ franklin-toc {
   /* Avoid clickable elements being too close together. */
   margin: 0.6rem 0;
 }
-}
+

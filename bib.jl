@@ -1,15 +1,15 @@
 using YAML, Dates
-bibliography = YAML.load_file("data/bibliography.yaml")
-literature = merge(YAML.load_file("data/literature.yaml"), bibliography)
-
+# bibliography = YAML.load_file("data/bibliography.yaml")
 
 # Below is WIP to try and parse the bibiolgraphy entries directly from a bib file.
 # The idea is to write them into dictionaries, to match what YAML does.
 using Bibliography
 using BibInternal # not sure I need these
 using BibParser # not sure I need these
-using Bibliography: names_to_strings
-# bibliography2 = import_bibtex("data/mypapers.bib")
+using Bibliography: names_to_strings, name_to_string
+bibliography = import_bibtex("data/mypapers2.bib")
+
+
 
 # TODO not sure I need this
 """
@@ -40,60 +40,145 @@ function bibentry2dict(bibentry)
     d = Dict()
     fields = propertynames(bibentry)
     for f in fields
-        f ∈ ["fields"] && continue
+        f ∈ [:fields] && continue
         v = string(getproperty(bibentry, f))
         println("$f => $v")
         d[f] = v
     end
-    if haskey(bibentry, "fields")
+    if hasproperty(bibentry, :fields)
         for (f,v) in bibentry.fields
-            v = string(getproperty(bibentry, f))
+            v = string(v)
+            f = Symbol(f)
             println("$f => $v")
             d[f] = v
         end
     end
     return d
 end
-function bibentry2dict2(bibentry)
-    d = Dict{String, String}()
+# I need to manually convert the names to a consistent set
+# so for that I will simply use last name and first name initial
+NAMES = Dict(
+    "Pasquier" => "Benoît Pasquier",
+    "Holzer" => "Mark Holzer",
+    "Primeau" => "François W. Primeau",
+    "Chamberlain" => "Matthew A. Chamberlain",
+    "Matear" => "Richard J. Matear",
+    "Bindoff" => "Nathaniel L. Bindoff",
+    "DeVries" => "Timothy DeVries",
+    "John" => "Seth G. John",
+    "Liang" => "Hengdi Liang",
+    "Silva" => "Sam Silva",
+    "Kelly" => "Rachel L. Kelly",
+    "Bian" => "Xiaopeng Bian",
+    "Fu" => "Feixue Fu",
+    "Smith" => "M. Isabel Smith",
+    "Lanning" => "Nathan T. Lanning",
+    "Seelen" => "Emily A. Seelen",
+    "Wasylenki" => "Laura Wasylenki",
+    "Conway" => "Tim M. Conway",
+    "Fitzsimmons" => "Jessica N. Fitzsimmons",
+    "Hutchins" => "David A. Hutchins",
+    "Yang" => "Shun-Chung Yang",
+    "Hines" => "Sophia K. V. Hines",
+    "Goldstein" => "Steven L. Goldstein",
+    "Mohajerani" => "Yara Mohajerani",
+    "Aydin" => "Murat Aydin",
+    "Garcia" => "Catherine Garcia",
+    "Wang" => "Wei-Lei Wang",
+    "Cael" => "B. B. Cael",
+    "Frants" => "Marina Frants",
+    "Goedman" => "Rob J. Goedman",
+    "Wu" => "Yingzhe Wu",
+    "Kwon" => "Eun Y. Kwon",
+    "Meskhidze" => "Nicholas Meskhidze",
+    "Völker" => "Christoph Völker",
+    "Al-Abadleh" => "Hind A. Al-Abadleh",
+    "Barbeau" => "Katherine Barbeau",
+    "Bressac" => "Matthieu Bressac",
+    "Bundy" => "Randelle M. Bundy",
+    "Croot" => "Peter Croot",
+    "Feng" => "Yan Feng",
+    "Ito" => "Akinori Ito",
+    "Johansen" => "Anne M. Johansen",
+    "Landing" => "William M. Landing",
+    "Mao" => "Jingqiu Mao",
+    "Myriokefalitakis" => "Stelios Myriokefalitakis",
+    "Ohnemus" => "Daniel Ohnemus",
+    "Ye" => "Ying Ye",
+    "Brzezinski" => "Mark A. Brzezinski",
+    "Nicola" => "Nicola",
+    "Holy" => "Timothy Holy",
+    "Altman" => "Alexander R. Altman",
+    "Rackauckas" => "Christopher Rackauckas",
+    "Kelman" => "Tony Kelman",
+    "Viral" => "Viral B. Shah",
+    "Bhattacharya" => "Jishnu Bhattacharya",
+)
+function bibentry2dict2(bibentry, NAMES)
+    d = Dict()
+    # for names I use BibInternal.names_to_strings
+    if hasproperty(bibentry, :authors) && !isempty(bibentry.authors)
+        @show bibentry.authors
+        @show names = [replace(a.last, NAMES...) for a in bibentry.authors]
+        d["author"] = names
+    end
+    hasproperty(bibentry, :editors) && !isempty(bibentry.editors) && (d["editor"] = names_to_strings(bibentry.editors))
+    # For the others I do it by hand
+    addbibentryfieldtodict!(d, bibentry, :id)
+    addbibentryfieldtodict!(d, bibentry, :title)
     addbibentrysubfieldtodict!(d, bibentry, :access, :doi, "doi")
-    hasproperty(bibentry, :access) && (d["doi"] = bibentry.access.doi)
-    hasproperty(bibentry, :authors) && (d["author"] = names_to_strings(bibentry.authors))
-    hasproperty(bibentry, :editors) && (d["editor"] = names_to_strings(bibentry.editors))
-    hasproperty(bibentry, :title) && (d["title"] = bibentry.title)
-    hasproperty(bibentry, :booktile) && (d["booktitle"] = bibentry.booktitle)
-    hasproperty(bibentry, :date) && (addbibentryfieldtodict!(d, bibentry.date))
-    hasproperty(bibentry, :in) && (addbibentryfieldtodict!(d, bibentry.in))
+    addbibentryfieldtodict!(d, bibentry, :type, "biblatextype")
+    addbibentrysubfieldstodict!(d, bibentry, :date)
+    # addbibentrysubfieldtodict!(d, bibentry, :date, :month)
+    # addbibentrysubfieldtodict!(d, bibentry, :date, :day)
+    addbibentrysubfieldtodict!(d, bibentry, :in, :journal, "journaltitle")
     # hasproperty(bibentry, :eprint) && (d["eprint"] = bibentry.eprint)
-    hasproperty(bibentry, :type) && (d["biblatextype"] = bibentry.type)
-    hasproperty(bibentry, :id) && (d["id"] = bibentry.id)
-    hasproperty(bibentry, :fields) && (addbibentrysubfieldstodict!(d, bibentry.fields))
+    addbibentrysubfieldstodict!(d, bibentry, :fields)
+    # Add PDF if it exists
+    isfile("pdfs/$(d["id"]).pdf") && (d["pdf"] = "/pdfs/$(d["id"]).pdf")
     return d
 end
-function addbibentryfieldtodict!(d, bibentry, field, fieldname)
+function addbibentryfieldtodict!(d, bibentry, field, fieldstr=String(field))
     if hasproperty(bibentry, field)
         v = getproperty(bibentry, field)
-        !isempty(v) && (d[fieldname] = v)
+        !isempty(v) && (d[fieldstr] = v)
     end
 end
-function addbibentrysubfieldtodict!(d, bibentry, field, subfield, fieldname)
+function addbibentrysubfieldtodict!(d, bibentry, field, subfield, fieldstr=String(subfield))
     if hasproperty(bibentry, field)
         v = getproperty(getproperty(bibentry, field), subfield)
-        !isempty(v) && (d[fieldname] = v)
+        !isempty(v) && (d[fieldstr] = v)
     end
 end
-function addbibentrysubfieldstodict!(d, bibentryfield)
-    for k in propertynames(bibentryfield)
-        k ∈ (:vals, :keys, :age, :maxprobe, :slots, :ndel, :count, :idxfloor) && continue
-        v = getproperty(bibentryfield, k)
-        !isempty(v) && (d[string(k)] = v)
+function addbibentrysubfieldstodict!(d, bibentry, field)
+    if hasproperty(bibentry, field)
+        bibentryfield = getproperty(bibentry, field)
+        for k in propertynames(bibentryfield)
+            k ∈ (:vals, :keys, :age, :maxprobe, :slots, :ndel, :count, :idxfloor) && continue
+            v = getproperty(bibentryfield, k)
+            !isempty(v) && (d[String(k)] = v)
+        end
     end
     return d
 end
 
-# @show pretty_print2(bibliography["Pasquier_Holzer_JGRO_2016"])
-# @show bibliography2["a:2016:1"]
-# @show pretty_print2(bibliography2["a:2016:1"])
+
+function bib2dict(bib, NAMES)
+    d = Dict()
+    for (k,bibentry) in bib
+        d[k] = bibentry2dict2(bibentry, NAMES)
+    end
+    return d
+end
+
+bibliography = bib2dict(bibliography, NAMES)
+literature = merge(YAML.load_file("data/literature.yaml"), bibliography)
+
+# pretty_print2(first(bibliography))
+
+bibliography_old = YAML.load_file("data/bibliography.yaml")
+
+# pretty_print2(first(bibliography_old))
 
 #
 #
@@ -206,6 +291,7 @@ If no types are given all will be printed
 function hfun_bibliography(params)
     types = (length(params)>0) ? lowercase.(strip.(split(params[1],","))) : ["all",]
     library = (length(params)>1) ? YAML.load_file(params[2]) : bibliography
+    # pretty_print2(library)
     reduced_library = filter( x-> (x[2]["biblatextype"] ∈ types) || ("all" ∈ types), library)
     list_html = "";
     if length(params) > 2
@@ -261,6 +347,7 @@ pagesprefix(entry) = haskey(entry,"pages") && contains(entry["pages"], "–") ? 
 
 formatlazyspan(entry,field; kwargs...) = haskey(entry,field) ? formatspan(entry,field; kwargs...) : ""
 function format_bibtex_entry(entry, key; list_style="number")
+    @show entry["author"]
     names = join( [ "<nobr>$(has_name(name) ? hfun_person([name,"fullname_link_fnorcid"]) : """<span class="person unknown">$name</span>""")" for name ∈ entry["author"] ], ",</nobr> ") * "</nobr>"
     s = """<a name="$(key)"></a>"""
     # if haskey(entry,"image") && get(entry, "biblatextype", "") == "software" #image in assets
@@ -278,7 +365,8 @@ function format_bibtex_entry(entry, key; list_style="number")
     <a href="$(eprinturl)$(get(entry,"eprint",""))">$(get(entry,"eprint",""))</a>
     """
     # pubdetails = """$(formatlazyspan(entry, "editor"; prefix="in: "))$(formatlazyspan(entry,"booktitle"; prefix= haskey(entry,"editor") ? ": " : "in: "))$(formatlazyspan(entry, "chapter"; prefix=", Chapter "))$(formatlazyspan(entry,"journaltitle";class="journal"))$(formatlazyspan(entry,"series"; prefix=", "))$(formatlazyspan(entry,"volume"))$(formatlazyspan(entry,"number"))$(formatlazyspan(entry,"issue"))$(formatlazyspan(entry,"pages", prefix=pagesprefix(entry)))$(formatlazyspan(entry,"publisher"; prefix=", "))$(formatlazyspan(entry,"type"))$(formatlazyspan(entry,"language"; prefix=", "))$(formatlazyspan(entry,"school"; prefix=", "))$(formatlazyspan(entry,"note"))$(formatspan(entry,"year"))"""
-    pubdetails = """$(formatlazyspan(entry, "editor"; prefix="in: "))$(formatlazyspan(entry,"booktitle"; prefix= haskey(entry,"editor") ? ": " : "in: "))$(formatlazyspan(entry, "chapter"; prefix=", Chapter "))$(formatlazyspan(entry,"journaltitle";class="journal"))$(formatspan(entry,"year"))"""
+    # pubdetails = """$(formatlazyspan(entry, "editor"; prefix="in: "))$(formatlazyspan(entry,"booktitle"; prefix= haskey(entry,"editor") ? ": " : "in: "))$(formatlazyspan(entry, "chapter"; prefix=", Chapter "))$(formatlazyspan(entry,"journaltitle";class="journal"))$(formatspan(entry,"year"))"""
+    pubdetails = """$(formatlazyspan(entry,"journaltitle";class="journal"))$(formatspan(entry,"year"))"""
     s = """$s
            $(formatspan(entry,"title"; remove=["{","}"]))
         """

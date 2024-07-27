@@ -544,7 +544,7 @@
     github: JuliaOcean/AIBECS.jl
     image: AIBECS.png
     link: https://juliaocean.github.io/AIBECS.jl/stable/
-    journaltitle: Zenodo
+    publisher: Zenodo
     title: "AIBECS.jl: A tool for exploring global marine biogeochemical cycles"
     year: 2019
 
@@ -562,7 +562,7 @@
     github: MTEL-USC/GNOM
     image: Nd_model.png
     # link: N/A
-    journaltitle: Zenodo
+    publisher: Zenodo
     title: "GNOM: An optimized steady-state model of the modern global marine neodymium cycle"
     year: 2021
 
@@ -575,7 +575,7 @@
     github: briochemc/WorldOceanAtlasTools.jl
     image: WOAT.png
     # link: N/A
-    journaltitle: Zenodo
+    publisher: Zenodo
     title: "WorldOceanAtlasTools.jl: Download and process World Ocean Data in Julia"
     year: 2019
 
@@ -589,7 +589,7 @@
     github: briochemc/F1Method.jl
     image: F1Method.png
     # link: N/A
-    journaltitle: Zenodo
+    publisher: Zenodo
     title: "F1Method.jl: A julia package to autodifferentiate through a steady-state solver"
     year: 2019
 
@@ -611,7 +611,7 @@
     github: JuliaDiff/HyperDualNumbers.jl
     image: JuliaDiff.png
     link: https://juliadiff.org/HyperDualNumbers.jl/stable/
-    journaltitle: Zenodo
+    publisher: Zenodo
     title: "HyperDualNumbers.jl"
     year: 2018
 
@@ -625,7 +625,7 @@
     github: briochemc/DualMatrixTools.jl
     image: DualMatrixTools.png
     link: https://briochemc.github.io/DualMatrixTools.jl/stable/
-    journaltitle: Zenodo
+    publisher: Zenodo
     title: "DualMatrixTools.jl"
     year: 2018
 
@@ -639,7 +639,7 @@
     github: briochemc/HyperDualMatrixTools.jl
     image: HyperDualMatrixTools.png
     link: https://briochemc.github.io/HyperDualMatrixTools.jl/stable/
-    journaltitle: Zenodo
+    publisher: Zenodo
     title: "HyperDualMatrixTools.jl"
     year: 2018
 

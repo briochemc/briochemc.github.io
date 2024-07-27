@@ -1,5 +1,5 @@
 
-## Talks/Posters
+# Talks/Posters
 
 @def title = "talks"
 
