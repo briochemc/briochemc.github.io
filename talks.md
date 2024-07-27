@@ -1,6 +1,6 @@
 
 # Talks/Posters
 
-@def title = "talks"
+<!-- @def title = "talks" -->
 
 {{talks}}

@@ -6,7 +6,7 @@
 <i class="fa-brands fa-github"></i> GitHub: <a href="https://github.com/briochemc">briochemc</a><br>
 ~~~
 
-@def title = "Software"
+<!-- @def title = "Software" -->
 
 ## Citable software
 
