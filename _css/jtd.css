@@ -174,8 +174,8 @@ SIDE BAR
 }
 
 .side-bar .header .title {
-  padding-right: 1rem;
-  padding-left: 1rem;
+  padding-right: 0rem;
+  padding-left: 0rem;
   flex-grow: 1;
   display: flex;
   height: 100%;
@@ -185,6 +185,7 @@ SIDE BAR
   color: #27262b;
   font-size: 18px !important;
   line-height: 1.15em;
+  width: 100%;
 }
 
 .show-menu {
@@ -193,16 +194,17 @@ SIDE BAR
   display: flex;
   height: 100%;
   line-height: 60px;
-  padding: 1rem;
+  padding: 0rem;
   align-items: center;
   color: #0e39b0;
   text-transform: uppercase;
   background: transparent;
   text-align: right;
-  padding-right: 2rem;
+  padding-right: 1rem;
   border: 0;
   width: calc(100% - 220px);
-  background-color: white;
+  /* width: -moz-available; */
+  /* background-color: white; */
 }
 
 .side-bar .menu {
@@ -293,6 +295,7 @@ input[type=checkbox]:checked ~ #side-menu { display: block; }
     display: none;
     padding-left: 35px;
     padding-bottom: 15px;
+    text-align: right;
   }
 
   .side-bar {
@@ -301,7 +304,8 @@ input[type=checkbox]:checked ~ #side-menu { display: block; }
 
   .side-bar .header {
     padding-left: 15px;
-    width: 150px;
+    /* width: 150px; */
+    width: 100%;
   } /* middle space */
   .show-menu { display: block; }
 }
