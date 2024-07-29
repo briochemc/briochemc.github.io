@@ -40,18 +40,18 @@ function hfun_talks(params::Vector{String}=String[])
         newyear = parse(Int, Dates.format(talk["date"],"yyyy"))
         if (newyear != lastyear)
             if group_by_year==true
-                (lastyear != 0) && (s = "$s\n</ul>") # close old list
+                (lastyear != 0) && (s = "$s\n</ol>") # close old list
                 s = """$s
-                       <ul class="talks fa-ul">
+                       <ol class="talks fa-ol">
                 """
                 # s = """$s
                 #        <h3 class="year">$(newyear)</h3>
-                #        <ul class="talks fa-ul">
+                #        <ol class="talks fa-ol">
                 # """
             else
                 if lastyear==0
                     s = """$s
-                           <ul class="talks fa-ul">
+                           <ol class="talks fa-ol">
                         """
                 end
             end
@@ -65,7 +65,7 @@ function hfun_talks(params::Vector{String}=String[])
         #     <li><span class="fa-li"><i class="fas fa-chalkboard-teacher"></i></span>$(format_talk(talk))</li>
         #     """
     end
-    s = "$s \n</ul>" # close old list
+    s = "$s \n</ol>" # close old list
     return s
 end
 function format_talk(talk::Dict)
@@ -89,32 +89,52 @@ function format_talk(talk::Dict)
     #nav-pills
     ts = """$ts
             <ul class="nav nav-icons">
-        """
-        # abstract
-        if haskey(talk,"abstract") #abstract icon
-            # ts = """$ts
-            # <li>
-            #     <a data-toggle="collapse" href="#$key-abstract" title="toggle visibility of the abstract for $key">
-            #         <i class="fas fa-lg fa-file-alt"></i>
-            #     </a>
-            # </li>"""
-            ts = """$ts
-            <button onclick="myFunction('$key-abstract')">Abstract</button>
-            """
-        end
+         """
+    # abstract
+    if haskey(talk,"abstract") #abstract icon
+        ts = """$ts
+                <li>
+                    <button onclick="myFunction('$key-abstract')">Abstract</button>
+                </li>
+                """
+    end
     # pdf
     if haskey(talk, "pdf") && isfile(talk["pdf"][2:end])
-        ts = """$(ts)$(entry_to_list_icon(talk,"pdf"; iconstyle="fas fa-md", icon="fa-download"))"""
+        ts = """$(ts)
+                <li>
+                    $(entry_to_list_icon(talk,"pdf"; iconstyle="fas fa-md", icon="fa-download"))
+                </li>
+            """
     end
     # pdf (slides)
-    ts = """$(ts)$(entry_to_list_icon(talk,"slides"; iconstyle="fas fa-md", icon="fa-file-pdf"))"""
+    ts = """$(ts)
+                <li>
+                    $(entry_to_list_icon(talk,"slides"; iconstyle="fas fa-md", icon="fa-file-pdf"))
+                </li>
+            """
     # video
-    ts = """$(ts)$(entry_to_list_icon(talk,"video"; iconstyle="fa-brands fa-md", icon="fa-youtube"))"""
+    ts = """$(ts)
+                <li>
+                    $(entry_to_list_icon(talk,"video"; iconstyle="fa-brands fa-md", icon="fa-youtube"))
+                </li>
+            """
     # ref
-    ts = """$(ts)$(entry_to_list_icon(talk,"literature-reference"; linkprefix="/publications/#", iconstyle="fas fa-md", icon="fa-book"))"""
+    ts = """$(ts)
+                <li>
+                    $(entry_to_list_icon(talk,"literature-reference"; linkprefix="/publications/#", iconstyle="fas fa-md", icon="fa-book"))
+                </li>
+            """
     # link
-    ts = """$(ts)$(entry_to_list_icon(talk,"doi"; linkprefix="http://dx.doi.org/", iconstyle="ai ai-lg", icon="ai-doi"))"""
-    ts = """$(ts)$(entry_to_list_icon(talk,"link"; iconstyle="fas fa-md", icon="fa-link"))"""
+    ts = """$(ts)
+                <li>
+                    $(entry_to_list_icon(talk,"doi"; linkprefix="http://dx.doi.org/", iconstyle="ai ai-lg", icon="ai-doi"))
+                </li>
+            """
+    ts = """$(ts)
+                <li>
+                    $(entry_to_list_icon(talk,"link"; iconstyle="fas fa-md", icon="fa-link"))
+                </li>
+            """
         # # abstract
         # if haskey(talk,"abstract") # abstract details/summary
         #     ts = """$ts
@@ -136,6 +156,7 @@ function format_talk(talk::Dict)
     if haskey(talk,"abstract") # abstract content
         abstract = strip(talk["abstract"])
         abstract = replace(abstract, "\n" => "\n\n")
+        abstract = latex2html(abstract)
         # ts = """$ts
         # <div id="$key-abstract" class="blockicon abstract collapse fas fa-lg fa-file-alt">
         # <div class="content">$(fd2html(abstract; internal=true))</div>
@@ -162,9 +183,9 @@ function hfun_remainingconferences()
         end
     end
     return """
-        <ul class="conferences fa-ul">
+        <ol class="conferences fa-ol">
         $(s)
-        </ul>
+        </ol>
     """
 end
 function hfun_forthcomingconferences()
@@ -186,9 +207,9 @@ function hfun_forthcomingconferences()
         return """
                   <h2>Forthcoming Conferences</h2>
                   <p>I plan to attend the following conferences</p>
-                  <ul class="conferences fa-ul">
+                  <ol class="conferences fa-ol">
                   $(s)
-                  </ul>
+                  </ol>
         """
     else
         return ""
@@ -222,5 +243,5 @@ function format_duration(s::Date, e::Date=s)
         # different months
         d = """$(Dates.format(s,"U d")) &mdash; $(Dates.format(e,"U d, yyyy"))"""
     end
-    return """<span class="dates comma">$(d)</span>"""
+    return """<span class="dates">$(d)</span>"""
 end
