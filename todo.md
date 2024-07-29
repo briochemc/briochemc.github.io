@@ -18,3 +18,5 @@
     Actually I shouldn't do this: Don't want to bring attention to the 2020 gap in papers.
 - TODO Add Abstract button to publications. Probably worth putting it with the download button on a new line.
 - TODO Remove space left of publications/talks/software (was reserved for icon I think)
+- DONE Fix set of icon/links bottom of side bar when in narrow mode
+- DONE Fix color of icon/links
