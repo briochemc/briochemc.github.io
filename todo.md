@@ -2,8 +2,8 @@
 - DONE Switch from YAML format to use bibtex directly for published manuscipts
 - DONE Remove extra citation stuff. Just keep Journal and year I think
 - TODO Get nice new photo of myself
-- TODO test deployment
-- TODO Replace old website on www.bpasquier.com
+- DONE test deployment
+- DONE Replace old website on www.bpasquier.com
 - TODO Add page of collaborators where there the ORCID and personal webpage links will be useful (could be complicated)
     - TODO Maybe add a graph of the collaborative network in Julia (could be a fun little Makie project)
 - TODO Add all software contributions as in CV
@@ -11,9 +11,10 @@
 - DONE Add CV pdf link
 - DONE Add Contacts
 - TODO (maybe) Add online CV
-- TODO Remove template fluff
+- DONE Remove template fluff
 - DONE Add talks
 - DONE (ish) Change format of talks to match the style of papers (does not need be the same, just look with similar style)
 - WONTDO Add years display in bibliography
     Actually I shouldn't do this: Don't want to bring attention to the 2020 gap in papers.
-- TODO Add Abstract button to publications?
+- TODO Add Abstract button to publications. Probably worth putting it with the download button on a new line.
+- TODO Remove space left of publications/talks/software (was reserved for icon I think)
