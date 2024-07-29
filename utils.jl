@@ -23,6 +23,7 @@ end
 using Dates
 include("yaml.jl")
 include("names.jl")
+include("latex2html.jl")
 # The following 3 might depend on yaml and names
 include("bib.jl")
 include("talks.jl")

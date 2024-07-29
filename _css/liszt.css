@@ -27,7 +27,7 @@ p .cite:after {
 p .cite {
     font-size: small;
 }
-ol.bibliography, ol.literature {
+ol.talks, ol.bibliography, ol.literature {
     margin-bottom: .5rem;
     list-style-type: none;
     margin-left: -1rem;
@@ -58,14 +58,15 @@ ol.bibliography, ol.literature {
 ol.literature {
     list-style-type: none;
 }
+ol.talks > li,
 ol.bibliography > li,
 ol.literature > li {
     min-height: 85px;
     margin-bottom:2rem;
-    padding-left:1rem;
     clear: both;
     /* border-left: 5px solid #ddd; */
 }
+ol.talks > li,
 ol.bibliography > li {
     counter-increment: bibitem -1;
 }
@@ -262,64 +263,66 @@ div.bibtex div.content {
  * Talks
  */
  .year {padding-bottom:0; margin-bottom:0;}
-ul.talks {
+ol.talks {
     list-style-type: none;
 }
-ul.talks li {
-    padding-top:1rem;
-    padding-bottom:1rem;
+ol.talks li {
+    padding-top:0rem;
+    padding-bottom:0rem;
 }
-ul.talks span.title {
+ol.talks span.title {
     font-weight: bold;
 }
-ul.talks span.name {
+ol.talks span.name {
     font-style: italic;
 }
-ul.talks span.title:after,
-ul.talks span.dates:before
+ol.talks span.title:after,
+ol.talks span.dates:before
 {
     content: "\A";
     white-space: pre;
 }
-ul.talks span.name:after,
-ul.talks span.institute:after
+ol.talks span.name:after,
+ol.talks span.institute:after
 {
     content: "\A";
 }
-ul.talks span.dates:after
+ol.talks span.dates:after
 {
-    content: ",";
-}
-ul.talks span.note:before {
     content: "\A";
     white-space: pre;
 }
-ul.talks li span.note {
+ol.talks span.note:before {
+    content: "\A";
+    white-space: pre;
+}
+ol.talks li span.note {
     font-weight: normal;
     font-style: italic;
     display: block;
     font-size: 80%;
     line-height: 50%;
 }
-ul.talks span.place:after,
-ul.talks span.university:after
+ol.talks span.place:after,
+ol.talks span.university:after
 {
-    content: ".";
-}
-ul.talks li ul.nav-icons {
-    margin: 0;
-    /* margin-top: -.1 25rem; */
-    padding: 0;
-    /* display: block; */
-    /* float: right; */
-    /* margin-bottom: 1rem; */
-    /* list-style-type: none; */
-}
-ul.talks li span.info:before {
     content: "\A";
     white-space: pre;
 }
-ul.talks span.info {
+ol.talks li ul.nav-icons {
+    margin: 0;
+    /* margin-top: -.1 25rem; */
+    padding: 0;
+    display: block;
+    /* float: right; */
+    margin-bottom: 1rem;
+    list-style-type: none;
+}
+ol.talks li span.info:before {
+    content: "\A";
+    white-space: pre;
+}
+ol.talks span.info {
     font-style: italic;
 }
 /* conferences below */
@@ -562,4 +565,6 @@ span.highlight {
     text-align: center;
     font-size: 1.25rem;
 }
+
+
 

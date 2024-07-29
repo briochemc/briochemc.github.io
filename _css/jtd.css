@@ -41,13 +41,13 @@ h1 {
   margin: 0.67em 0;
 }
 
-sub,
+/* sub,
 sup {
   font-size: 75%;
   line-height: 0;
   position: relative;
   vertical-align: baseline;
-}
+} */
 
 sup {
   top: -0.5em;
@@ -495,7 +495,7 @@ ol {
 
 .franklin-content ul,
 .franklin-content ol {
-  padding-left: 1.5em;
+  padding-left: 1rem;
 }
 
 .franklin-content h1:first-of-type {

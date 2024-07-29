@@ -16,7 +16,10 @@
 - DONE (ish) Change format of talks to match the style of papers (does not need be the same, just look with similar style)
 - WONTDO Add years display in bibliography
     Actually I shouldn't do this: Don't want to bring attention to the 2020 gap in papers.
-- TODO Add Abstract button to publications. Probably worth putting it with the download button on a new line.
-- TODO Remove space left of publications/talks/software (was reserved for icon I think)
+- DONE Add Abstract button to publications. Probably worth putting it with the download button on a new line.
+- DONE Remove space left of publications (was reserved for icon I think)
+- TODO Remove space left of talks (was reserved for icon I think)
+- DONE Remove space left of software (was reserved for icon I think)
 - DONE Fix set of icon/links bottom of side bar when in narrow mode
 - DONE Fix color of icon/links
+- TODO Find how to enable KaTeX in abstracts

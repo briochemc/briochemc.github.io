@@ -126,6 +126,7 @@ function bibentry2dict2(bibentry, NAMES)
     # For the others I do it by hand
     addbibentryfieldtodict!(d, bibentry, :id)
     addbibentryfieldtodict!(d, bibentry, :title)
+    addbibentrysubfieldasdicttodict!(d, bibentry, :fields, "abstract")
     addbibentrysubfieldtodict!(d, bibentry, :access, :doi, "doi")
     addbibentryfieldtodict!(d, bibentry, :type, "biblatextype")
     addbibentrysubfieldstodict!(d, bibentry, :date)
@@ -147,6 +148,12 @@ end
 function addbibentrysubfieldtodict!(d, bibentry, field, subfield, fieldstr=String(subfield))
     if hasproperty(bibentry, field)
         v = getproperty(getproperty(bibentry, field), subfield)
+        !isempty(v) && (d[fieldstr] = v)
+    end
+end
+function addbibentrysubfieldasdicttodict!(d, bibentry, field, subfield, fieldstr=String(subfield))
+    if hasproperty(bibentry, field) && haskey(getproperty(bibentry, field), subfield)
+        v = getproperty(bibentry, field)[subfield]
         !isempty(v) && (d[fieldstr] = v)
     end
 end
@@ -376,61 +383,53 @@ function format_bibtex_entry(entry, key; list_style="number")
     s = """$s
            $(pubdetails)
         """
-    s = """$s
-           $(entry_to_list_icon(entry,"pdf"; iconstyle="fas fa-md", icon="fa-download"))
-        """
+    # s = """$s
+    #        $(entry_to_list_icon(entry,"pdf"; iconstyle="fas fa-md", icon="fa-download"))
+    #     """
     s = """$s
            $(formatlazyspan(entry, "doi"; prefix="doi: "))
         """
     s = """$s
            $( (get(entry, "biblatextype", "") == "online" || get(entry,"journaltitle","")=="") ? eprint_text_link : "")
         """
-    # s = """$s
-    #     <ul class="nav nav-icons">
-    #     """
-    #bibtex icon
-    # s = """$s
-    #     <li>
-    #         <a data-toggle="collapse" href="#$key-bibtex" title="toggle visibility of the biblatex for $key">
-    #             <i class="fas fa-md fa-file-code"></i>
-    #         </a>
-    #     </li>"""
-    # if haskey(entry,"abstract") #abstract icon
-    #     s = """$s
-    #         <li>
-    #             <a data-toggle="collapse" href="#$key-abstract" title="toggle abstract">
-    #                 abstract
-    #             </a>
-    #         </li>"""
-    # end
-    # if lowercase(get(entry,"eprinttype",""))=="arxiv" #pdf icon -> arxiv
-    #     s = """$(s)$(entry_to_list_icon(entry,"eprint"; linkprefix="https://arxiv.org/pdf/", iconstyle="fas fa-md", icon="fa-file-pdf"))"""
-    # end
-    # s = """$(s)$(entry_to_list_icon(entry,"doi"; linkprefix="http://dx.doi.org/", iconstyle="ai ai-lg", icon="ai-doi"))"""
-    s = """$(s)$(entry_to_list_icon(entry,"github"; linkprefix="https://github.com/", iconstyle="fab fa-md", icon="fa-github"))"""
-    # s = """$(s)$(entry_to_list_icon(entry,"link"; iconstyle="fas fa-md", icon="fa-link"))"""
-    # s = """$(s)$(entry_to_list_icon(entry,"pdf"; iconstyle="fas fa-md", icon="fa-download"))"""
-    # if haskey(entry,"isbn_link") && haskey(entry,"isbn")
-    #     s = """$(s)$(entry_to_list_icon(entry,"isbn_link"; iconstyle="fas fa-md", icon="fa-book", title="ISBN: $(entry["isbn"])"))"""
-    # end
-    # s = """$s
-    #     </ul>
-    # """
-    # if haskey(entry,"abstract") # abstract content
-    #     abstract = strip(entry["abstract"])
-    #     abstract = replace(abstract, "\n" => "\n\n")
-    #     s = """$s
-    #     <div id="$key-abstract" class="blockicon abstract collapse fas fa-md">
-    #         <div class="content">$(fd2html(abstract; internal=true))</div>
-    #     </div>
-    #     """
-    # end
-    # # bibtex entry
-    # s = """$s
-    #     <div id="$key-bibtex" class="blockicon bibtex collapse fas fa-md fa-file-code">
-    #         <div class="content">$(format_bibtex_code(entry, key))</div>
-    #     </div>
-    #     """
+    s = """$s
+        <ul class="nav nav-icons">
+        """
+    # abstract
+    if haskey(entry,"abstract") #abstract icon
+        s = """$s
+               <li>
+                   <button onclick="myFunction('$key-abstract')">Abstract</button>
+               </li>
+            """
+    end
+    # pdf
+    if haskey(entry, "pdf") && isfile(entry["pdf"][2:end])
+        s = """$(s)
+               <li>
+                    $(entry_to_list_icon(entry,"pdf"; iconstyle="fas fa-md", icon="fa-download"))
+                </li>
+            """
+    end
+    s = """$s
+           </ul>
+        """
+    # content: abstract
+    if haskey(entry,"abstract") # abstract content
+        abstract = strip(entry["abstract"])
+        abstract = replace(abstract, "\n" => "\n\n")
+        abstract = latex2html(abstract)
+        # ts = """$ts
+        # <div id="$key-abstract" class="blockicon abstract collapse fas fa-lg fa-file-alt">
+        # <div class="content">$(fd2html(abstract; internal=true))</div>
+        # </div>
+        # """
+        s = """$s
+               <div id="$key-abstract" style="display:none">
+                   <blockquote>$abstract</blockquote>
+               </div>
+            """
+    end
     #print some label? for the default number we just print a li and the numbering will be done by the outer ol in css
     key_label  = ""
     # otherwise we print a span for the label and the formatting has to still be done in css
