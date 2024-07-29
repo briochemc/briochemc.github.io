@@ -13,6 +13,7 @@ function latex2html(abstract)
         "σtot-1" => "<i>σ</i><sub>tot</sub><sup>−1</sup>",
         "σtot" => "<i>σ</i><sub>tot</sub>",
         "τpre" => "<i>τ</i><sub>pre</sub>",
+        "τseq" => "<i>τ</i><sub>seq</sub>",
         "\\&thinsp;" => "&thinsp;",
         "\\&gt" => ">",
         "< \\br>" => "<br>",
