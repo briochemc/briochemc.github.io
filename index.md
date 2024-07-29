@@ -26,7 +26,7 @@ I spend most of my time thinking about the fascinating mechanisms that drive the
 To improve our understanding, I build numerical models of tracers in the ocean.
 This requires engaging with a diverse range of research fields including biology, geology, chemistry, and physics, and deep knowledge of advanced mathematical and computational tools.
 My education as a mathematician and engineer helps me to develop new ideas and methods to tackle challenging questions in ocean sciences.
-And when possible, I also spend time developing open-source packages.
+When possible, I also spend time developing open-source packages.
 
 
 An overarching theme of my research is the interplay between the ocean's circulation and biogeochemical tracers.
