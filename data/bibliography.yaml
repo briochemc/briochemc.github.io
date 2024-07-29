@@ -38,12 +38,12 @@
 
 "Pasquier_etal_JGRO_2024":
     abstract: >
-        The deoxygenation of the ocean is an important consequence of climate change that poses an imminent threat to marine life and global food security.
+        Ocean deoxygenation is an important consequence of climate change that poses an imminent threat to marine life and global food security.
         However, our understanding of the complex interactions between changes in circulation, solubility, and respiration that drive global-scale deoxygenation is incomplete.
         Here, we consider idealized biogeochemical steady states in equilibrium with perpetually slower and warmer oceans constructed from climate-model simulations of the 2090s that we hold constant in time.
-        In contrast to simulations of the end-of-century transient state, our idealized states are intensely deoxygenated in the abyss, consistent with perpetually reduced ventilation and Antarctic Bottom Water formation.
+        In contrast to simulations of the end-of-century transient state, our idealized states are intensely deoxygenated in the abyss, consistent with perpetually reduced ventilation and throttled Antarctic Bottom Water formation.
         We disentangle the effects of the deoxygenation drivers on preformed oxygen and true oxygen utilization (TOU) using the novel concept of upstream exposure time, which precisely connects TOU to oxygen utilization rates and preformed oxygen to ventilation.
-        For our idealized steady states, deoxygenation below 2000\,m depth is due to increased TOU, driven dominantly by the slower circulations that allow respiration to act roughly 2--3 times longer thereby overwhelming the effects of reduced respiration rates.
+        For our idealized steady states, deoxygenation below 2000\,m depth is due to increased TOU, driven dominantly by slower circulations that allow respiration to act roughly 2--3 times longer thereby overwhelming the effects of reduced respiration rates.
         Above 500\,m depth, decreased respiration and slower circulation closely compensate, resulting in little expansion of upper-ocean hypoxia.
         The bulk of preformed oxygen loss is driven by ventilation shifting equatorward to where warmer surface waters hold less oxygen.
         Warming-driven declines in solubility account for less than 10\,\% of the total oxygen loss.
