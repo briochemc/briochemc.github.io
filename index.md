@@ -17,7 +17,7 @@ I am a Research Associate currently working with Associate Professor [Mark Holze
 <br>
 ~~~
 
-I'm on the lookout for my next job so don't hesitate to contact me if you are looking to hire someone with my skills!
+I'm on the lookout for my next job so don't hesitate to contact me if you are looking to hire someone with my skills.
 
 
 ## Research interests
