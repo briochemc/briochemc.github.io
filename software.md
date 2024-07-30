@@ -12,7 +12,15 @@
 
 {{bibliography software data/bibliography.yaml}}
 
-## Other software
+## Software contributions
+
+{{bibliography softwareowner data/bibliography.yaml}}
+
+## Minor software contributions
+
+{{bibliography softwarecontribution data/bibliography.yaml}}
+
+
 
 <!-- ## Misc
 {{bibliography misc data/bibliography.yaml }} -->

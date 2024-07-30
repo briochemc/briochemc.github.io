@@ -541,7 +541,7 @@
     biblatextype: software
     copyright: MIT License
     doi: 10.5281/zenodo.2864051
-    github: JuliaOcean/AIBECS.jl
+    github: https://www.github.com/JuliaOcean/AIBECS.jl
     image: AIBECS.png
     link: https://juliaocean.github.io/AIBECS.jl/stable/
     publisher: Zenodo
@@ -559,7 +559,7 @@
     biblatextype: software
     copyright: MIT License
     doi: 10.5281/zenodo.5651295
-    github: MTEL-USC/GNOM
+    github: https://www.github.com/MTEL-USC/GNOM
     image: Nd_model.png
     # link: N/A
     publisher: Zenodo
@@ -572,7 +572,7 @@
     biblatextype: software
     copyright: MIT License
     doi: 10.5281/zenodo.2677666
-    github: briochemc/WorldOceanAtlasTools.jl
+    github: https://www.github.com/briochemc/WorldOceanAtlasTools.jl
     image: WOAT.png
     # link: N/A
     publisher: Zenodo
@@ -586,7 +586,7 @@
     biblatextype: software
     copyright: MIT License
     doi: 10.5281/zenodo.2667835
-    github: briochemc/F1Method.jl
+    github: https://www.github.com/briochemc/F1Method.jl
     image: F1Method.png
     # link: N/A
     publisher: Zenodo
@@ -608,7 +608,7 @@
     biblatextype: software
     copyright: MIT License
     doi: 10.5281/zenodo.1660762
-    github: JuliaDiff/HyperDualNumbers.jl
+    github: https://www.github.com/JuliaDiff/HyperDualNumbers.jl
     image: JuliaDiff.png
     link: https://juliadiff.org/HyperDualNumbers.jl/stable/
     publisher: Zenodo
@@ -622,7 +622,7 @@
     biblatextype: software
     copyright: MIT License
     doi: 10.5281/zenodo.1493571
-    github: briochemc/DualMatrixTools.jl
+    github: https://www.github.com/briochemc/DualMatrixTools.jl
     image: DualMatrixTools.png
     link: https://briochemc.github.io/DualMatrixTools.jl/stable/
     publisher: Zenodo
@@ -636,12 +636,359 @@
     biblatextype: software
     copyright: MIT License
     doi: 10.5281/zenodo.1670841
-    github: briochemc/HyperDualMatrixTools.jl
+    github: https://www.github.com/briochemc/HyperDualMatrixTools.jl
     image: HyperDualMatrixTools.png
     link: https://briochemc.github.io/HyperDualMatrixTools.jl/stable/
     publisher: Zenodo
     title: "HyperDualMatrixTools.jl"
     year: 2018
+
+# Other software "owned"
+
+
+"Inpaintings.jl":
+    author:
+        - Benoît Pasquier
+    biblatextype: softwareowner
+    github: https://www.github.com/briochemc/Inpaintings.jl
+    title: "Inpaintings.jl"
+    journaltitle: "Julia version of MATLAB's inpaint_nans"
+
+"OceanographyCruises.jl":
+    author:
+        - Benoît Pasquier
+    biblatextype: softwareowner
+    github: https://www.github.com/briochemc/OceanographyCruises.jl
+    title: "OceanographyCruises.jl"
+    journaltitle: "An interface for dealing with oceanographic cruises data"
+
+"OceanGrids.jl":
+    author:
+        - Benoît Pasquier
+    biblatextype: softwareowner
+    github: https://www.github.com/briochemc/OceanGrids.jl
+    title: "OceanGrids.jl"
+    journaltitle: "Standard format of grids for AIBECS"
+
+"OceanBasins.jl":
+    author:
+        - Benoît Pasquier
+    biblatextype: softwareowner
+    github: https://www.github.com/briochemc/OceanBasins.jl
+    title: "OceanBasins.jl"
+    journaltitle: "Programmatically determine which ocean basin a (lat,lon) coordinate is in"
+
+"GEOTRACES.jl":
+    author:
+        - Benoît Pasquier
+        - Anshul Singhvi
+    biblatextype: softwareowner
+    github: https://www.github.com/briochemc/GEOTRACES.jl
+    title: "GEOTRACES.jl"
+    journaltitle: "A package for reading and using GEOTRACES data in Julia"
+
+"BlockDiagonalFactors.jl":
+    author:
+        - Benoît Pasquier
+    biblatextype: softwareowner
+    github: https://www.github.com/briochemc/BlockDiagonalFactors.jl
+    title: "BlockDiagonalFactors.jl"
+    journaltitle: "Efficiently solve linear block-diagonal systems with repeated blocks"
+
+"Earth2014.jl":
+    author:
+        - Benoît Pasquier
+        - Yakir Luc Gagnon
+    biblatextype: softwareowner
+    github: https://www.github.com/briochemc/Earth2014.jl
+    title: "Earth2014.jl"
+    journaltitle: "Download topographic data for the globe"
+
+"UnitfulRecipes.jl":
+    title: "UnitfulRecipes.jl"
+    biblatextype: softwareowner
+    author:
+        - Benoît Pasquier
+        - David E Gustavsson
+        - Jan Weidner
+        - Jeff Fessler
+        - Daniel Boland
+        - Bart Janssens
+        - Dilum Aluthge
+        - Rafael Schouten
+        - Claire Foster
+    github: https://www.github.com/briochemc/UnitfulRecipes.jl
+    journaltitle: "Plotting data with units seamlessly in Julia."
+
+
+# "XXX":
+#     author:
+#         - A
+#         - B
+#     biblatextype: softwarecontribution
+#     copyright: XXX
+#     doi: XXX
+#     image: XXX.png
+#     link: XXX
+#     publication_date: XXXX-XX-XX
+#     publisher: XXX
+#     title: XXX
+#     year: since XXXX
+#     github: XXX
+
+# Other software contributions
+
+
+
+
+"latexdiff":
+    title: "latexdiff"
+    biblatextype: softwarecontribution
+    author:
+        - Frederik Tilmann
+        - Yarden Peleg
+        - Benoît Pasquier
+        - Joachim Protze
+        - Tom de Geus
+        - and many contributors
+    github: https://www.github.com/ftilmann/latexdiff
+    journaltitle: "Compares two latex files and marks up significant differences between them."
+
+"YAXArrays.jl":
+    title: "YAXArrays.jl"
+    biblatextype: softwarecontribution
+    author:
+        - Fabian Gans
+        - Felix Cremer
+        - Lazaro Alonso
+        - Guido Kraemer
+        - Pavel V. Dimens
+        - Daniel Loos
+        - Daniel E. Pabon-Moreno
+        - Martin Reinhardt
+        - and many contributors
+    github: https://www.github.com/JuliaDataCubes/YAXArrays.jl
+    journaltitle: "Yet Another XArray-like Julia package."
+
+"cmap":
+    title: "cmap"
+    biblatextype: softwarecontribution
+    author:
+        - Timothy Sipkens
+        - Benoît Pasquier
+    github: https://www.github.com/tsipkens/cmap
+    journaltitle: "Perceptually uniform colormaps for MATLAB, compiled from multiple sources."
+
+"Makie.jl":
+    title: "Makie.jl"
+    biblatextype: softwarecontribution
+    author:
+        - Simon Danisch
+        - Julius Krumbiegel
+        - and many contributors
+    github: https://www.github.com/MakieOrg/Makie.jl
+    journaltitle: "Interactive data visualisations and plotting in Julia."
+
+"offsetaxis-pkg":
+    title: "offsetaxis-pkg"
+    biblatextype: softwarecontribution
+    author:
+        - Kelly Kearney
+        - Benoît Pasquier
+    github: https://www.github.com/kakearney/offsetaxis-pkg
+    journaltitle: "OFFSETAXIS Add an x- or y-axis offset from the plotted axis area (MATLAB)."
+
+"GeoStats.jl":
+    title: "GeoStats.jl"
+    biblatextype: softwarecontribution
+    author:
+      - Júlio Hoffimann
+      - and many contributors
+    github: https://www.github.com/JuliaEarth/GeoStats.jl
+    journaltitle: "Comprehensive framework for geostatistics (or spatial statistics)."
+
+"Plots.jl":
+    title: "Plots.jl"
+    biblatextype: softwarecontribution
+    author:
+        - Tom Breloff1
+        - and many contributors
+    github: https://www.github.com/JuliaPlots/Plots.jl
+    journaltitle: "Powerful convenience for Julia visualisations and data analysis."
+
+"Unitful.jl":
+    title: "Unitful.jl"
+    biblatextype: softwarecontribution
+    author:
+        - Andrew Keller
+        - and many contributors
+    github: https://www.github.com/PainterQubits/Unitful.jl
+    journaltitle: "Julia package for physical units."
+
+"UnitfulMoles.jl":
+    title: "UnitfulMoles.jl"
+    biblatextype: softwarecontribution
+    author:
+        - Rafael Schouten
+        - Benoît Pasquier
+    github: https://www.github.com/rafaqz/UnitfulMoles.jl
+    journaltitle: "Utilities for working with Mole units for the Julia language."
+
+"Distributions.jl":
+    title: "Distributions.jl"
+    biblatextype: softwarecontribution
+    author:
+        - Dahua Lin
+        - David Widmann
+        - Simon Byrne
+        - John Myles White
+        - Andreas Noack
+        - Mathieu Besançon
+        - Douglas Bates
+        - John Pearson
+        - John Zito
+        - Alex Arslan
+        - Moritz Schauer
+        - Kevin Squire
+        - David Anthoff
+        - Theodore Papamarkou
+        - Jan Drugowitsch
+        - Benjamin Deonovic
+        - Avik Sengupta
+        - Seth Axen
+        - Brian J Smith
+        - Glenn Moynihan
+        - Giuseppe Ragusa
+        - Martin O'Leary
+        - Michael
+        - Mohamed Tarek
+        - Viral B. Shah
+        - Christoph Dann
+        - Mike J Innes
+        - Tamas K. Papp
+        - and many contributors
+    github: https://www.github.com/JuliaStats/Distributions.jl
+    journaltitle: "A Julia package for probability distributions and associated functions."
+
+"DiffEqBase.jl":
+    title: "DiffEqBase.jl"
+    biblatextype: softwarecontribution
+    author:
+        - Christopher Rackauckas
+        - Kanav Gupta
+        - Yingbo Ma
+        - Avik Pal
+        - Jared Lumpe
+        - David Widmann
+        - Lilith Orion Hafner
+        - Takafumi Arakaki
+        - Daniel González Arribas
+        - Oscar Smith
+        - and many contributors
+    github: https://www.github.com/SciML/DiffEqBase.jl
+    journaltitle: "DiffEqBase.jl is a component package in the DiffEq ecosystem."
+
+"SciMLBase.jl":
+    title: "SciMLBase.jl"
+    biblatextype: softwarecontribution
+    author:
+        - Christopher Rackauckas
+        - Aayush Sabharwal
+        - Arno Strouwen
+        - Qingyu Qu
+        - Valentin Kaisermayer
+        - Avik Pal
+        - Vaibhav Kumar Dixit
+        - Alex Jones
+        - Oscar Smith
+        - Lorenzo Van Munoz
+        - Yingbo Ma
+        - Sharan Yalburgi
+        - Anshul Singhvi
+        - and many contributors
+    github: https://www.github.com/SciML/SciMLBase.jl
+    journaltitle: "The Base interface of the SciML ecosystem."
+
+"DiffEqOperators.jl":
+    title: "DiffEqOperators.jl"
+    biblatextype: softwarecontribution
+    author:
+        - Christopher Rackauckas
+        - Alex Jones
+        - ajozefiak
+        - Shivin Srivastava
+        - Valentin Sulzer
+        - Mohammed Jeeshan Sheikh
+        - Emmanuel Lujan
+        - Yingbo Ma
+        - Xingjian Guo
+        - William Chen
+        - and many contributors
+    github: https://www.github.com/SciML/DiffEqOperators.jl
+    journaltitle: "Linear operators for discretizations of differential equations and scientific machine learning (SciML)."
+
+"Interpolations.jl":
+    title: "Interpolations.jl"
+    biblatextype: softwarecontribution
+    author:
+        - Tim Holy
+        - Mark Kittisopikul
+        - Alex Wadell
+        - Tomas Aschan
+        - Miles Lucas
+        - Spencer Lyon
+        - and many contributors
+    github: https://www.github.com/JuliaMath/Interpolations.jl
+    journaltitle: "Fast, continuous interpolation of discrete datasets in Julia."
+
+"RecipesBase.jl":
+    title: "RecipesBase.jl"
+    biblatextype: softwarecontribution
+    author:
+        - Tom Breloff
+        - Chris Rackauckas
+        - Daniel Schwabeneder
+        - Simon Christ
+        - and many contributors
+    github: https://www.github.com/JuliaPlots/RecipesBase.jl
+    journaltitle: "Base package for defining transformation recipes on user types for Plots.jl."
+
+"CMAP.jl":
+    title: "CMAP.jl"
+    biblatextype: softwarecontribution
+    author:
+        - Mohammad Ashkezari
+        - Benoît Pasquier
+    github: https://www.github.com/simonscmap/CMAP.jl
+    journaltitle: "Simons CMAP Julia client."
+
+"InverseDistanceWeighting.jl":
+    title: "InverseDistanceWeighting.jl"
+    biblatextype: softwarecontribution
+    author:
+        - Júlio Hoffimann
+        - Benoît Pasquier
+    github: https://www.github.com/juliohm/InverseDistanceWeighting.jl
+    journaltitle: "Inverse distance estimation solver for the GeoStats.jl framework."
+
+
+
+
+# "XXX":
+#     title: XXX
+#     biblatextype: softwarecontribution
+#     author:
+#         - A
+#         - B
+#     github: XXX
+#     abstract: XXX
+#     copyright: XXX
+#     doi: XXX
+#     image: XXX.png
+#     link: XXX
+#     publication_date: XXXX-XX-XX
+#     publisher: XXX
+#     year: since XXXX
 
 # "XXX":
 #     author:

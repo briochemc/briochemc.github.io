@@ -195,11 +195,11 @@ ol li i.ai-orcid
 }
 ol li ul.nav-icons, dl dd ul.nav-icons {
     margin: 0;
-    margin-top: .5rem;
+    /* margin-top: .5rem; */
     padding: 0;
     /* display: block; */
     /* float: right; */
-    margin-bottom: .5rem;
+    /* margin-bottom: .5rem; */
     list-style-type: none;
 }
 dl.supervised dd ul.nav-icons {
@@ -315,7 +315,7 @@ ol.talks li ul.nav-icons {
     padding: 0;
     display: block;
     /* float: right; */
-    margin-bottom: 1rem;
+    /* margin-bottom: 1rem; */
     list-style-type: none;
 }
 ol.talks li span.info:before {

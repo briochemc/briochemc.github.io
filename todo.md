@@ -6,7 +6,7 @@
 - DONE Replace old website on www.bpasquier.com
 - TODO Add page of collaborators where there the ORCID and personal webpage links will be useful (could be complicated)
     - TODO Maybe add a graph of the collaborative network in Julia (could be a fun little Makie project)
-- TODO Add all software contributions as in CV
+- DONE Add all software contributions as in CV
 - DONE fix dates in talks
 - DONE Add CV pdf link
 - DONE Add Contacts
@@ -18,7 +18,7 @@
     Actually I shouldn't do this: Don't want to bring attention to the 2020 gap in papers.
 - DONE Add Abstract button to publications. Probably worth putting it with the download button on a new line.
 - DONE Remove space left of publications (was reserved for icon I think)
-- TODO Remove space left of talks (was reserved for icon I think)
+- DONE Remove space left of talks (was reserved for icon I think)
 - DONE Remove space left of software (was reserved for icon I think)
 - DONE Fix set of icon/links bottom of side bar when in narrow mode
 - DONE Fix color of icon/links
