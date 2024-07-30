@@ -373,7 +373,7 @@ function format_bibtex_entry(entry, key; list_style="number")
     """
     # pubdetails = """$(formatlazyspan(entry, "editor"; prefix="in: "))$(formatlazyspan(entry,"booktitle"; prefix= haskey(entry,"editor") ? ": " : "in: "))$(formatlazyspan(entry, "chapter"; prefix=", Chapter "))$(formatlazyspan(entry,"journaltitle";class="journal"))$(formatlazyspan(entry,"series"; prefix=", "))$(formatlazyspan(entry,"volume"))$(formatlazyspan(entry,"number"))$(formatlazyspan(entry,"issue"))$(formatlazyspan(entry,"pages", prefix=pagesprefix(entry)))$(formatlazyspan(entry,"publisher"; prefix=", "))$(formatlazyspan(entry,"type"))$(formatlazyspan(entry,"language"; prefix=", "))$(formatlazyspan(entry,"school"; prefix=", "))$(formatlazyspan(entry,"note"))$(formatspan(entry,"year"))"""
     # pubdetails = """$(formatlazyspan(entry, "editor"; prefix="in: "))$(formatlazyspan(entry,"booktitle"; prefix= haskey(entry,"editor") ? ": " : "in: "))$(formatlazyspan(entry, "chapter"; prefix=", Chapter "))$(formatlazyspan(entry,"journaltitle";class="journal"))$(formatspan(entry,"year"))"""
-    pubdetails = """$(formatlazyspan(entry,"journaltitle";class="journal"))$(formatspan(entry,"year"))"""
+    pubdetails = """$(formatlazyspan(entry,"journaltitle";class="journal"))$(formatlazyspan(entry,"year"))"""
     title = formatspan(entry,"title"; remove=["{","}"])
     title = latex2html(title)
     s = """$s
@@ -410,6 +410,13 @@ function format_bibtex_entry(entry, key; list_style="number")
         s = """$(s)
                <li>
                     $(entry_to_list_icon(entry,"pdf"; iconstyle="fas fa-md", icon="fa-download"))
+                </li>
+            """
+    end
+    if haskey(entry, "github")
+        s = """$(s)
+               <li>
+                    $(entry_to_list_icon(entry,"github"; iconstyle="fa-brands fa-md", icon="fa-github"))
                 </li>
             """
     end
