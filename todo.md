@@ -1,4 +1,4 @@
-- ONGOING Port rest of data from kellertuer
+- DONE Port rest of data from kellertuer
 - DONE Switch from YAML format to use bibtex directly for published manuscipts
 - DONE Remove extra citation stuff. Just keep Journal and year I think
 - TODO Get nice new photo of myself
@@ -23,3 +23,4 @@
 - DONE Fix set of icon/links bottom of side bar when in narrow mode
 - DONE Fix color of icon/links
 - TODO Find how to enable KaTeX in abstracts
+- DONE Add PhD thesis

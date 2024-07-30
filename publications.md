@@ -20,5 +20,5 @@
 <!-- ## Peer-reviewed Conference Proceedings
 {{bibliography inproceedings data/bibliography.yaml}} -->
 
-<!-- ## Theses
-{{bibliography thesis data/bibliography.yaml}} -->
+## Thesis
+{{bibliography thesis data/bibliography.yaml}}
