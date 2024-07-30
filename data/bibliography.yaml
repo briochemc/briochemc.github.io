@@ -541,12 +541,13 @@
     author:
         - Benoît Pasquier
     biblatextype: thesis
-    school: School of Mathematics and Statistics, University of New South Wales
+    school: Faculty of Science, University of New South Wales
     type: PhD
     title: >
         The ocean's global iron, phosphorus, and silicon cycles: inverse modelling and novel diagnostics
     year: 2017
     pdf: /pdfs/PhDThesisBP.pdf
+    doi: 10.26190/unsworks/3239
     # image: XXX.png
 
 
