@@ -529,6 +529,27 @@
 #     image: XXX.png
 
 
+"PhDThesis":
+    abstract: >
+        The ocean's biological pump is crucial for the carbon balance of the climate system, and the control of its three-dimensional "plumbing" on pump efficiency needed to be quantified. The nutrient cycles driving the biological pump are limited by dissolved iron (dFe). However, the iron cycle is poorly constrained, and the effects of iron source perturbations had never been quantified in a data-constrained model. In this thesis, we quantify the pathways and timescales of the biological pump, build an inverse model of the coupled phosphorus, silicon, and iron cycles, and explore the response of these cycles to changes in the aeolian iron supply.<br>
+
+        We use Green-function methods to show that the Southern Ocean (SO) is where 62 ± 2 % of regenerated phosphate (PO4) reemerges after a mean sequestration time of 240 ± 60 yr. The pathways from productive regions to the SO contribute most to the biological pump, with a mean sequestration time of 130 ± 70 yr. Most PO4 is carried by abyssal paths with transit times exceeding 700 yr, while ∼1/3 of the regenerated PO4 from the equatorial Pacific that is destined for the SO is carried in Antarctic Intermediate Water.<br>
+
+        We use the model of the coupled nutrient cycles in inverse mode to objectively determine biogeochemical parameters by minimizing the mismatch with observed nutrient and phytoplankton concentrations. We generate a family of estimates, all consistent with the observations, for a wide range of iron source strengths, themselves not constrainable by current observations. The carbon and opal exports are well constrained in magnitude and pattern. We quantify the systematics of the carbon and opal exports supported by aeolian, hydrothermal, and sedimentary dFe and find that aeolian dFe is the most efficient for supporting production.<br>
+
+        The response to aeolian source perturbations is sensitive to the state of the iron cycle that is fitted to observations. A shutdown of the aeolian source does not completely untrap nutrients from the SO because sedimentary and hydrothermal dFe suffice to sustain production. A globally uniform 50 Gmol yr−1 aeolian iron addition fertilizes macronutrient-rich regions leading to increased deep regenerated and recycled dFe. This perturbation actually reduces iron fertilization supported by long-range transport because increased scavenging removes dFe before it can reach its destination. The response of the opal export is muted because the iron dependence of the Si:P uptake ratio counteracts fertilization.
+    author:
+        - Benoît Pasquier
+    biblatextype: thesis
+    school: School of Mathematics and Statistics, University of New South Wales
+    type: PhD
+    title: >
+        The ocean's global iron, phosphorus, and silicon cycles: inverse modelling and novel diagnostics
+    year: 2017
+    pdf: /pdfs/PhDThesisBP.pdf
+    # image: XXX.png
+
+
 #
 # Software
 #

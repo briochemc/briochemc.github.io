@@ -22,6 +22,7 @@ function latex2html(abstract)
         "Ebio" => "<i>E</i><sub>bio</sub>",
         "pCO2" => "<i>p</i>CO<sub>2</sub>",
         " CO2" => " CO<sub>2</sub>", # can't use "CO2" without a space before because of PCO2 model.
+        "PO4" => "PO<sub>4</sub>",
         "Nsoft" => "<i>N</i><sub>soft</sub>",
         "Ncarb" => "<i>N</i><sub>carb</sub>",
         "εNd" => "<i>ε</i><sub>Nd</sub>",
