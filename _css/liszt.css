@@ -96,6 +96,7 @@ ol li span.title {
 ol li span.journaltitle {
     font-style: italic;
 }
+ol li span.school:before,
 ol li span.journaltitle:before {
     content: "\A";
     white-space: pre;
@@ -153,7 +154,7 @@ ol li span.number {
     margin-left: 0ex;
 }
 ol li span.year:before {
-    content: "\00a0(";
+    content: "(";
 }
 ol li span.year:after {
     content: ")";
