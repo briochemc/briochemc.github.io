@@ -10,12 +10,11 @@
 - DONE fix dates in talks
 - DONE Add CV pdf link
 - DONE Add Contacts
-- TODO (maybe) Add online CV
+- TODO (maybe) Add an online (html) version of my CV
 - DONE Remove template fluff
 - DONE Add talks
 - DONE (ish) Change format of talks to match the style of papers (does not need be the same, just look with similar style)
-- WONTDO Add years display in bibliography
-    Actually I shouldn't do this: Don't want to bring attention to the 2020 gap in papers.
+- TODO Display a "timeline" (years) on the side of the bibliographies
 - DONE Add Abstract button to publications. Probably worth putting it with the download button on a new line.
 - DONE Remove space left of publications (was reserved for icon I think)
 - DONE Remove space left of talks (was reserved for icon I think)
@@ -24,3 +23,5 @@
 - DONE Fix color of icon/links
 - TODO Find how to enable KaTeX in abstracts
 - DONE Add PhD thesis
+- TODO Add talks by others on which I am a coauthor (might be hard to find this data...)
+    - TODO If I do this, I must add the authors field to the talks
