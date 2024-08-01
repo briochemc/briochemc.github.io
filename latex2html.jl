@@ -26,6 +26,13 @@ function latex2html(abstract)
         "Nsoft" => "<i>N</i><sub>soft</sub>",
         "Ncarb" => "<i>N</i><sub>carb</sub>",
         "εNd" => "<i>ε</i><sub>Nd</sub>",
+        "ɛNd" => "<i>ε</i><sub>Nd</sub>",
+        "δ56Fe" => "<i>δ</i><sup>56</sup>Fe",
+        "δ66Zn" => "<i>δ</i><sup>66</sup>Zn",
+        "δ60Ni" => "<i>δ</i><sup>60</sup>Ni",
+        "δ65Cu" => "<i>δ</i><sup>65</sup>Cu",
+        "δ114Cd" => "<i>δ</i><sup>114</sup>Cd",
+        "β" => "<i>β</i>",
     )
 end
 

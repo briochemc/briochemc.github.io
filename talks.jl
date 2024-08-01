@@ -73,6 +73,12 @@ function format_talk(talk::Dict)
     ts =  """<a name="$key"></a>"""
     ts = """$(ts)$(entry_to_html(talk,"title"))"""
     #append seminar/conference
+    if haskey(talk, "author")
+        names = join( [ "<nobr>$(has_name(name) ? hfun_person([name,"fullname_link_fnorcid"]) : """<span class="person unknown">$name</span>""")" for name ∈ talk["author"] ], ",</nobr> ") * "</nobr>"
+        ts = """$ts
+                $names<br>
+             """
+    end
     haskey(talk,"conference") && (ts = """$(ts)$(fomat_conference(conferences[talk["conference"]]))""")
     haskey(talk,"seminar") && (ts = """$(ts)$(fomat_seminar(talk["seminar"], talk["date"]))""")
     # note & with TODO
@@ -127,7 +133,7 @@ function format_talk(talk::Dict)
     # link
     ts = """$(ts)
                 <li>
-                    $(entry_to_list_icon(talk,"doi"; linkprefix="http://dx.doi.org/", iconstyle="ai ai-lg", icon="ai-doi"))
+                    $(entry_to_list_icon(talk,"doi"; linkprefix="http://dx.doi.org/", iconstyle="ai ai-md", icon="ai-doi"))
                 </li>
             """
     ts = """$(ts)
