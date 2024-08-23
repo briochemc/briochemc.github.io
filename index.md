@@ -31,7 +31,7 @@ When possible, I also spend time developing open-source packages.
 
 An overarching theme of my research is the interplay between the ocean's circulation and biogeochemical tracers.
 Understanding the transport of nutrients is critical because they sustain all life in the ocean, and their distributions are predicted to respond dramatically to climate change.
-This includes macronutients like phosphate and nitrate, but also trace metals such as iron, nickel, or, cadmium.
+This includes macronutients like phosphate and nitrate, but also trace metals such as iron, nickel, or cadmium.
 I am thus naturally interested in tracers of ocean circulation, such as neodymium, because they inform us on the ocean's past circulation patterns.
 In my latest research, I have been working on the response of oxygen and carbon cycles to climate change.
 The future of the oxygen cycle is another critical issue because our warming climate is driving the ocean to lose its oxygen, which is essential for marine life, with direct impacts for global food security.
