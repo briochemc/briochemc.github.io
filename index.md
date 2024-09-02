@@ -8,8 +8,9 @@
 
 ## Current position
 
-I am a Research Associate currently working with Associate Professor [Mark Holzer](https://web.maths.unsw.edu.au/~markholzer/) within the [School of Mathematics and Statistics](https://www.maths.unsw.edu.au/) of the [University of New South Wales (UNSW)](https://www.unsw.edu.au/) in Sydney.
+I am a researcher currently working with [Dr. Richard Matear](https://people.csiro.au/M/R/Richard-Matear) at Australia's National Science Agency (the [CSIRO](https://www.csiro.au/)).
 
+I am also an Adjunct Fellow the [School of Mathematics and Statistics](https://www.maths.unsw.edu.au/) of the [University of New South Wales (UNSW)](https://www.unsw.edu.au/) in Sydney.
 
 ~~~
 <img src="/assets/O2minjl_demo.svg" style="width:100% !important; padding:0 !important"><br>
@@ -17,7 +18,6 @@ I am a Research Associate currently working with Associate Professor [Mark Holze
 <br>
 ~~~
 
-I'm on the lookout for my next job so don't hesitate to contact me if you are looking to hire someone with my skills.
 
 
 ## Research interests
