@@ -8,7 +8,8 @@
 
 ## Current position
 
-I am a researcher currently working with [Dr. Richard Matear](https://people.csiro.au/M/R/Richard-Matear) at Australia's National Science Agency (the [CSIRO](https://www.csiro.au/)).
+I am a researcher currently working with [Dr. Richard Matear](https://people.csiro.au/M/R/Richard-Matear) at [CSIRO](https://www.csiro.au/) (Australia's National Science Agency).
+The goal is to produce ocean transport matrices from the standard output of [CMIP](https://wcrp-cmip.org/) models to be used for a cross-model evaluation of the feasibility of marine Carbon Dioxide Removal (mCDR) as part of CSIRO's [CarbonLock Future Science Platform](https://research.csiro.au/carbonlock/).
 
 I am also an Adjunct Fellow the [School of Mathematics and Statistics](https://www.maths.unsw.edu.au/) of the [University of New South Wales (UNSW)](https://www.unsw.edu.au/) in Sydney.
 
