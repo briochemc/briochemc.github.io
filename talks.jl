@@ -1,7 +1,7 @@
 
 using YAML, Dates
 talks = YAML.load_file("data/talks.yaml")
-conferences = YAML.load_file("data/conferences.yaml")
+# conferences = YAML.load_file("data/conferences.yaml")
 
 exclude_conf = String[]
 
@@ -177,50 +177,50 @@ function format_talk(talk::Dict)
     return ts
 end
 
-function hfun_remainingconferences()
-    filtered_conf = filter( x-> (x[1] ∉ exclude_conf), conferences)
-    sorted_conf = sort(collect(filtered_conf), lt = (a,b) -> a[2]["start"] > b[2]["start"])
-    s = "";
-    for conf in sorted_conf
-        if conf[2]["start"] < Dates.now()
-            s = """$s
-                   <li><span class="fa-li"><i class="fas fa-users"></i></span>$(fomat_conference(conf[2]))</li>
-                """
-        end
-    end
-    return """
-        <ol class="conferences fa-ol">
-        $(s)
-        </ol>
-    """
-end
-function hfun_forthcomingconferences()
-    sorted_conf = sort(collect(conferences), lt = (a,b) -> a[2]["start"] < b[2]["start"])
-    s = "";
-    for conf in sorted_conf
-        if conf[2]["start"] > Dates.now()-Week(2) # all that are newer than 2 weeks
-            s = """$s
-                   <li><span class="fa-li"><i class="fas fa-users"></i></span>$(fomat_conference(conf[2]))
-                   <span class="icons">
-                    $(get(conf[2], "talk", false) ? """<i class="fas fa-chalkboard-teacher" title="I am giving a talk"></i>""" : "")
-                    $(get(conf[2], "organizer", false) ? """<i class="fas fa-chair" title="I am organizing/chairing a session"></i>""" : "")
-                    </span>
-                   </li>
-                """
-        end
-    end
-    if length(s) > 0
-        return """
-                  <h2>Forthcoming Conferences</h2>
-                  <p>I plan to attend the following conferences</p>
-                  <ol class="conferences fa-ol">
-                  $(s)
-                  </ol>
-        """
-    else
-        return ""
-    end
-end
+# function hfun_remainingconferences()
+#     filtered_conf = filter( x-> (x[1] ∉ exclude_conf), conferences)
+#     sorted_conf = sort(collect(filtered_conf), lt = (a,b) -> a[2]["start"] > b[2]["start"])
+#     s = "";
+#     for conf in sorted_conf
+#         if conf[2]["start"] < Dates.now()
+#             s = """$s
+#                    <li><span class="fa-li"><i class="fas fa-users"></i></span>$(fomat_conference(conf[2]))</li>
+#                 """
+#         end
+#     end
+#     return """
+#         <ol class="conferences fa-ol">
+#         $(s)
+#         </ol>
+#     """
+# end
+# function hfun_forthcomingconferences()
+#     sorted_conf = sort(collect(conferences), lt = (a,b) -> a[2]["start"] < b[2]["start"])
+#     s = "";
+#     for conf in sorted_conf
+#         if conf[2]["start"] > Dates.now()-Week(2) # all that are newer than 2 weeks
+#             s = """$s
+#                    <li><span class="fa-li"><i class="fas fa-users"></i></span>$(fomat_conference(conf[2]))
+#                    <span class="icons">
+#                     $(get(conf[2], "talk", false) ? """<i class="fas fa-chalkboard-teacher" title="I am giving a talk"></i>""" : "")
+#                     $(get(conf[2], "organizer", false) ? """<i class="fas fa-chair" title="I am organizing/chairing a session"></i>""" : "")
+#                     </span>
+#                    </li>
+#                 """
+#         end
+#     end
+#     if length(s) > 0
+#         return """
+#                   <h2>Forthcoming Conferences</h2>
+#                   <p>I plan to attend the following conferences</p>
+#                   <ol class="conferences fa-ol">
+#                   $(s)
+#                   </ol>
+#         """
+#     else
+#         return ""
+#     end
+# end
 function fomat_conference(conf::Dict)
     s = """
            $(entry_to_html(conf,"name"; link="url"))

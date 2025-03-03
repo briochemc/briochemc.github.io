@@ -6,16 +6,20 @@
 
 
 
-## Current position
+I am a scientist with mathematical training invested in studying the ocean and its response to climate change.
 
-I am currently working as a Contract Researcher with [Dr. Richard Matear](https://people.csiro.au/M/R/Richard-Matear) at [CSIRO](https://www.csiro.au/) (Australia's National Science Agency).
-The goal is to produce ocean transport matrices from the standard output of [CMIP](https://wcrp-cmip.org/) models to be used for a cross-model evaluation of the feasibility of marine Carbon Dioxide Removal (mCDR) as part of CSIRO's [CarbonLock Future Science Platform](https://research.csiro.au/carbonlock/).
 
-I am also an Adjunct Fellow the [School of Mathematics and Statistics](https://www.maths.unsw.edu.au/) of the [University of New South Wales (UNSW)](https://www.unsw.edu.au/) in Sydney.
+
+My latest work, estimating the sequestration efficiency of the deep ocean using only climate-model archives, was funded by the [CarbonLock Future Science Platform](https://research.csiro.au/carbonlock/) of [CSIRO](https://www.csiro.au/) (Australia's National Science Agency), for which I worked as a Contract Researcher with [Dr. Richard Matear](https://people.csiro.au/M/R/Richard-Matear).
+
+I am also an Adjunct Fellow of the [School of Mathematics and Statistics](https://www.maths.unsw.edu.au/) of the [University of New South Wales (UNSW)](https://www.unsw.edu.au/) in Sydney, where I was a postdoctoral Research Associate with [Associate Professor Mark Holzer](https://web.maths.unsw.edu.au/~markholzer/) until 2024, working on the response of the global oxygen and carbon cycles to climate change.
 
 ~~~
 <img src="/assets/O2minjl_demo.svg" style="width:100% !important; padding:0 !important"><br>
-<center><small>Above: My current location overlaid on water-column minimum oxygen levels (see <a href=publications/#preprints>preprint</a>).</small></center>
+<center><small>
+Above: My current location, Sydney, overlaid on water-column minimum oxygen levels.<br>
+Modified from <a href=publications/#peer-reviewed_articles>Pasquier et al., JGR: Oceans, 2024</a>.
+</small></center>
 <br>
 ~~~
 

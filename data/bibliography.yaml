@@ -555,6 +555,21 @@
 # Software
 #
 
+
+
+"OceanTransportMatrixBuilder.jl":
+    author:
+        - Benoît Pasquier
+    biblatextype: software
+    copyright: MIT License
+    doi: 10.5281/zenodo.13864392
+    github: https://github.com/TMIP-code/OceanTransportMatrixBuilder.jl
+    # image: AIBECS.png
+    # link: https://github.com/TMIP-code/OceanTransportMatrixBuilder.jl
+    publisher: Zenodo
+    title: "OceanTransportMatrixBuilder.jl: A Julia package to build ocean transport matrices from CMIP model output."
+    year: 2024
+
 "AIBECS.jl":
     author:
         - Benoît Pasquier
