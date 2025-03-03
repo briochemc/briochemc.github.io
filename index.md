@@ -38,8 +38,9 @@ An overarching theme of my research is the interplay between the ocean's circula
 Understanding the transport of nutrients is critical because they sustain all life in the ocean, and their distributions are predicted to respond dramatically to climate change.
 This includes macronutients like phosphate and nitrate, but also trace metals such as iron, nickel, or cadmium.
 I am thus naturally interested in tracers of ocean circulation, such as neodymium, because they inform us on the ocean's past circulation patterns.
-In my latest research, I have been working on the response of the oxygen and carbon cycles to climate change.
-The future of the oxygen cycle is another critical issue because our warming climate is driving the ocean to lose its oxygen, which is essential for marine life, with direct impacts for global food security.
+I have also been working on the response of the oxygen and carbon cycles to climate change.
+Our warming climate is driving the ocean to lose its oxygen, which is essential for marine life and indirectly impacts global food security.
+In my latest research, I have been looking at the sequestration efficiency of the deep ocean, which could be used to store the carbon that we must remove from the atmosphere to limit global warming.
 
 
 I firmly believe that scientists have a duty to make sure we understand our environment well enough to prepare for its abrupt change and prevent the worst outcomes.
