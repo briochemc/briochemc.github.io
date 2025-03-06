@@ -301,21 +301,34 @@ function hfun_bibliography(params)
     # pretty_print2(library)
     reduced_library = filter( x-> (x[2]["biblatextype"] ∈ types) || ("all" ∈ types), library)
     list_html = "";
-    if length(params) > 2
-        title = params[3]
-        if length(reduced_library) > 0
-            list_html = """$(list_html)
-                        <h2>$title</h2>
-                    """
-        end
-    end
+    # if length(params) > 2
+    #     title = params[3]
+    #     if length(reduced_library) > 0
+    #         list_html = """$(list_html)
+    #                     <h2>$title</h2>
+    #                 """
+    #     end
+    # end
     list = sort(collect(reduced_library), lt=isless_bibtex, by=x->x[2])
     for entry ∈ list
         list_html = """$(list_html)
                         $(format_bibtex_entry(entry[2],entry[1]))
                     """
     end
+    title = if types == ["article"]
+        "<h2>Peer-reviewed articles ($(length(reduced_library)))</h2>"
+    elseif types == ["software"]
+        "<h2>Citable software ($(length(reduced_library)))</h2>"
+    elseif types == ["softwareowner"]
+        "<h2>Software contributions ($(length(reduced_library)))</h2>"
+    elseif types == ["softwarecontribution"]
+        "<h2>Minor software contributions ($(length(reduced_library)))</h2>"
+    else
+        ""
+    end
     return  """
+            $title
+
             <ol class="bibliography" style="counter-reset:bibitem $(length(list)+1)">
                 $list_html
             </ol>

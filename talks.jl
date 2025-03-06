@@ -66,6 +66,12 @@ function hfun_talks(params::Vector{String}=String[])
         #     """
     end
     s = "$s \n</ol>" # close old list
+    # add title
+    s = """
+    <h1>Talks / Posters ($(length(sorted_talks)))</h1>
+
+    $s
+    """
     return s
 end
 function format_talk(talk::Dict)

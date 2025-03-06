@@ -11,7 +11,7 @@
 ## Preprints
 {{bibliography online data/bibliography.yaml}}
 
-## Peer-reviewed articles
+<!-- ## Peer-reviewed articles -->
 {{bibliography article}}
 
 <!-- ## Book Chapter

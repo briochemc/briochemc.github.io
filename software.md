@@ -8,15 +8,15 @@
 
 <!-- @def title = "Software" -->
 
-## Citable software
+<!-- ## Citable software -->
 
 {{bibliography software data/bibliography.yaml}}
 
-## Software contributions
+<!-- ## Software contributions -->
 
 {{bibliography softwareowner data/bibliography.yaml}}
 
-## Minor software contributions
+<!-- ## Minor software contributions -->
 
 {{bibliography softwarecontribution data/bibliography.yaml}}
 
