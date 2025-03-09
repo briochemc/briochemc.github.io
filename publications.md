@@ -8,8 +8,6 @@
 
 <!-- @def title = "Publications" -->
 
-## Preprints
-{{bibliography online data/bibliography.yaml}}
 
 <!-- ## Peer-reviewed articles -->
 {{bibliography article}}
@@ -22,3 +20,6 @@
 
 ## Thesis
 {{bibliography thesis data/bibliography.yaml}}
+
+## Preprints
+{{bibliography online data/bibliography.yaml}}

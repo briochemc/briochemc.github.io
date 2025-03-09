@@ -1,18 +1,25 @@
 
 
+~~~
+<img src="/assets/frontphoto.png" style="width:100% !important; padding:0 !important">
+<br>
+~~~
+
 # About me
 
 <!-- @def title = "about" -->
 
 
 
-I am a scientist with mathematical training invested in studying the ocean and its response to climate change.
+I am a scientist with mathematical training invested in studying the ocean and its response to climate change, currently looking to take on a new project.
 
 
 
-My latest work, estimating the sequestration efficiency of the deep ocean using only climate-model archives, was funded by the [CarbonLock Future Science Platform](https://research.csiro.au/carbonlock/) of [CSIRO](https://www.csiro.au/) (Australia's National Science Agency), for which I worked as a Contract Researcher with [Dr. Richard Matear](https://people.csiro.au/M/R/Richard-Matear).
+## Latest positions
 
-I am also an Adjunct Fellow of the [School of Mathematics and Statistics](https://www.maths.unsw.edu.au/) of the [University of New South Wales (UNSW)](https://www.unsw.edu.au/) in Sydney, where I was a postdoctoral Research Associate with [Associate Professor Mark Holzer](https://web.maths.unsw.edu.au/~markholzer/) until 2024, working on the response of the global oxygen and carbon cycles to climate change.
+My latest work, estimating the sequestration efficiency of the deep ocean using only climate-model archives, was funded by the [CarbonLock Future Science Platform](https://research.csiro.au/carbonlock/) of [CSIRO](https://www.csiro.au/) (Australia's National Science Agency), for which I worked as a Contract Researcher with [Dr. Richard Matear](https://people.csiro.au/M/R/Richard-Matear) until March 2025.
+
+I am also an Adjunct Fellow of the [School of Mathematics and Statistics](https://www.maths.unsw.edu.au/) of the [University of New South Wales (UNSW)](https://www.unsw.edu.au/) in Sydney, where I was a postdoctoral Research Associate with [Associate Professor Mark Holzer](https://web.maths.unsw.edu.au/~markholzer/) until September 2024, working on the response of the global oxygen and carbon cycles to climate change.
 
 ~~~
 <img src="/assets/O2minjl_demo.svg" style="width:100% !important; padding:0 !important"><br>
