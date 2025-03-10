@@ -132,7 +132,7 @@ cond = false
 # COLORS2 = cgrad(:Troy, 10; categorical = true, rev = true)[[5, 4, 3, 2, 6, 1, 7, 8, 9, 10]]
 # COLORS2 = cgrad(:diverging_bkr_55_10_c35_n256, 10; categorical = true, rev = true)[[1, 2, 3, 4, 10, 5, 9, 8, 7, 6]]
 # COLORS2 = cgrad(:diverging_bky_60_10_c30_n256, 10; categorical = true, rev = true)[[1, 2, 3, 4, 10, 5, 9, 8, 7, 6]]
-COLORS2 = cgrad(:seaborn_icefire_gradient, 12; categorical = true, rev = true)[1 .+ [1, 2, 3, 4, 10, 5, 9, 8, 7, 6]]
+COLORS2 = cgrad(:seaborn_icefire_gradient, 12; categorical = true)[1 .+ [1, 2, 3, 4, 10, 5, 9, 8, 7, 6]]
 # COLORS2 = cgrad(:berlin, 12; categorical = true, rev = true)[1 .+ [1, 2, 3, 4, 10, 5, 9, 8, 7, 6]]
 # COLORS2 = cgrad(:Demuth, 10; categorical = true, rev = true)[[5, 4, 3, 2, 6, 1, 7, 8, 9, 10]]
 # COLORS2 = cgrad([:black; cgrad(:Ingres, 8; categorical = true)[:]; :black], categorical = true, rev = true)[[5, 4, 3, 2, 6, 1, 7, 8, 9, 10]]
