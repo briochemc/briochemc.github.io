@@ -1,7 +1,7 @@
 
 
 ~~~
-<img src="/assets/frontphoto.png" style="width:100% !important; padding:0 !important">
+<img src="/assets/frontphoto.jpeg" style="width:100% !important; padding:0 !important">
 <br>
 ~~~
 
