@@ -3,7 +3,7 @@ Pkg.activate()
 using CairoMakie
 using Dates
 
-fig = Figure(size = (810, 800))
+fig = Figure(size = (610, 800))
 
 years = 2001:5:year(Dates.now())
 
@@ -17,7 +17,7 @@ ax = Axis(fig[1, 1];
     xtickwidth = 0,
     ytickwidth = 0,
     # limits = (0.5, 12.5, first(years) - 0.5, year(Dates.now()) + 0.5),
-    limits = (1 - 8.3, 12 + 7, first(years) - 0.5, year(Dates.now()) + 0.5),
+    limits = (1 - 4.1, 12 + 4.2, first(years) - 0.5, year(Dates.now()) + 0.5),
     topspinevisible = false,
     rightspinevisible = false,
     bottomspinevisible = false,
@@ -59,16 +59,16 @@ COLORS = Dict(
 )
 
 jobs = [
-    (start = "Sep 2024", finish = "Feb 2025", job = "Contract Researcher", at = "CSIRO", isintern = false),
+    (start = "Sep 2024", finish = "Feb 2025", job = "Contract\nResearcher", at = "CSIRO", isintern = false),
     # (start = "Aug 2024", finish = "Present", job = "Adjunct Fellow", at = "UNSW", isintern = false),
-    (start = "Oct 2021", finish = "Aug 2024", job = "Research Associate", at = "UNSW", isintern = false),
-    (start = "Nov 2019", finish = "Oct 2021", job = "Postdoctoral Researcher", at = "USC", isintern = false),
-    (start = "Sep 2017", finish = "Sep 2019", job = "Postdoctoral Research Scholar", at = "UCI", isintern = false),
+    (start = "Oct 2021", finish = "Aug 2024", job = "Research\nAssociate", at = "UNSW", isintern = false),
+    (start = "Nov 2019", finish = "Oct 2021", job = "Postdoctoral\nResearcher", at = "USC", isintern = false),
+    (start = "Sep 2017", finish = "Sep 2019", job = "Postdoctoral\nResearch\nScholar", at = "UCI", isintern = false),
     (start = "Mar 2017", finish = "Aug 2017", job = "Casual Research Assistant", at = "UNSW", isintern = true),
     (start = "Jun 2016", finish = "Dec 2016", job = "Mathematics Tutor", at = "UNSW", isintern = true),
-    (start = "May 2011", finish = "Aug 2012", job = "Proposal Engineer", at = "Suez Water", isintern = false),
-    (start = "Jul 2008", finish = "Jun 2009", job = "Forex Trader Assistant", at = "Société Générale", isintern = true),
-    (start = "Apr 2007", finish = "Jul 2007", job = "Mathematics Research Intern", at = "École Polytechnique", isintern = true),
+    (start = "May 2011", finish = "Aug 2012", job = "Proposal\nEngineer", at = "Suez Water", isintern = false),
+    (start = "Jul 2008", finish = "Jun 2009", job = "Forex Trader Assistant", at = "Société\nGénérale", isintern = true),
+    (start = "Apr 2007", finish = "Jul 2007", job = "Mathematics Research Intern", at = "École\nPolytechnique", isintern = true),
     (start = "Sep 2004", finish = "Feb 2005", job = "IT Intern", at = "Bioforce", isintern = true),
     (start = "Jul 2006", finish = "Jul 2006", job = "Assembly Line Worker", at = "Mecaplast", isintern = true),
 # )
@@ -76,15 +76,16 @@ jobs = [
     (start = "Jan 2013", finish = "Sep 2017", job = "PhD", at = "UNSW", isintern = false),
     (start = "Jan 2010", finish = "Dec 2010", job = "MSc", at = "UNSW", isintern = false),
     # (start = "Sep 2007", finish = "Jun 2008", job = "MSc", at = "Dauphine + ENSAE", isintern = false),
-    (start = "Aug 2007", finish = "Jul 2009", job = "MSc", at = "Dauphine + ENSAE", isintern = false),
-    (start = "Aug 2004", finish = "Jul 2007", job = "MSc", at = "École Polytechnique", isintern = false),
-    (start = "Aug 2001", finish = "Jul 2004", job = "Preparatory Classes", at = "Lycée Masséna", isintern = false),
+    (start = "Aug 2007", finish = "Jul 2009", job = "MSc", at = "Dauphine\nENSAE", isintern = false),
+    (start = "Aug 2004", finish = "Jul 2007", job = "MSc", at = "École\nPolytechnique", isintern = false),
+    (start = "Aug 2001", finish = "Jul 2004", job = "Preparatory\nClasses", at = "Lycée\nMasséna", isintern = false),
 ]
 
-jobs = sort(jobs, by = x -> get_date(x.start))
 
 DATEFORMAT = dateformat"u y"
 get_date(mydate) = mydate == "Present" ? Dates.today() : Date(mydate, DATEFORMAT)
+
+jobs = sort(jobs, by = x -> get_date(x.start))
 
 colors = cgrad(:tableau_superfishel_stone, categorical = true)
 
@@ -150,7 +151,7 @@ for (ijob, job) in enumerate(jobs)
         # scatter!(ax, x, y; markeroptions..., marker, color)
         scatter!(ax, x, y; markeroptions..., marker, color)
         sep = maximum(y) - minimum(y) == 0 ? " " : "\n"
-        mybracket!(ax, cond, y, color, rich(rich("$(job.job)", font = :bold), "$(sep)$(job.at)"))
+        mybracket!(ax, cond, y, color, rich(rich(job.job, font = :bold), sep, rich(job.at)))
         cond = !cond
         colorcount += 1
     end
