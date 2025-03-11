@@ -34,7 +34,7 @@ Otherwise, if you are a visual person like me, below is a month-by-month summary
 <img src="/assets/timeline.svg" style="width:100% !important; padding:0 !important; border:0 !important; margin:0 !important"><br>
 <center><small>
 Summary visualisation of the past 25 years of my educational and professional life.<br>
-Produced with Makie.jl (code available <a href=https://github.com/briochemc/briochemc.github.io>on GitHub</a>).
+Made with Makie.jl (code available <a href=https://github.com/briochemc/briochemc.github.io>on GitHub</a>).
 </small></center>
 <br>
 ~~~
