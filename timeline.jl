@@ -67,7 +67,7 @@ jobs = [
     (start = "Mar 2017", finish = "Aug 2017", job = "Casual Research Assistant", at = "UNSW", isintern = true),
     (start = "Jun 2016", finish = "Dec 2016", job = "Mathematics Tutor", at = "UNSW", isintern = true),
     (start = "May 2011", finish = "Aug 2012", job = "Proposal\nEngineer", at = "Suez Water", isintern = false),
-    (start = "Jul 2008", finish = "Jun 2009", job = "Forex Trader Assistant", at = "Société\nGénérale", isintern = true),
+    (start = "Jul 2008", finish = "Jun 2009", job = "Trader Intern", at = "Société\nGénérale", isintern = false),
     (start = "Apr 2007", finish = "Jul 2007", job = "Mathematics Research Intern", at = "École\nPolytechnique", isintern = true),
     (start = "Sep 2004", finish = "Feb 2005", job = "IT Intern", at = "Bioforce", isintern = true),
     (start = "Jul 2006", finish = "Jul 2006", job = "Assembly Line Worker", at = "Mecaplast", isintern = true),
@@ -76,7 +76,7 @@ jobs = [
     (start = "Jan 2013", finish = "Sep 2017", job = "PhD", at = "UNSW", isintern = false),
     (start = "Jan 2010", finish = "Dec 2010", job = "MSc", at = "UNSW", isintern = false),
     # (start = "Sep 2007", finish = "Jun 2008", job = "MSc", at = "Dauphine + ENSAE", isintern = false),
-    (start = "Aug 2007", finish = "Jul 2009", job = "MSc", at = "Dauphine\nENSAE", isintern = false),
+    (start = "Aug 2007", finish = "Jul 2008", job = "MSc", at = "Dauphine\nENSAE", isintern = false),
     (start = "Aug 2004", finish = "Jul 2007", job = "MSc", at = "École\nPolytechnique", isintern = false),
     (start = "Aug 2001", finish = "Jul 2004", job = "Preparatory\nClasses", at = "Lycée\nMasséna", isintern = false),
 ]
@@ -120,6 +120,7 @@ function mybracket!(ax, cond, y, color, text)
 end
 
 cond = false
+Nlabels = sum(x -> !x.isintern, jobs)
 
 # for (iedu, edu) in enumerate(education)
 #     dates = get_date(edu.start):Month(1):get_date(edu.finish)
@@ -129,10 +130,11 @@ cond = false
 #     mybracket!(ax, cond, y, COLORS[edu.at], "$(edu.job)\n$(edu.at)")
 # end
 # You can tell I tried a few color palettes :) Ice fire it is!
+COLORS2 = cgrad(:seaborn_icefire_gradient, 15; categorical = true)[1 .+ [1, 2, 3, 13, 4, 12, 5, 11, 10, 9, 7]]
 # COLORS2 = cgrad(:Troy, 10; categorical = true, rev = true)[[5, 4, 3, 2, 6, 1, 7, 8, 9, 10]]
 # COLORS2 = cgrad(:diverging_bkr_55_10_c35_n256, 10; categorical = true, rev = true)[[1, 2, 3, 4, 10, 5, 9, 8, 7, 6]]
 # COLORS2 = cgrad(:diverging_bky_60_10_c30_n256, 10; categorical = true, rev = true)[[1, 2, 3, 4, 10, 5, 9, 8, 7, 6]]
-COLORS2 = cgrad(:seaborn_icefire_gradient, 12; categorical = true)[1 .+ [1, 2, 3, 4, 10, 5, 9, 8, 7, 6]]
+# COLORS2 = cgrad(:seaborn_icefire_gradient, 12; categorical = true)[1 .+ [1, 2, 3, 4, 10, 5, 9, 8, 7, 6]]
 # COLORS2 = cgrad(:berlin, 12; categorical = true, rev = true)[1 .+ [1, 2, 3, 4, 10, 5, 9, 8, 7, 6]]
 # COLORS2 = cgrad(:Demuth, 10; categorical = true, rev = true)[[5, 4, 3, 2, 6, 1, 7, 8, 9, 10]]
 # COLORS2 = cgrad([:black; cgrad(:Ingres, 8; categorical = true)[:]; :black], categorical = true, rev = true)[[5, 4, 3, 2, 6, 1, 7, 8, 9, 10]]
@@ -157,9 +159,9 @@ for (ijob, job) in enumerate(jobs)
     end
 end
 
-text!(ax, 6.5, 2025; text = "2025", align = (:center, :center))
-text!(ax, 6.5, 2001; text = "2001", align = (:center, :center))
-
+for year in (2001, 2025)
+    text!(ax, 6.5, year; text = "$year", align = (:center, :center))
+end
 
 save("_assets/timeline.svg", fig)
 fig
