@@ -11,7 +11,7 @@
 
 I am a scientist with mathematical training who is concerned about climate change and its impacts.
 In the last few years, I have spent time studying the ocean and its response to our warming climate.
-And today I am back on the job market, looking for my next project to use my skill and contribute to the fight against climate change.
+And today I am back on the job market, looking for my next project, where I hope my skills can provide useful contributions to the fight against climate change.
 
 Until recently I was a Contract Researcher for the [CarbonLock Future Science Platform](https://research.csiro.au/carbonlock/) of [CSIRO](https://www.csiro.au/) (Australia's National Science Agency), working on estimating the sequestration efficiency of the deep ocean using only climate-model archives (with [Dr. Richard Matear](https://people.csiro.au/M/R/Richard-Matear)).
 
