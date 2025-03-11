@@ -28,15 +28,31 @@ ax = Axis(fig[1, 1];
 hideydecorations!(ax)
 
 squarepoly = Makie.Polygon([Point2f(-0.5, -0.5), Point2f(-0.5, 0.5), Point2f(0.5, 0.5), Point2f(0.5, -0.5), Point2f(-0.5, -0.5)])
+r = 0.5
+# Round the corners
+squarepoly = BezierPath([
+    MoveTo(Point(0.5, 0.5 - r)),
+    EllipticalArc(Point(0.5 - r, 0.5 - r), r, r, 0, 0, π/2),
+    LineTo(Point(-0.5 + r, 0.5)),
+    EllipticalArc(Point(-0.5 + r, 0.5 - r), r, r, 0, π/2, π),
+    LineTo(Point(-0.5, -0.5 + r)),
+    EllipticalArc(Point(-0.5 + r, -0.5 + r), r, r, 0, π, 3π/2),
+    LineTo(Point(0.5 - r, -0.5)),
+    EllipticalArc(Point(0.5 - r, -0.5 + r), r, r, 0, 3π/2, 2π),
+    LineTo(Point(0.5, 0.5 - r)),
+    ClosePath()
+])
+
 # edupoly = Makie.Polygon([Point2f(-0.5, -0.5), Point2f(-0.5, 0.5), Point2f(0.5, -0.5), Point2f(-0.5, -0.5)])
 internpoly = Makie.Polygon([Point2f(-0.5, -0.5), Point2f(-0.5, 0.5), Point2f(0.5, -0.5), Point2f(-0.5, -0.5)])
 edupoly = squarepoly
 # jobpoly = Makie.Polygon([Point2f(0.5, 0.5), Point2f(-0.5, 0.5), Point2f(0.5, -0.5), Point2f(0.5, 0.5)])
 jobpoly = squarepoly
 
-markeroptions = (
+markersize = 0.8
+markeroptions = (;
     # marker = :rect,
-    markersize = 0.8,
+    markersize,
     # strokecolor = :darkgray,
     markerspace = :data,
     # strokewidth = 1,
@@ -109,11 +125,11 @@ scatter!(ax, lastmonth:12, fill(lastyear, 12 - lastmonth + 1); color = lastmonth
 function mybracket!(ax, cond, y, color, text)
     if cond
         x = 12.5
-        y1, y2 = last(y) + 0.4, first(y) - 0.4
+        y1, y2 = last(y) + markersize / 2, first(y) - markersize / 2
         align = (:left, :center)
     else
         x = 0.5
-        y1, y2 = first(y) - 0.4, last(y) + 0.4
+        y1, y2 = first(y) - markersize / 2, last(y) + markersize / 2
         align = (:right, :center)
     end
     bracket!(ax, x, y1, x, y2; offset = 5, width = 5, text, style = :square, color, rotation = 0, align, textcolor = color)
@@ -151,7 +167,7 @@ for (ijob, job) in enumerate(jobs)
         # color = COLORS2[ijob]
         marker = job.isintern ? internpoly : squarepoly
         # scatter!(ax, x, y; markeroptions..., marker, color)
-        scatter!(ax, x, y; markeroptions..., marker, color)
+        scatter!(ax, x, y; markeroptions..., marker, color, strokecolor = (4 * color + RGBAf(0,0,0,1)) / 5, strokewidth = 2)
         sep = maximum(y) - minimum(y) == 0 ? " " : "\n"
         mybracket!(ax, cond, y, color, rich(rich(job.job, font = :bold), sep, rich(job.at)))
         cond = !cond
