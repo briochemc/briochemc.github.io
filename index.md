@@ -13,7 +13,7 @@
 <!-- @def title = "about" -->
 
 I am a scientist with mathematical training and expertise in ocean biogeochemical modelling.
-After spending the last few years investigating the ocean and its response to global warming, I am currently seeking new opportunities and looking for my next project.
+After spending the last few years investigating the ocean and its response to [global warming](https://en.wikipedia.org/wiki/Climate_change), I am currently seeking new opportunities and looking for my next project.
 I hope to leverage my skills to contribute effectively to the fight against climate change.
 
 Until recently I was a Contract Researcher for the [CarbonLock Future Science Platform](https://research.csiro.au/carbonlock/) of [CSIRO](https://www.csiro.au/) (Australia's National Science Agency), working on estimating the sequestration efficiency of the deep ocean from climate-model archives (with [Dr. Richard Matear](https://people.csiro.au/M/R/Richard-Matear)).
