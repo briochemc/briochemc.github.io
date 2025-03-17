@@ -3,7 +3,7 @@
 
 ~~~
 <center>
-    <img src="/assets/oceanmathglasses3.jpeg" style="width:80% !important; padding:0 !important">
+    <img src="/assets/oceanmathglasses3.jpeg" title="The Ocean through the Lense of the Mathematician" style="width:80% !important; padding:0 !important">
 </center>
 <br>
 ~~~
@@ -21,7 +21,7 @@ Until recently I was a Contract Researcher for the [CarbonLock Future Science Pl
 I am also an Adjunct Fellow of the [School of Mathematics and Statistics](https://www.maths.unsw.edu.au/) of the [University of New South Wales (UNSW)](https://www.unsw.edu.au/) in Sydney, where I was a postdoctoral Research Associate until September 2024, working on the response of the global ocean's oxygen and carbon cycles to climate change (with [Associate Professor Mark Holzer](https://web.maths.unsw.edu.au/~markholzer/)).
 
 ~~~
-<img src="/assets/O2minjl_demo.svg" style="width:100% !important; padding:0 !important"><br>
+<img src="/assets/O2minjl_demo.svg" title="Current Location" style="width:100% !important; padding:0 !important"><br>
 <center><small>
 My current location, Sydney, overlaid on water-column minimum oxygen levels.<br>
 Modified from <a href=publications/#peer-reviewed_articles>Pasquier et al., JGR: Oceans, 2024</a>.
@@ -36,7 +36,7 @@ For details, see my likely up-to-date [CV in PDF format](pdfs/CV_benoit_pasquier
 For a visual summary, see the timeline below, which provides a month-by-month overview of my resume going back 25 years.
 
 ~~~
-<img src="/assets/timeline.svg" style="width:100% !important; padding:0 !important; border:0 !important; margin:0 !important"><br>
+<img src="/assets/timeline.svg" title="Visual Resume" style="width:100% !important; padding:0 !important; border:0 !important; margin:0 !important"><br>
 <center><small>
 Summary visualisation of the past 25 years of my educational and professional life.<br>
 Made with Makie.jl (code available <a href=https://github.com/briochemc/briochemc.github.io>on GitHub</a>).
