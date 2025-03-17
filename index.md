@@ -12,7 +12,7 @@
 
 <!-- @def title = "about" -->
 
-I am a scientist with mathematical training.
+I am a scientist with mathematical training and expertise in ocean biogeochemical modelling.
 After spending the last few years investigating the ocean and its response to global warming, I am currently seeking new opportunities and looking for my next project.
 I hope to leverage my skills to contribute effectively to the fight against climate change.
 
