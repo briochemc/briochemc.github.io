@@ -1,7 +1,10 @@
 
 
+
 ~~~
-<img src="/assets/frontphoto.jpeg" style="width:100% !important; padding:0 !important">
+<center>
+    <img src="/assets/oceanmathglasses3.jpeg" style="width:80% !important; padding:0 !important">
+</center>
 <br>
 ~~~
 
