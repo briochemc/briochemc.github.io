@@ -503,3 +503,24 @@
     name: AGU Fall Meeting
     place: Washington, DC, USA
   date: 2024-12-09
+
+
+
+- title: "The sequestration efficiency of the deep ocean: Fast computations using transport matrices built from ACCESS-ESM1.5 archives"
+  author:
+    - Benoît Pasquier
+    - Richard J. Matear
+    - Matthew A. Chamberlain
+    - Tilo Ziehn
+    - David K. Hutchinson
+    - François W. Primeau
+    - Yi Liu
+    - Ann Bardin
+  abstract: >
+    Neodymium (Nd) isotope ratios have emerged as a promising paleoceanographic proxy for deep ocean circulation; however, their utility relies on a clear understanding of what determines Nd isotope distributions in the ocean today. If inputs to the surface ocean dominate, then Nd isotope values in the ocean interior can be used to reconstruct water mass mixing in the past. If benthic sources dominate, then the isotopic composition of a water mass can be modified along its flow path, complicating the interpretation of past ocean reconstructions. We use a new tracer-enabled transport matrix model, the Global Neodymium Ocean Model (GNOM), to investigate the controls on the marine Nd cycle. Parameters that set Nd sources to the ocean and cycling within the ocean are not prescribed, but instead simultaneously optimized given realistic ranges based on experiments and observations. Due to its computational efficiency, we can use this model to explore a large range of parameter space and determine how each source influences observed isotope distributions. To test the robustness of the model, given the large number of free parameters, we run model optimizations systematically omitting sources from sediments, rivers, and dust. We also test the importance of sedimentary fluxes at different depths. We find that sediments, rivers, and dust are the most important sources of Nd to the ocean, but that shallow sediments contribute more than deep sediments.Thus, rather than a simple ‘top-down’ or ‘bottom-up’ view of sedimentary Nd cycling, we find that a variety of sources at various depths contribute to Nd cycling in the oceans.
+  key: COSIMA2025
+  pdf: /pdfs/COSIMA_2025.pdf
+  seminar:
+    name: COSIMA Working Group Meeting
+    place: Online
+  date: 2025-04-10
