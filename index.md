@@ -65,12 +65,11 @@ This impacts global food security.
 In my latest research, I have been looking at the sequestration efficiency of the deep ocean for storing the carbon that we must remove from the atmosphere to limit global warming.
 
 
-I firmly believe that scientists have a duty to make sure we understand our environment well enough to prepare for its abrupt change and prevent the worst outcomes.
-I commend my fellow sea-going oceanographers, who play a crucial role in this pursuit by providing us with an ever-growing set of observational data.
-As a mathematically inclined oceanographer, I am committed to contributing to that endeavour.
-I intend to put all my energy towards answering the critical science questions posed by our changing environment and towards educating the next generation of scientists that will eventually take over.
+Our duty as scientists is to make sure we understand our environment well enough to prepare for its abrupt change and prevent the worst outcomes.
+I commend my fellow sea-going oceanographers, who play a crucial role in this pursuit by providing us with an ever-growing set of critically important observational data.
+As a mathematically inclined oceanographer, I am committed to putting my skills and energy towards answering the profound science questions posed by our changing environment and towards educating the next generation of scientists that will eventually take over.
 Despite my work continuously exposing me to the grim outlook of climate change, I am regularly amazed by the scientific discoveries that we make and the positive outcomes that we can achieve.
-I remain scientifically fascinated by the complex interplay between the ocean, biology, and climate, and I look forward to making a difference by working alongside wonderful collaborators.
+I remain scientifically fascinated by the complex interplay between the ocean, biology, and climate, and I look forward to making a difference by working alongside inspiring collaborators.
 
 
 
