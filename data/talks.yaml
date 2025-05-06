@@ -245,7 +245,7 @@
   # howpublished = {talk},
   date: 2019-08-07
   key: UNSWCCRC2019
-  link: https://github.com/briochemc/AIBECS_demos/blob/master/presentations/CCRC_Seminar_20190807.ipynb
+  notebook: https://github.com/briochemc/AIBECS_demos/blob/master/presentations/CCRC_Seminar_20190807.ipynb
   abstract: >
     Running standard global marine biogeochemistry models comes with large computational costs and with a steep learning curve. The recently developed AWESOME OCIM (for A Working Environment for Simulating Ocean Movement and Elemental cycling in an Ocean Circulation Inverse Model) is an attractive alternative because it offers better user experience thanks to a MATLAB Graphical User Interface (GUI), and faster computations thanks to the OCIM's steady-state matrix formulation of the ocean circulation. Benoît will introduce and give a live demonstration of the AIBECS (for Algebraic Implicit Biogeochemical Elemental Cycling System), an open-source, user-friendly, fast, and modular Julia package, which aims to provide a solution to the limitations of the AWESOME OCIM. The AIBECS provides an Application Programming Interface (API) to generate global steady-state marine biogeochemistry models in just a few lines of code. Under the hood, the AIBECS comes with state-of-the-art nonlinear-system solvers, auto-differentiation algorithms, and was designed with parameter optimization/estimation and uncertainty analysis in mind. The AIBECS allows researchers to focus on the science rather than spending time reinventing the wheel for differentiating convoluted systems, for solving nonlinear problems, or for leveraging cryptic linear-algebra shortcuts. Because of its ease of use, the AIBECS is ideal for teaching and exploratory research. The AIBECS is also ideal for cutting-edge research owing to its open-source design, its modularity, its advanced algorithms, and its novel-diagnostic capabilities.
 
@@ -261,7 +261,7 @@
   # howpublished = {talk},
   date: 2019-08-07
   key: UNSWAMS2019
-  link: https://github.com/briochemc/F1_demos/blob/master/presentations/UNSW_AppliedSeminar_20190808.ipynb
+  notebook: https://github.com/briochemc/F1_demos/blob/master/presentations/UNSW_AppliedSeminar_20190808.ipynb
   abstract: >
     Introducing a Julia package to efficiently differentiate an objective function defined implicitly by the solution of a large PDE system.<br>
 
@@ -359,6 +359,7 @@
   date: 2021-07-28
   key: JuliaCon2021
   video: https://www.youtube.com/watch?v=UCIRrXz2ZS0
+  repo: https://github.com/JuliaOcean/MarineEcosystemsJuliaCon2021.jl
   abstract: >
     Life in the oceans is strongly connected to our climate. In this workshop, you will learn to use packages from the JuliaOcean and JuliaClimate organizations that provide a foundation for studying marine ecosystems across a wide range of scales. We will first run agent-based models to explore individual microbes and processes that drive species interactions. On the other end of the model hierarchy, we will simulate planetary-scale transports that control ocean biogeography and climate change.
 
@@ -401,6 +402,7 @@
   date: 2023-02-22
   key: UNSWORC2023
   pdf: /pdfs/ORC_UNSW_2023.pdf
+  keynote: /talks/ORC_UNSW_2023.key
 
 - title: Quantifying the Dominant Fluxes of the Modern Marine Neodymium Cycle through Model Optimization
   seminar:
@@ -450,6 +452,7 @@
   date: 2024-02-05
   key: AMOS2024
   pdf: /pdfs/AMOS_Canberra_2024.pdf
+  keynote: /talks/AMOS_Canberra_2024.key
   abstract: >
     Modeling the ocean's carbon and oxygen cycles accurately is challenging because of uncertainties in both biogeochemistry and ocean circulation. One solution to reduce the mismatch between observed and modelled biogeochemical tracer fields is biogeochemical parameter optimization. I will present recent work where we show that parameter optimization may compensate for biases of the embedding circulation model by altering the inner workings of the biological pump, with implications for estimating the future response of the ocean system to environmental change. To this end we embedded a mechanistic model of the ocean's coupled nutrient, carbon, and oxygen cycles into two circulation models: OCIM2, which is data-assimilated, and ACCESS-M, which is built from the ACCESS1.3 climate model. We find that parameter optimization reduces mismatch with tracer observations and reproduces the global biological pump strength and regenerated inventories for both circulations, but ACCESS-M export production optimizes to twice that of OCIM2 to compensate for ACCESS-M having lower sequestration efficiencies driven by less efficient particle transfer and shorter residence times. Idealized simulations forcing complete Southern Ocean nutrient utilization show that the response of the optimized system is strongly sensitive to the embedding circulation. In ACCESS-M, Southern Ocean nutrient and carbon trapping is partially short circuited by unrealistically deep mixed layers. For both circulations, intense Southern Ocean production deoxygenates Southern-Ocean-sourced deep waters, muting the imprint of circulation biases on oxygen. Our findings highlight that the biological pump's plumbing needs careful assessment to predict the biogeochemical response to ecological changes, even when optimally matching observations.
 
@@ -470,6 +473,7 @@
   date: 2024-02-20
   key: OSM2024
   pdf: /pdfs/OSM_NewOrleans_2024.pdf
+  keynote: /talks/OSM_NewOrleans_2024.key
   abstract: >
     What would be the state of the marine carbon and oxygen cycles if the ocean's physical and thermodynamic state was frozen in time? We answer this question by embedding a simple data-constrained model of the nutrient, carbon, and oxygen cycles in steady circulations that correspond to perpetual 2090s conditions as simulated for the RCP4.5 and RCP8.5 scenarios. Focusing on steady-state changes from preindustrial conditions allows us to capture the response of the system on all timescales, not just on the sub-centennial timescales of typical transient simulations. We find that biological production experiences only modest declines because the reduced nutrient supply by a more sluggish future circulation is counteracted by warming-stimulated growth. Organic-matter export declines by 15–25 % due to reductions in both biological production and export ratios, the latter driven by warming-accelerated shallow respiration and reduced subduction of dissolved organic matter. The future biological pump becomes stronger in the sense that it cycles a 30–70 % larger regenerated carbon inventory accumulated over dramatically longer sequestration times, while pump efficiency is reduced in the sense that preformed DIC is shunted away from biological utilization to outgassing. Near-surface paths of preformed DIC become more important in the future as weakened ventilation isolates the deep ocean. Thus, while regenerated DIC cycling becomes slower, preformed DIC cycling speeds up in the future for inventory changes of similar magnitude. Intense global deoxygenation (25–65 % less oxygen globally) is driven primarily by the circulation through (i) increased residence times and total oxygen utilization despite reduced respiration rates, underlining reexposure times as the key link between regenerated carbon and oxygen inventories, and (ii) the decrease of the fraction of the ocean interior that is ventilated from high latitudes, which partially shuts down the corresponding cold and oxygen-rich water supply to the deep ocean.
 
@@ -518,6 +522,7 @@
     - Ann Bardin
   key: COSIMA2025
   pdf: /pdfs/COSIMA_2025.pdf
+  keynote: /talks/COSIMA_2025.key
   seminar:
     name: COSIMA Working Group Meeting
     place: Online

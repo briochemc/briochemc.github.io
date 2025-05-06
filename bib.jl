@@ -419,22 +419,32 @@ function format_bibtex_entry(entry, key; list_style="number")
         s = """$s
                <li>
                    <button onclick="myFunction('$key-abstract')">Abstract</button>
-               </li>
+                </li>
             """
     end
     # pdf
+    # $(entry_to_list_icon(entry,"pdf"; iconstyle="fas fa-md", icon="fa-file-pdf"))
+    # $(entry_to_list_text(entry,"pdf"; text="paper.pdf"))
+    # $(entry_to_list_button(entry,"pdf"; text="PDF"))
     if haskey(entry, "pdf") && isfile(entry["pdf"][2:end])
         s = """$(s)
-               <li>
-                    $(entry_to_list_icon(entry,"pdf"; iconstyle="fas fa-md", icon="fa-download"))
-                </li>
+            <li>
+            $(entry_to_list_buttonicon(entry,"pdf"; iconstyle="fas fa-md", icon="fa-file", text="PDF"))
+            </li>
+            """
+    end
+    if haskey(entry, "supp") && isfile(entry["supp"][2:end])
+        s = """$(s)
+            <li>
+                $(entry_to_list_buttonicon(entry,"supp"; iconstyle="fas fa-md", icon="fa-file", text="Supp"))
+            </li>
             """
     end
     if haskey(entry, "github")
         s = """$(s)
-               <li>
-                    $(entry_to_list_icon(entry,"github"; iconstyle="fa-brands fa-md", icon="fa-github"))
-                </li>
+            <li>
+                $(entry_to_list_buttonicon(entry,"github"; iconstyle="fa-brands fa-md", icon="fa-github", text="Repository"))
+            </li>
             """
     end
     s = """$s

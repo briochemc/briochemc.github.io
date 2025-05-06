@@ -20,12 +20,33 @@ function entries_to_group(data,keys; classes=keys, group_class="group", iconstyl
               </span>
            """
 end
-function entry_to_list_icon(data, key; linkprefix="", iconstyle="fas", icon="", title=get(data,key,key))
+function entry_to_list_icon(data, key; linkprefix="", iconstyle="fas", icon="", title=get(data,key,key), text="")
     !haskey(data,key) && return ""
     htmlstring = """<a href="$(linkprefix)$(data[key])" title="$(title)" target="_blank">
-                        <i class="$iconstyle $icon" style="color:rgb(0,85,164)"
-                        ></i>
+                        <i class="$iconstyle $icon" style="color:rgb(0,85,164)">$text</i>
                     </a>
                 """
+    return htmlstring
+end
+function entry_to_list_text(data, key; linkprefix="", title=get(data,key,key), text="text")
+    !haskey(data,key) && return ""
+    htmlstring = """<a href="$(linkprefix)$(data[key])" title="$(title)" target="_blank">
+                        <span style="color:rgb(0,85,164)">$text</span>
+                    </a>
+                """
+    return htmlstring
+end
+function entry_to_list_button(data, key; linkprefix="", title=get(data,key,key), text="text")
+    !haskey(data,key) && return ""
+    htmlstring = """
+                 <button onclick="window.location.href='$(linkprefix)$(data[key])';">$text</button>
+                 """
+    return htmlstring
+end
+function entry_to_list_buttonicon(data, key; linkprefix="", iconstyle="fas", icon="", title=get(data,key,key), text="text")
+    !haskey(data,key) && return ""
+    htmlstring = """
+                 <button onclick="window.location.href='$(linkprefix)$(data[key])';"><i class="$iconstyle $icon" style="color:rgb(0,85,164)"></i> $text</button>
+                 """
     return htmlstring
 end
