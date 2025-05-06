@@ -15,8 +15,9 @@
         - François W. Primeau
         - Yi Liu
         - Ann Bardin
-    # doi:
+    doi: 10.22541/essoar.174646362.20144320/v1
     pdf: /pdfs/Pasquier_etal_GRL_submitted.pdf
+    supp: /pdfs/Pasquier_etal_GRL_SI_submitted.pdf
         # - /pdfs/Pasquier_Primeau_SISC_draft_supp.pdf
     # issn: ?
     journaltitle: Geophysical Research Letters
@@ -25,7 +26,7 @@
     title: "The sequestration efficiency of the deep ocean"
     biblatextype: online
     # volume: ?
-    year: submitted
+    year: under review
     expecteddate: 2025-06-01
 
 
@@ -808,6 +809,36 @@
 
 
 
+
+"Pardiso.jl":
+    title: "Pardiso.jl"
+    biblatextype: softwarecontribution
+    author:
+        - Kristoffer Carlsson
+        - Mikkel Paltorp
+        - Jürgen Fuhrmann
+        - William Sweeney
+        - Benoît Pasquier
+        - Pablo San-Jose
+        - Lea Kapelevich
+        - Viral B. Shah
+        - Patrick Belliveau
+        - Tony Kelman
+        - Knut Andreas Meyer
+        - Francesc Verdugo
+        - Till Ehrengruber
+    github: https://github.com/JuliaSparse/Pardiso.jl
+    journaltitle: "Calling the PARDISO library from Julia."
+
+"OceanGreensFunctionMethods.jl":
+    title: "OceanGreensFunctionMethods.jl"
+    biblatextype: softwarecontribution
+    author:
+        - G Jake Gebbie
+        - Thomas Haine
+        - Benoît Pasquier
+    github: https://github.com/ggebbie/OceanGreensFunctionMethods.jl
+    journaltitle: "Green's Function Methods for Tracer Timescales and Pathways in Ocean Models."
 
 "latexdiff":
     title: "latexdiff"

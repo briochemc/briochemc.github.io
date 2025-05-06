@@ -87,6 +87,7 @@ function format_talk(talk::Dict)
     end
     haskey(talk,"conference") && (ts = """$(ts)$(fomat_conference(conferences[talk["conference"]]))""")
     haskey(talk,"seminar") && (ts = """$(ts)$(fomat_seminar(talk["seminar"], talk["date"]))""")
+    haskey(talk,"doi") && (ts = """$ts$(fomat_doi(talk["doi"]))""")
     # note & with TODO
     info = """$(entry_to_html(talk,"note"))"""
     if haskey(talk,"with")
@@ -111,37 +112,67 @@ function format_talk(talk::Dict)
                 """
     end
     # pdf
+    # $(entry_to_list_icon(talk,"pdf"; iconstyle="fas fa-md", icon="fa-download"))
     if haskey(talk, "pdf") && isfile(talk["pdf"][2:end])
         ts = """$(ts)
-                <li>
-                    $(entry_to_list_icon(talk,"pdf"; iconstyle="fas fa-md", icon="fa-download"))
-                </li>
-            """
+             <li>
+                 $(entry_to_list_buttonicon(talk,"pdf"; iconstyle="fa-solid", icon="fa-file", text="PDF"))
+             </li>
+             """
     end
-    # pdf (slides)
+    # slides
+    if haskey(talk, "keynote") && isfile(talk["keynote"][2:end])
+        ts = """$(ts)
+             <li>
+                 $(entry_to_list_buttonicon(talk,"keynote"; iconstyle="fa-brands", icon="fa-apple", text="Keynote"))
+             </li>
+             """
+    end
+    # repo
+    if haskey(talk, "repo")
+        ts = """$(ts)
+             <li>
+                 $(entry_to_list_buttonicon(talk,"repo"; iconstyle="fa-brands fa-md", icon="fa-github", text="Repository"))
+             </li>
+             """
+    end
     ts = """$(ts)
                 <li>
                     $(entry_to_list_icon(talk,"slides"; iconstyle="fas fa-md", icon="fa-file-pdf"))
                 </li>
             """
     # video
-    ts = """$(ts)
-                <li>
-                    $(entry_to_list_icon(talk,"video"; iconstyle="fa-brands fa-md", icon="fa-youtube"))
-                </li>
-            """
+    if haskey(talk, "video")
+        ts = """$(ts)
+             <li>
+                 $(entry_to_list_buttonicon(talk,"video"; iconstyle="fa-brands fa-md", icon="fa-youtube", text="Video"))
+             </li>
+             """
+    end
+    # ts = """$(ts)
+    #             <li>
+    #                 $(entry_to_list_icon(talk,"video"; iconstyle="fa-brands fa-md", icon="fa-youtube"))
+    #             </li>
+    #         """
     # ref
+    if haskey(talk, "notebook")
+        ts = """$(ts)
+             <li>
+                 $(entry_to_list_buttonicon(talk,"notebook"; iconstyle="fa-brands fa-md", icon="fa-github", text="Notebook"))
+             </li>
+             """
+    end
     ts = """$(ts)
                 <li>
                     $(entry_to_list_icon(talk,"literature-reference"; linkprefix="/publications/#", iconstyle="fas fa-md", icon="fa-book"))
                 </li>
             """
     # link
-    ts = """$(ts)
-                <li>
-                    $(entry_to_list_icon(talk,"doi"; linkprefix="http://dx.doi.org/", iconstyle="ai ai-md", icon="ai-doi"))
-                </li>
-            """
+    # ts = """$(ts)
+    #             <li>
+    #                 $(entry_to_list_icon(talk,"doi"; linkprefix="http://dx.doi.org/", iconstyle="ai ai-md", icon="ai-doi"))
+    #             </li>
+    #         """
     ts = """$(ts)
                 <li>
                     $(entry_to_list_icon(talk,"link"; iconstyle="fas fa-md", icon="fa-link"))
@@ -241,6 +272,11 @@ function fomat_seminar(seminar::Dict, date::Date)
            $(entry_to_html(seminar,"name";link="url"))$(entry_to_html(seminar,"institute"))$(entry_to_html(seminar,"university"))$(format_duration(date))$(entry_to_html(seminar,"place"))
         """
     return s
+end
+function fomat_doi(doi)
+    """
+    doi: <a href="https://dx.doi.org/$doi">$doi</a>
+    """
 end
 function format_duration(s::Date, e::Date=s)
     d = ""
