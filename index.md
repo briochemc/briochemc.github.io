@@ -8,17 +8,20 @@
 <br>
 ~~~
 
+
+
 # About me
+
 
 <!-- @def title = "about" -->
 
-I am a scientist with mathematical training and expertise in ocean biogeochemical modelling.
-After spending the last few years investigating the ocean and its response to [global warming](https://en.wikipedia.org/wiki/Climate_change), I am currently seeking new opportunities and looking for my next project.
-I hope to leverage my skills to contribute effectively to the fight against climate change.
+I am a scientist with broad scientific training and expertise in ocean biogeochemical modelling.
+If I can, I will put my skills at the service of the fight against climate change.
+[Contact me](contact) if you have a project aligned with my profile!
 
-Until recently I was a Contract Researcher for the [CarbonLock Future Science Platform](https://research.csiro.au/carbonlock/) of [CSIRO](https://www.csiro.au/) (Australia's National Science Agency), working on estimating the sequestration efficiency of the deep ocean from climate-model archives (with [Dr. Richard Matear](https://people.csiro.au/M/R/Richard-Matear)).
-
-I am also an Adjunct Fellow of the [School of Mathematics and Statistics](https://www.maths.unsw.edu.au/) of the [University of New South Wales (UNSW)](https://www.unsw.edu.au/) in Sydney, where I was a postdoctoral Research Associate until September 2024, working on the response of the global ocean's oxygen and carbon cycles to climate change (with [Associate Professor Mark Holzer](https://web.maths.unsw.edu.au/~markholzer/)).
+As a Postdoctoral Research Associate at the [University of New South Wales (UNSW)](https://www.unsw.edu.au/) in Sydney, I built a marine biogeochemistry model and looked at the response of the ocean's carbon and oxygen cycles to global warming (with [Associate Professor Mark Holzer](https://web.maths.unsw.edu.au/~markholzer/)).
+More recently, as a Contract Researcher for the [CarbonLock Future Science Platform](https://research.csiro.au/carbonlock/) of [CSIRO](https://www.csiro.au/) (Australia's National Science Agency), I combined cutting edge transport-matrix methods to estimate the sequestration efficiency of the deep ocean from climate-model archives (with [Dr. Richard Matear](https://people.csiro.au/M/R/Richard-Matear)).
+See my [Publications](publications) for an up-to-date publication record.
 
 ~~~
 <img src="/assets/O2minjl_demo.svg" title="Current Location" style="width:100% !important; padding:0 !important"><br>
