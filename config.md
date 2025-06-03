@@ -28,3 +28,27 @@ Add here global latex commands to use throughout your pages.
 \newcommand{\R}{\mathbb R}
 \newcommand{\scal}[1]{\langle #1 \rangle}
 \newcommand{\note}[2]{@@note @@title ⚠ #1@@ @@content #2 @@ @@}
+
+\newcommand{\figenv}[3]{
+~~~
+<figure class="figure" style="text-align:center;">
+<img src="!#2" style="padding:0;#3"/>
+<figcaption style="text-align:left">#1</figcaption>
+</figure>
+~~~
+}
+
+\newcommand{\figenvwithcode}[4]{
+~~~
+<figure class="figure" style="text-align:center;">
+<img src="!#2" style="padding:0;#3"/>
+<figcaption class="figcaption" style="text-align:left">#1
+</figcaption>
+<hr style="margin-top:0.5em;margin-bottom:0.5em;height:3px;border-width:0;color:red;background-color:lightgray">
+<button class="collapsible">Code</button><div class="collapsiblecontent" style="text-align:left;">~~~ #4 ~~~</div>
+</figure>
+~~~
+}
+\newcommand{\collaps}[2]{
+~~~<button type="button" class="collapsible">~~~ #1 ~~~</button><div class="collapsiblecontent">~~~ #2 ~~~</div>~~~
+}

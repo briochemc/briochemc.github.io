@@ -15,7 +15,7 @@
 ================================================================== */
 
 html {
-  font-family: Helvetica, Arial, sans-serif;
+  font-family: Roboto, Helvetica, Arial, sans-serif;
   font-size: var(--normal);
   color: var(--text-color);
 }
@@ -61,7 +61,7 @@ html {
 
 .page-foot {
   font-size: 60%;
-  font-family: Arial, serif;
+  font-family: Roboto, Arial, serif;
   color: #a6a2a0;
   text-align: center;
   margin-top: 6em;
@@ -360,3 +360,55 @@ code {
 
 
 
+/* Style the button that is used to open and close the collapsible content */
+.collapsible {
+  /* float: right; */
+  /* background-color: #eee;
+  color: #444;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: inherit; */
+}
+
+hr {
+  /* display: block; */
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+  /* margin-left: auto;
+  margin-right: auto;
+  border-style: inset; */
+  height:10px;
+  border-width:0;
+  /* color:gray; */
+  color:red;
+  background-color:gray
+}
+
+/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+.active, .collapsible:hover {
+  /* background-color: #ccc; */
+}
+
+/* Style the collapsible content. Note: hidden by default */
+.collapsiblecontent {
+  /* padding: 0 18px; */
+  display: none;
+  overflow: hidden;
+  /* background-color: #f1f1f1; */
+}
+
+/* Style the caption */
+.figcaption {
+  /* padding: 0 18px; */
+  /* background-color: #f1f1f1; */
+}
+
+/* Style the figure */
+.figure {
+  padding: 1em;
+  background-color: #f5f6fa;
+}
