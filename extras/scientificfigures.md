@@ -1,5 +1,10 @@
 # Scientific figures
 
+Data visualization is key to communicating science well, and just like the process of writing can help understand, designing graphs and charts also helps.
+However, figures published in science, even in high-profile journals, are seldom without flaws.
+Below are some of my personal pet peeves about scientific figures, with solutions on how to fix them.
+
+\note{Note}{The figures below are made using the [Julia](https://julialang.org/) programming language and the [Makie.jl](https://docs.makie.org/stable/) plotting library. There is a button to display the code for creating each figure but beware! The code includes lots of little tweaks for style that you don't really need in general for making good scientific figures.}
 
 
 ## Legends are OK but annotations are better
@@ -8,7 +13,6 @@ Annotate your figures directly instead of using legends.
 Legends are OK, but back and forth between data and legend costs your reader time and energy.
 By annotating data with labels, your remove clutter and hold the hand of the reader.
 
-\note{Note}{The figures below are made using the [Julia](https://julialang.org/) programming language and the [Makie.jl](https://docs.makie.org/stable/) plotting library. There is a button to display the code for creating each figure but beware! The code includes lots of little tweaks for style that you don't really need in general for making good scientific figures.}
 
 Consider the example below:
 
@@ -134,3 +138,54 @@ rowgap!(f.layout, 40)
 save(joinpath(@OUTPUT, "scientificfigures2.svg"), f) # hide
 ```
 }
+
+## Avoid logscales with bars
+
+Bar plots are good to visualize and compare amounts, and logscales are good to compare large differences.
+But bars combined with a logarithmic scale generally make no sense.
+This is because the lengths of the bars is completely arbitrary, as it is controlled by the location of the bottom of the bars, which can be anywhere on the logarithmic scale (should it be 1? 10? 0.1?).
+
+\figenvwithcode{
+Enter caption here!
+}{/assets/extras/scientificfigures/code/output/scientificfigures3.svg}{width:100%}{
+```julia:./code/scientificfigures3
+using CairoMakie, MakieExtra
+# Some sinusoidal data
+data = [3210, 666, 42] * 1e6
+x = 1:length(data)
+# some options
+backgroundcolor = "#f5f6fa"
+options = (
+    titlealign = :left,
+    topspinevisible = false,
+    leftspinevisible = true,
+    rightspinevisible = false,
+    bottomspinevisible = true,
+    yminorticksvisible = true,
+    xticks = (x, string.(range('A', length=length(data)))),
+    ytickformat = EngTicks(),
+)
+logoptions = (
+    yscale = log10,
+    yminorticks = BaseMulTicks(1:9),
+)
+# start figure
+f = Figure(; size = (500, 200), fontsize = 18, backgroundcolor)
+# left panel
+ax = Axis(f[1,1]; options..., logoptions..., title = "No tgood", yticks = BaseMulTicks([1]))
+barplot!(ax, x, data; color = :gray)
+ylims!(ax, 21e6, nothing)
+# middle panel
+ax = Axis(f[1,2]; options..., logoptions..., title = "No good", yticks = BaseMulTicks([1], base = 1e3))
+barplot!(ax, x, data; color = :gray, fillto = 1)
+ylims!(ax, 1, nothing)
+# hidedecorations!(ax)
+# right panel
+ax = Axis(f[1,3]; options..., title = "Better")
+barplot!(ax, x, data; color = :gray)
+ylims!(ax, 0, nothing)
+# hideydecorations!(ax)
+save(joinpath(@OUTPUT, "scientificfigures3.svg"), f) # hide
+```
+}
+
