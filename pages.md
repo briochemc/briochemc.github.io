@@ -1,1 +1,0 @@
-- [Legends](/pages/legends)
