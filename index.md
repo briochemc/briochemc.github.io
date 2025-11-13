@@ -16,8 +16,9 @@
 
 I am a scientist with broad scientific training and expertise in modelling biogeochemical tracers in the ocean.
 As a postdoc during the past few years, I have worked on the ocean's nutrients, carbon, and oxygen cycles, and on their response to climate change.
-Today I am looking for a new project and want to put my skills at the service of the fight against climate change.
-So [contact me](contact) if you have a project aligned with my profile!
+<!-- Today I am looking for a new project and want to put my skills at the service of the fight against climate change.
+So [contact me](contact) if you have a project aligned with my profile! -->
+
 
 I spent most of my time thinking about the fascinating mechanisms that drive the cycles of carbon, nutrients, and oxygen in the global ocean.
 To improve our understanding, I built numerical models of tracers in the ocean.
@@ -40,6 +41,7 @@ This is why I want to contribute to the fight against global warming and its adv
 In my latest research, I have been taking a closer look at the response of these tracers to climate change.
 As a Postdoctoral Research Associate at the [University of New South Wales (UNSW)](https://www.unsw.edu.au/) in Sydney, I built a marine biogeochemistry model and looked at the response of the ocean's carbon and oxygen cycles to global warming (with [Associate Professor Mark Holzer](https://web.maths.unsw.edu.au/~markholzer/)).
 More recently, as a Contract Researcher for the [CarbonLock Future Science Platform](https://research.csiro.au/carbonlock/) of [CSIRO](https://www.csiro.au/) (Australia's National Science Agency), I combined cutting edge transport-matrix methods to estimate the sequestration efficiency of the deep ocean and its response to climate change from climate-model archives (with [Dr. Richard Matear](https://people.csiro.au/M/R/Richard-Matear)).
+As a Research Associate at the Climate Change Research Centre (CCRC) with of UNSW, I am currently exploring the application of transport-matrix methods to different climate and ocean models (with [Associate Professor Laurie Menviel]()).
 See my [Publications](publications) for an up-to-date publication record.
 
 <!-- ~~~

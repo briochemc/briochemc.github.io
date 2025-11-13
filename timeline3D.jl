@@ -7,56 +7,26 @@ fig = Figure(size = (610, 800))
 
 years = 2001:5:2026
 
-ax = Axis(fig[1, 1];
-    xticks = (1:12, string.(first.(Dates.monthname.(1:12)))),
-    yticks = (years, string.(years)),
+ax = Axis3(fig[1, 1];
+    # xticks = (1:12, string.(first.(Dates.monthname.(1:12)))),
+    # yticks = (years, string.(years)),
     # yticks = [],
-    aspect = DataAspect(),
+    aspect = (1, 1, 4),
     xgridvisible = false,
     ygridvisible = false,
     xtickwidth = 0,
     ytickwidth = 0,
     # limits = (0.5, 12.5, first(years) - 0.5, year(Dates.now()) + 0.5),
-    limits = (1 - 4.5, 12 + 4.5, first(years) - 0.5, last(years) + 0.5),
-    topspinevisible = false,
-    rightspinevisible = false,
-    bottomspinevisible = false,
-    leftspinevisible = false,
-    xaxisposition = :top,
+    # limits = (1 - 4.5, 12 + 4.5, first(years) - 0.5, last(years) + 0.5),
+    front_spines = true,
+    # xspinesvisible = false,
+    # yspinesvisible = false,
+    # zspinevisible = false,
     # backgroundcolor = :pink,
 )
 hideydecorations!(ax)
-
-squarepoly = Makie.Polygon([Point2f(-0.5, -0.5), Point2f(-0.5, 0.5), Point2f(0.5, 0.5), Point2f(0.5, -0.5), Point2f(-0.5, -0.5)])
-r = 0.5
-# Round the corners
-squarepoly = BezierPath([
-    MoveTo(Point(0.5, 0.5 - r)),
-    EllipticalArc(Point(0.5 - r, 0.5 - r), r, r, 0, 0, π/2),
-    LineTo(Point(-0.5 + r, 0.5)),
-    EllipticalArc(Point(-0.5 + r, 0.5 - r), r, r, 0, π/2, π),
-    LineTo(Point(-0.5, -0.5 + r)),
-    EllipticalArc(Point(-0.5 + r, -0.5 + r), r, r, 0, π, 3π/2),
-    LineTo(Point(0.5 - r, -0.5)),
-    EllipticalArc(Point(0.5 - r, -0.5 + r), r, r, 0, 3π/2, 2π),
-    LineTo(Point(0.5, 0.5 - r)),
-    ClosePath()
-])
-
-# edupoly = Makie.Polygon([Point2f(-0.5, -0.5), Point2f(-0.5, 0.5), Point2f(0.5, -0.5), Point2f(-0.5, -0.5)])
-internpoly = Makie.Polygon([Point2f(-0.5, -0.5), Point2f(-0.5, 0.5), Point2f(0.5, -0.5), Point2f(-0.5, -0.5)])
-edupoly = squarepoly
-# jobpoly = Makie.Polygon([Point2f(0.5, 0.5), Point2f(-0.5, 0.5), Point2f(0.5, -0.5), Point2f(0.5, 0.5)])
-jobpoly = squarepoly
-
-markersize = 0.8
-markeroptions = (;
-    # marker = :rect,
-    markersize,
-    # strokecolor = :darkgray,
-    markerspace = :data,
-    # strokewidth = 1,
-)
+hidexdecorations!(ax)
+hidezdecorations!(ax)
 
 COLORS = Dict(
     "CSIRO" => "#4BA6CA",
@@ -114,13 +84,13 @@ x = month.(dates)
 y = year.(dates)
 bgcolor = "#f0f0f0"
 bgcolor = :lightgray
-scatter!(ax, x, y; markeroptions..., marker = squarepoly, color = bgcolor)
-firstmonth = month(firstdate)
-firstyear = year(firstdate)
-scatter!(ax, 1:firstmonth, fill(firstyear, firstmonth); color = 1:firstmonth, markeroptions..., marker = squarepoly, colormap = cgrad([:white, bgcolor]))
-lastmonth = month(lastdate)
-lastyear = year(lastdate)
-scatter!(ax, lastmonth:12, fill(lastyear, 12 - lastmonth + 1); color = lastmonth:12, markeroptions..., marker = squarepoly, colormap = cgrad([bgcolor, :white]))
+# scatter!(ax, x, y; markeroptions..., marker = squarepoly, color = bgcolor)
+# firstmonth = month(firstdate)
+# firstyear = year(firstdate)
+# scatter!(ax, 1:firstmonth, fill(firstyear, firstmonth); color = 1:firstmonth, markeroptions..., marker = squarepoly, colormap = cgrad([:white, bgcolor]))
+# lastmonth = month(lastdate)
+# lastyear = year(lastdate)
+# scatter!(ax, lastmonth:12, fill(lastyear, 12 - lastmonth + 1); color = lastmonth:12, markeroptions..., marker = squarepoly, colormap = cgrad([bgcolor, :white]))
 # scatter!(ax, month(first(dates)), year(first(dates)); markeroptions..., marker = jobpoly, color = :lightgray)
 
 function mybracket!(ax, cond, y, color, text)
@@ -160,28 +130,35 @@ colorcount = 1
 for (ijob, job) in enumerate(jobs)
     global colorcount, cond
     dates = get_date(job.start):Month(1):get_date(job.finish)
-    x = month.(dates)
+    m = month.(dates)
     y = year.(dates)
+
+    t = @. y + m / 12 - 2000
+    t2 = range(first(t), stop = last(t), step = 0.01)
 
     if !job.isintern
         # color = COLORS[job.at]
         color = COLORS2[colorcount]
         # color = COLORS2[ijob]
-        marker = job.isintern ? internpoly : squarepoly
+        # marker = job.isintern ? internpoly : squarepoly
         # scatter!(ax, x, y; markeroptions..., marker, color)
-        scatter!(ax, x, y; markeroptions..., marker, color, strokecolor = (4 * color + RGBAf(0,0,0,1)) / 5, strokewidth = 2)
-        sep = maximum(y) - minimum(y) == 0 ? " " : "\n"
-        mybracket!(ax, cond, y, color, rich(rich(job.job, font = :bold), sep, rich(job.at)))
+        # scatter!(ax, x, y; markeroptions..., marker, color, strokecolor = (4 * color + RGBAf(0,0,0,1)) / 5, strokewidth = 2)
+        # lines!(ax, cos.(2π * m / 12), sin.(2π * m / 12), t; color, strokecolor = (4 * color + RGBAf(0,0,0,1)) / 5, strokewidth = 2)
+        # lines!(ax, cos.(2π * t2), sin.(2π * t2), t2; color, linewidth = 20, linecap = :round, transparency = true, alpha = 0.7)
+        lines!(ax, cos.(2π * t2), sin.(2π * t2), t2; color, linewidth = 20, linecap = :round)
+        # sep = maximum(y) - minimum(y) == 0 ? " " : "\n"
+        # mybracket!(ax, cond, y, color, rich(rich(job.job, font = :bold), sep, rich(job.at)))
         cond = !cond
         colorcount += 1
     end
+    colorcount == 2 && continue
 end
 
 # for year in (2001, 2025)
 #     text!(ax, 6.5, year; text = "$year", align = (:center, :center))
 # end
-text!(ax, 0.5, 2001; text = "2001", align = (:left, :center))
-text!(ax, 12.5, 2026; text = "2026", align = (:right, :center))
+# text!(ax, 0.5, 2001; text = "2001", align = (:left, :center))
+# text!(ax, 12.5, 2026; text = "2026", align = (:right, :center))
 
-save("_assets/timeline.svg", fig)
+save("_assets/timeline3D.svg", fig)
 fig
