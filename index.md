@@ -2,10 +2,14 @@
 
 
 ~~~
-<center>
-    <img src="/assets/oceanmathglasses3.jpeg" title="The Ocean through the Lense of the Mathematician" style="width:80% !important; padding:0 !important">
-</center>
-<br>
+<figure class="talk-hero">
+  <img src="/assets/ACCESS_2025_talk_photo.jpg"
+       alt="Benoît Pasquier presenting at the ACCESS Community Workshop 2025">
+  <figcaption>
+    ACCESS Community Workshop 2025
+    <span class="credit">Credit: Harshula Jayasuriya (ACCESS-NRI)</span>
+  </figcaption>
+</figure>
 ~~~
 
 

@@ -1,5 +1,11 @@
 
 
+~~~
+<figure class="page-hero">
+  <img src="/assets/software.png" alt="Network of connected components and modules">
+</figure>
+~~~
+
 # Software
 
 ~~~

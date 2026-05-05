@@ -43,6 +43,55 @@ html {
   border-radius: 10px;
 }
 
+/* Hero photo at the top of the Talks/Posters page */
+.franklin-content .talk-hero {
+  margin: 0 auto 2.5em;
+  padding: 0;
+  width: 80%;
+  text-align: center;
+}
+
+.franklin-content .talk-hero img {
+  display: block;
+  width: 100%;
+  height: auto;
+  padding: 0;
+  margin: 0;
+  border-radius: 14px;
+}
+
+.franklin-content .talk-hero figcaption {
+  margin-top: 0.75em;
+  font-size: 0.85em;
+  line-height: 1.45;
+  color: #6b7280;
+  text-align: center;
+  letter-spacing: 0.01em;
+}
+
+.franklin-content .talk-hero figcaption .credit {
+  display: block;
+  color: #9ca3af;
+  font-style: italic;
+}
+
+/* Generic page hero (e.g., Publications, Software) */
+.franklin-content .page-hero {
+  margin: 0 auto 2em;
+  padding: 0;
+  width: 80%;
+}
+
+.franklin-content .page-hero img {
+  display: block;
+  width: 100%;
+  height: auto;
+  padding: 0;
+  margin: 0;
+  border-radius: 14px;
+}
+
+
 .franklin-content .footnote {
   position: relative;
   top: -0.5em;
@@ -121,15 +170,11 @@ h6 {
 }
 
 .franklin-content h1 {
-  padding-bottom: 0.5em;
-  border-bottom: 5px solid lightgrey;
   margin-top: 1.5em;
   margin-bottom: 1em;
 }
 
 .franklin-content h2 {
-  padding-bottom: 0.3em;
-  border-bottom: 1px solid lightgrey;
   margin-top: 2em;
   margin-bottom: 1em;
 }

@@ -1,4 +1,10 @@
 
+~~~
+<figure class="page-hero">
+  <img src="/assets/publications.png" alt="Stacks of papers and figures">
+</figure>
+~~~
+
 # Publications
 
 ~~~

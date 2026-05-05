@@ -118,7 +118,7 @@ code {
   line-height: 1.4;
   padding: 0.2em 0.15em;
   font-weight: 400;
-  background-color: #f5f6fa;
+  background-color: #f7fcfb;
   border: 1px solid #eeebee;
   border-radius: 4px;
 }
@@ -166,7 +166,7 @@ SIDE BAR
   z-index: 100;
   display: flex;
   flex-wrap: wrap;
-  background-color: #f5f6fa;
+  background-color: #f7fcfb;
 }
 
 .side-bar .header {
@@ -343,7 +343,6 @@ input[type=checkbox]:checked ~ #side-menu { display: block; }
     z-index: 101;
     height: 60px;
     max-height: 60px;
-    border-bottom: 1px solid #eeebee;
     padding-right: 2rem;
     padding-left: 2rem;
   }
@@ -424,7 +423,7 @@ MAIN CONTENT
   /* padding-top:1rem; */
 
   /* padding-bottom:1rem; */
-  background-color: #f5f6fa;
+  background-color: #f7fcfb;
   height: 60px;
   line-height: 60px;
 }
