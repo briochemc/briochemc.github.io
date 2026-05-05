@@ -1,13 +1,14 @@
 using YAML, Dates
-# bibliography = YAML.load_file("data/bibliography.yaml")
-
-# Below is WIP to try and parse the bibiolgraphy entries directly from a bib file.
-# The idea is to write them into dictionaries, to match what YAML does.
+using OrderedCollections: OrderedDict
 using Bibliography
-using BibInternal # not sure I need these
-using BibParser # not sure I need these
+using BibInternal
+using BibParser
 using Bibliography: names_to_strings, name_to_string
-bibliography = import_bibtex("data/mypapers2.bib")
+
+# articles.bib is auto-generated from Zotero. Its keys match PDF filenames
+# (e.g. Pasquier_Holzer_JGRO_2016 → pdfs/Pasquier_Holzer_JGRO_2016.pdf) and
+# every entry includes an abstract.
+bibliography = import_bibtex("data/articles.bib")
 
 
 
@@ -113,7 +114,13 @@ NAMES = Dict(
     "Kelman" => "Tony Kelman",
     "Viral" => "Viral B. Shah",
     "Bhattacharya" => "Jishnu Bhattacharya",
+    "Ziehn" => "Tilo Ziehn",
+    "Hutchinson" => "David K. Hutchinson",
+    "Liu" => "Yi Liu",
+    "Bardin" => "Ann Bardin",
+    "Wise" => "Paige M. Wise",
 )
+
 function bibentry2dict2(bibentry, NAMES)
     d = Dict()
     # for names I use BibInternal.names_to_strings
@@ -133,9 +140,16 @@ function bibentry2dict2(bibentry, NAMES)
     # addbibentrysubfieldtodict!(d, bibentry, :date, :month)
     # addbibentrysubfieldtodict!(d, bibentry, :date, :day)
     addbibentrysubfieldtodict!(d, bibentry, :in, :journal, "journaltitle")
-    # hasproperty(bibentry, :eprint) && (d["eprint"] = bibentry.eprint)
-    addbibentrysubfieldstodict!(d, bibentry, :fields)
-    # Add PDF if it exists
+    # Pull arbitrary BibLaTeX fields (`journaltitle`, `sortyear`, `keywords`, ...)
+    # from bibentry.fields. This is a Dict, so we iterate keys directly —
+    # propertynames(::Dict) would return struct internals, not entries.
+    if hasproperty(bibentry, :fields)
+        for (k, v) in bibentry.fields
+            isempty(v) && continue
+            haskey(d, k) && continue
+            d[k] = v
+        end
+    end
     isfile("pdfs/$(d["id"]).pdf") && (d["pdf"] = "/pdfs/$(d["id"]).pdf")
     return d
 end
@@ -290,26 +304,22 @@ end
     {{library types file}}
 
 print a library restricted to the comma separated list of types, from the optional library
-`file`, which defaults to using the preloaded `data/bibliography.yaml`.
+`file`, which defaults to using the preloaded `data/mypapers.bib`.
 
 If no types are given all will be printed
 
 """
 function hfun_bibliography(params)
     types = (length(params)>0) ? lowercase.(strip.(split(params[1],","))) : ["all",]
-    library = (length(params)>1) ? YAML.load_file(params[2]) : bibliography
+    library = (length(params)>1) ? YAML.load_file(params[2]; dicttype=OrderedDict{String,Any}) : bibliography
     # pretty_print2(library)
     reduced_library = filter( x-> (x[2]["biblatextype"] ∈ types) || ("all" ∈ types), library)
     list_html = "";
-    # if length(params) > 2
-    #     title = params[3]
-    #     if length(reduced_library) > 0
-    #         list_html = """$(list_html)
-    #                     <h2>$title</h2>
-    #                 """
-    #     end
-    # end
-    list = sort(collect(reduced_library), lt=isless_bibtex, by=x->x[2])
+    # Articles sort by date (newest first); software entries have no date so we
+    # keep the file order from data/bibliography.yaml.
+    is_software = all(t -> startswith(t, "software"), types)
+    list = is_software ? collect(reduced_library) :
+                         sort(collect(reduced_library), lt=isless_bibtex, by=x->x[2])
     for entry ∈ list
         list_html = """$(list_html)
                         $(format_bibtex_entry(entry[2],entry[1]))
@@ -317,12 +327,10 @@ function hfun_bibliography(params)
     end
     title = if types == ["article"]
         "<h2>Peer-reviewed articles ($(length(reduced_library)))</h2>"
-    elseif types == ["software"]
-        "<h2>Citable software ($(length(reduced_library)))</h2>"
     elseif types == ["softwareowner"]
-        "<h2>Software contributions ($(length(reduced_library)))</h2>"
-    elseif types == ["softwarecontribution"]
-        "<h2>Minor software contributions ($(length(reduced_library)))</h2>"
+        "<h2>Software I own ($(length(reduced_library)))</h2>"
+    elseif types == ["softwarecontributor"]
+        "<h2>Software I contributed to ($(length(reduced_library)))</h2>"
     else
         ""
     end

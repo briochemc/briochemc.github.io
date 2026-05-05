@@ -1,11 +1,29 @@
+"Wise_etal_GRL_2026":
+    abstract: >
+        Neodymium (Nd) isotopes ratios are regarded as a key proxy for past ocean circulation despite unsettled debate on marine Nd cycle controls, which opposes a “top-down” hypothesis (surface sources dominate) and a “bottom-up” hypothesis (sedimentary sources dominate), each with important implications for Nd isotope proxy interpretation. We suggest a new, basin-specific framework for interpreting Nd isotope records. Specifically, while Nd isotope records are reliable water-mass-mixing proxies in the Atlantic, they are likely better used as proxies of residence time in the Pacific. Here, we test these hypotheses using a computationally efficient, data-constrained model of the marine Nd cycle. Our results show Atlantic Nd isotopes are dominated by surface sources, while Pacific Nd isotope ratios are strongly influenced by sedimentary sources. We find that shallow, reactive sediments—especially those with extremely radiogenic or unradiogenic isotopic compositions—are crucial to reproduce observed εNd profiles in the Pacific.
+    author:
+        - Paige M. Wise
+        - Benoît Pasquier
+        - Seth G. John
+        - Sophia K. V. Hines
+    doi: 10.1029/2025GL117334
+    pdf: /pdfs/Wise_etal_GRL_2026.pdf
+    journaltitle: Geophysical Research Letters
+    title: "Differing Controls on the Cycling of Neodymium in the Atlantic and the Pacific"
+    year: 2026
+    volume: 53
+    number: 6
+    pages: e2025GL117334
+    issn: 1944-8007
+    biblatextype: article
+
+
+
+
+
 "Pasquier_etal_GRL_2025":
     abstract: >
-        Ocean sediments may provide adequate long-term storage for carbon dioxide removal (CDR), with the abyssal ocean providing extra sequestration.
-        The transit of carbon from seafloor release to ocean surface can take up to millennia, as it occurs through many pathways characterized by long-tailed transit-time distributions (TTDs).
-        Here, we introduce an idealized methodological framework for efficiently computing these TTDs from climate-model archives.
-        We apply this framework to one Earth System Model and estimate the deep ocean sequestration efficiency for the 2030s and 2090s ocean circulations.
-        We find the highest sequestration efficiencies on abyssal plains isolated from the deep branches of the conveyor belt, such as the North Pacific Basins, where less than 10 % of water makes contact with the surface after 1000 years.
-        The climate-warming induced slowdown of the 2090s deep ocean circulation extends return times by about 30 %, which exceeds internal variability (~ 20 %) estimated from the ensemble of simulations.
+        The abyssal ocean may provide adequate sequestration for Carbon Capture and Storage and Carbon Dioxide Removal. The transit of carbon from seafloor release to ocean surface can take millennia, as it occurs through many water pathways characterized by long-tailed transit-time distributions (TTDs). However, multi-millennial simulations of TTDs are typically prohibitively expensive. Here, we introduce an idealized but computationally efficient methodological framework for computing TTDs offline from climate-model archives. We applied this framework to one Earth System Model to estimate the deep ocean sequestration efficiency for the 2030s and 2090s ocean circulations. We found that sequestration is most efficient on abyssal plains isolated from deep branches of the conveyor belt, such as the North Pacific Basins, where less than 10% of the water reaches the surface after 1,000 years. The climate-warming-induced slowdown of the 2090s deep-ocean circulation extends return times by about 30%, which exceeds internal climate variability (~20%).
     author:
         - Benoît Pasquier
         - Richard J. Matear
@@ -15,19 +33,18 @@
         - François W. Primeau
         - Yi Liu
         - Ann Bardin
-    doi: 10.22541/essoar.174646362.20144320/v1
-    pdf: /pdfs/Pasquier_etal_GRL_submitted.pdf
-    supp: /pdfs/Pasquier_etal_GRL_SI_submitted.pdf
+    doi: 10.1029/2025GL116799
+    pdf: /pdfs/Pasquier_etal_GRL_2025.pdf
+    supp: /pdfs/Pasquier_etal_GRL_2025_SI.pdf
         # - /pdfs/Pasquier_Primeau_SISC_draft_supp.pdf
-    # issn: ?
+    issn: 1944-8007
     journaltitle: Geophysical Research Letters
-    # number: ?
-    # pages: ?
-    title: "The sequestration efficiency of the deep ocean"
-    biblatextype: online
-    # volume: ?
-    year: under review
-    expecteddate: 2025-06-01
+    number: 18
+    pages: e2025GL116799
+    title: "The Sequestration Efficiency of the Deep Ocean"
+    biblatextype: article
+    volume: 52
+    year: 2025
 
 
 "John_etal_GBC_2024":
@@ -54,7 +71,7 @@
         - Mark Holzer
         - Sam Silva
     doi: 10.1029/2023GB008018
-    pdf: /pdfs/John_etal_NatureGeoscience_2024.pdf
+    pdf: /pdfs/John_etal_GBC_2024.pdf
     issn: 1944-9224
     # image: ?
     journaltitle: "Global Biogeochemical Cycles"
@@ -67,38 +84,6 @@
     expecteddate: 2024-05-13
 
 
-
-# "Pasquier_etal_JGRO_2024":
-#     abstract: >
-#         Ocean deoxygenation is an important consequence of climate change that poses an imminent threat to marine life and global food security.
-#         However, our understanding of the complex interactions between changes in circulation, solubility, and respiration that drive global-scale deoxygenation is incomplete.
-#         Here, we consider idealized biogeochemical steady states in equilibrium with perpetually slower and warmer oceans constructed from climate-model simulations of the 2090s that we hold constant in time.
-#         In contrast to simulations of the end-of-century transient state, our idealized states are intensely deoxygenated in the abyss, consistent with perpetually reduced ventilation and throttled Antarctic Bottom Water formation.
-#         We disentangle the effects of the deoxygenation drivers on preformed oxygen and true oxygen utilization (TOU) using the novel concept of upstream exposure time, which precisely connects TOU to oxygen utilization rates and preformed oxygen to ventilation.
-#         For our idealized steady states, deoxygenation below 2000\,m depth is due to increased TOU, driven dominantly by slower circulations that allow respiration to act roughly 2--3 times longer thereby overwhelming the effects of reduced respiration rates.
-#         Above 500\,m depth, decreased respiration and slower circulation closely compensate, resulting in little expansion of upper-ocean hypoxia.
-#         The bulk of preformed oxygen loss is driven by ventilation shifting equatorward to where warmer surface waters hold less oxygen.
-#         Warming-driven declines in solubility account for less than 10 % of the total oxygen loss.
-#         Although idealized, our analysis suggests that long-term changes in the marine oxygen cycle could be driven dominantly by changes in circulation rather than by thermodynamics or biology.
-#     author:
-#         - Benoît Pasquier
-#         - Mark Holzer
-#         - Matthew A. Chamberlain
-#         - Richard J. Matear
-#         - Nathaniel L. Bindoff
-#     # doi: ?
-#     pdf: /pdfs/Pasquier_etal_JGRO_2024.pdf
-#     # issn: ?
-#     image: O2minjl.pd
-#     journaltitle: "Journal of Geophysical Research: Oceans"
-#     # link: ?
-#     # number: ?
-#     # pages: ?
-#     title: "Deoxygenation and its drivers analyzed in steady state for perpetually slower and warmer oceans"
-#     biblatextype: online
-#     # volume: ?
-#     year: in press
-#     expecteddate: 2024-09-01
 
 "Pasquier_etal_BG_2024":
     abstract: >
@@ -592,7 +577,7 @@
 "OceanTransportMatrixBuilder.jl":
     author:
         - Benoît Pasquier
-    biblatextype: software
+    biblatextype: softwareowner
     copyright: MIT License
     doi: 10.5281/zenodo.13864392
     github: https://github.com/TMIP-code/OceanTransportMatrixBuilder.jl
@@ -607,7 +592,7 @@
         - Benoît Pasquier
         - François W. Primeau
         - Seth G. John
-    biblatextype: software
+    biblatextype: softwareowner
     copyright: MIT License
     doi: 10.5281/zenodo.2864051
     github: https://www.github.com/JuliaOcean/AIBECS.jl
@@ -625,7 +610,7 @@
         - Yingzhe Wu
         - Steven L. Goldstein
         - Seth G. John
-    biblatextype: software
+    biblatextype: softwareowner
     copyright: MIT License
     doi: 10.5281/zenodo.5651295
     github: https://www.github.com/MTEL-USC/GNOM
@@ -638,7 +623,7 @@
 "WorldOceanAtlasTools.jl":
     author:
         - Benoît Pasquier
-    biblatextype: software
+    biblatextype: softwareowner
     copyright: MIT License
     doi: 10.5281/zenodo.2677666
     github: https://www.github.com/briochemc/WorldOceanAtlasTools.jl
@@ -652,7 +637,7 @@
     abstract: This package implements the F-1 algorithm described in Pasquier and Primeau (in preparation). It allows for efficient quasi-auto-differentiation of an objective function defined implicitly by the solution of a steady-state problem.
     author:
         - Benoît Pasquier
-    biblatextype: software
+    biblatextype: softwareowner
     copyright: MIT License
     doi: 10.5281/zenodo.2667835
     github: https://www.github.com/briochemc/F1Method.jl
@@ -674,42 +659,42 @@
         - Tony Kelman
         - Viral B. Shah
         - Jishnu Bhattacharya
-    biblatextype: software
+    biblatextype: softwarecontributor
     copyright: MIT License
     doi: 10.5281/zenodo.1660762
     github: https://www.github.com/JuliaDiff/HyperDualNumbers.jl
     image: JuliaDiff.png
     link: https://juliadiff.org/HyperDualNumbers.jl/stable/
     publisher: Zenodo
-    title: "HyperDualNumbers.jl"
+    title: "HyperDualNumbers.jl: Julia implementation of HyperDualNumbers"
     year: 2018
 
 "DualMatrixTools.jl":
     abstract: A little Julia module to allow factorization and backslash to work with dual-valued arrays and sparse arrays.
     author:
         - Benoît Pasquier
-    biblatextype: software
+    biblatextype: softwareowner
     copyright: MIT License
     doi: 10.5281/zenodo.1493571
     github: https://www.github.com/briochemc/DualMatrixTools.jl
     image: DualMatrixTools.png
     link: https://briochemc.github.io/DualMatrixTools.jl/stable/
     publisher: Zenodo
-    title: "DualMatrixTools.jl"
+    title: "DualMatrixTools.jl: Efficiently solve dual-valued linear systems"
     year: 2018
 
 "HyperDualMatrixTools.jl":
     abstract: A little Julia module to allow factorization and backslash to work with hyperdual-valued arrays and sparse arrays.
     author:
         - Benoît Pasquier
-    biblatextype: software
+    biblatextype: softwareowner
     copyright: MIT License
     doi: 10.5281/zenodo.1670841
     github: https://www.github.com/briochemc/HyperDualMatrixTools.jl
     image: HyperDualMatrixTools.png
     link: https://briochemc.github.io/HyperDualMatrixTools.jl/stable/
     publisher: Zenodo
-    title: "HyperDualMatrixTools.jl"
+    title: "HyperDualMatrixTools.jl: Efficiently solve hyperdual-valued linear systems"
     year: 2018
 
 # Other software "owned"
@@ -773,9 +758,52 @@
     title: "Earth2014.jl"
     journaltitle: "Download topographic data for the globe"
 
+"ACCESS-TMIP":
+    author:
+        - Benoît Pasquier
+    biblatextype: softwareowner
+    doi: 10.5281/zenodo.17068271
+    github: https://github.com/TMIP-code/ACCESS-TMIP
+    title: "ACCESS-TMIP"
+    journaltitle: "Comparing diagnostics of water transport across ACCESS runs."
+
+"TMIP-code/notebooks":
+    author:
+        - Benoît Pasquier
+    biblatextype: softwareowner
+    doi: 10.5281/zenodo.17068273
+    github: https://github.com/TMIP-code/notebooks
+    title: "TMIP-code/notebooks"
+    journaltitle: "A place to explore and share TMIP-related Jupyter and Pluto notebooks."
+
+"Oceananigans.jl":
+    title: "Oceananigans.jl"
+    biblatextype: softwarecontributor
+    author:
+        - Ali Ramadhan
+        - Gregory L. Wagner
+        - Navid C. Constantinou
+        - Simone Silvestri
+        - Tomás Chor
+        - Francis J. Poulin
+        - Elise Palethorpe
+        - Andre Nogueira Souza
+        - Suyash Bire
+        - Mosè Giordano
+        - Henry Hongnan Guo
+        - Victoria Whitley Clark
+        - Jago Strong-Wright
+        - Chris Hill
+        - William Moses
+        - Xin Kai Lee
+        - Benoît Pasquier
+        - and many contributors
+    github: https://www.github.com/CliMA/Oceananigans.jl
+    journaltitle: "Julia software for fast, friendly, flexible, ocean-flavored fluid dynamics on CPUs and GPUs."
+
 "UnitfulRecipes.jl":
     title: "UnitfulRecipes.jl"
-    biblatextype: softwareowner
+    biblatextype: softwarecontributor
     author:
         - Benoît Pasquier
         - David E Gustavsson
@@ -794,7 +822,7 @@
 #     author:
 #         - A
 #         - B
-#     biblatextype: softwarecontribution
+#     biblatextype: softwarecontributor
 #     copyright: XXX
 #     doi: XXX
 #     image: XXX.png
@@ -812,7 +840,7 @@
 
 "Pardiso.jl":
     title: "Pardiso.jl"
-    biblatextype: softwarecontribution
+    biblatextype: softwarecontributor
     author:
         - Kristoffer Carlsson
         - Mikkel Paltorp
@@ -832,7 +860,7 @@
 
 "OceanGreensFunctionMethods.jl":
     title: "OceanGreensFunctionMethods.jl"
-    biblatextype: softwarecontribution
+    biblatextype: softwarecontributor
     author:
         - G Jake Gebbie
         - Thomas Haine
@@ -842,7 +870,7 @@
 
 "latexdiff":
     title: "latexdiff"
-    biblatextype: softwarecontribution
+    biblatextype: softwarecontributor
     author:
         - Frederik Tilmann
         - Yarden Peleg
@@ -855,7 +883,7 @@
 
 "YAXArrays.jl":
     title: "YAXArrays.jl"
-    biblatextype: softwarecontribution
+    biblatextype: softwarecontributor
     author:
         - Fabian Gans
         - Felix Cremer
@@ -871,7 +899,7 @@
 
 "cmap":
     title: "cmap"
-    biblatextype: softwarecontribution
+    biblatextype: softwarecontributor
     author:
         - Timothy Sipkens
         - Benoît Pasquier
@@ -880,7 +908,7 @@
 
 "Makie.jl":
     title: "Makie.jl"
-    biblatextype: softwarecontribution
+    biblatextype: softwarecontributor
     author:
         - Simon Danisch
         - Julius Krumbiegel
@@ -890,7 +918,7 @@
 
 "offsetaxis-pkg":
     title: "offsetaxis-pkg"
-    biblatextype: softwarecontribution
+    biblatextype: softwarecontributor
     author:
         - Kelly Kearney
         - Benoît Pasquier
@@ -899,7 +927,7 @@
 
 "GeoStats.jl":
     title: "GeoStats.jl"
-    biblatextype: softwarecontribution
+    biblatextype: softwarecontributor
     author:
       - Júlio Hoffimann
       - and many contributors
@@ -908,7 +936,7 @@
 
 "Plots.jl":
     title: "Plots.jl"
-    biblatextype: softwarecontribution
+    biblatextype: softwarecontributor
     author:
         - Tom Breloff1
         - and many contributors
@@ -917,7 +945,7 @@
 
 "Unitful.jl":
     title: "Unitful.jl"
-    biblatextype: softwarecontribution
+    biblatextype: softwarecontributor
     author:
         - Andrew Keller
         - and many contributors
@@ -926,7 +954,7 @@
 
 "UnitfulMoles.jl":
     title: "UnitfulMoles.jl"
-    biblatextype: softwarecontribution
+    biblatextype: softwarecontributor
     author:
         - Rafael Schouten
         - Benoît Pasquier
@@ -935,7 +963,7 @@
 
 "Distributions.jl":
     title: "Distributions.jl"
-    biblatextype: softwarecontribution
+    biblatextype: softwarecontributor
     author:
         - Dahua Lin
         - David Widmann
@@ -971,7 +999,7 @@
 
 "DiffEqBase.jl":
     title: "DiffEqBase.jl"
-    biblatextype: softwarecontribution
+    biblatextype: softwarecontributor
     author:
         - Christopher Rackauckas
         - Kanav Gupta
@@ -989,7 +1017,7 @@
 
 "SciMLBase.jl":
     title: "SciMLBase.jl"
-    biblatextype: softwarecontribution
+    biblatextype: softwarecontributor
     author:
         - Christopher Rackauckas
         - Aayush Sabharwal
@@ -1010,7 +1038,7 @@
 
 "DiffEqOperators.jl":
     title: "DiffEqOperators.jl"
-    biblatextype: softwarecontribution
+    biblatextype: softwarecontributor
     author:
         - Christopher Rackauckas
         - Alex Jones
@@ -1028,7 +1056,7 @@
 
 "Interpolations.jl":
     title: "Interpolations.jl"
-    biblatextype: softwarecontribution
+    biblatextype: softwarecontributor
     author:
         - Tim Holy
         - Mark Kittisopikul
@@ -1042,7 +1070,7 @@
 
 "RecipesBase.jl":
     title: "RecipesBase.jl"
-    biblatextype: softwarecontribution
+    biblatextype: softwarecontributor
     author:
         - Tom Breloff
         - Chris Rackauckas
@@ -1054,7 +1082,7 @@
 
 "CMAP.jl":
     title: "CMAP.jl"
-    biblatextype: softwarecontribution
+    biblatextype: softwarecontributor
     author:
         - Mohammad Ashkezari
         - Benoît Pasquier
@@ -1063,19 +1091,119 @@
 
 "InverseDistanceWeighting.jl":
     title: "InverseDistanceWeighting.jl"
-    biblatextype: softwarecontribution
+    biblatextype: softwarecontributor
     author:
         - Júlio Hoffimann
         - Benoît Pasquier
     github: https://www.github.com/juliohm/InverseDistanceWeighting.jl
     journaltitle: "Inverse distance estimation solver for the GeoStats.jl framework."
 
+"Format.jl":
+    title: "Format.jl"
+    biblatextype: softwarecontributor
+    author:
+        - Scott P. Jones
+        - John M. Kuhn
+        - Dahua Lin
+        - tonyhffong
+        - Yichao Yu
+        - Alex Arslan
+        - Tony Kelman
+        - Iain Dunning
+        - Oscar Dowson
+        - Kevin Squire
+        - Viral B. Shah
+        - Ranjan Anantharaman
+        - Tom Breloff
+        - Joseph Kleinhenz
+        - Chuan-Zheng Lee
+        - Alexander Plavin
+        - Benoît Pasquier
+        - and many contributors
+    github: https://github.com/JuliaString/Format.jl
+    journaltitle: "A Julia package to provide C and Python-like formatting support."
+
+"AndersonAcceleration":
+    title: "AndersonAcceleration"
+    biblatextype: softwarecontributor
+    author:
+        - Samar P. Khatiwala
+        - Benoît Pasquier
+    github: https://github.com/briochemc/AndersonAcceleration
+    journaltitle: "Anderson Acceleration for fixed point problems and spin-up of periodically-forced ocean models."
+
+"payu":
+    title: "payu"
+    biblatextype: softwarecontributor
+    author:
+        - Marshall Ward
+        - Aidan Heerdegen
+        - jo-basevi
+        - Qianhui Chen
+        - Spencer Wong
+        - Dougie Squire
+        - Anton Steketee
+        - Nicholas Hoover
+        - minghang.li
+        - Bruno P. Kinoshita
+        - Jasmeen Kaur
+        - Phellipe Couto
+        - Angus Gibson
+        - Tommy Gatti
+        - Manodeep Sinha
+        - Andrew Kiss
+        - Benoît Pasquier
+        - and many contributors
+    github: https://github.com/payu-org/payu
+    journaltitle: "A workflow management tool for numerical models on the NCI computing systems."
+
+"NonlinearSolve.jl":
+    title: "NonlinearSolve.jl"
+    biblatextype: softwarecontributor
+    author:
+        - Christopher Rackauckas
+        - Avik Pal
+        - Jadon Clugston
+        - Yash Raj Singh
+        - Simon Deltadahl
+        - Qingyu Qu
+        - Utkarsh
+        - Flemming Holtorf
+        - Arno Strouwen
+        - Axel Larsson
+        - RomeoV
+        - Oscar Smith
+        - Kanav Gupta
+        - Yingbo Ma
+        - Aayush Sabharwal
+        - James Wrigley
+        - Guillaume Dalle
+        - Huiyu Xie
+        - Ned Ganchovski
+        - Daniel González Arribas
+        - Aditya Pandey
+        - Yonatan Delelegn
+        - Vaibhav Dixit
+        - Anant Thazhemadam
+        - Dennis Ogiermann
+        - Hendrik Ranocha
+        - Fabian Gittins
+        - Matt Bossart
+        - David Barton
+        - Songchen Tan
+        - Tamas K. Papp
+        - Benoît Pasquier
+        - and many contributors
+    github: https://github.com/SciML/NonlinearSolve.jl
+    journaltitle: "High-performance and differentiation-enabled nonlinear solvers (Newton methods), bracketed rootfinding (bisection, Falsi), with sparsity and Newton-Krylov support."
+
+
 
 
 
 # "XXX":
 #     title: XXX
-#     biblatextype: softwarecontribution
+#     biblatextype: softwarecontributor
 #     author:
 #         - A
 #         - B
