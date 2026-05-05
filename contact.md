@@ -4,10 +4,8 @@
 
 **Benoît Pasquier**
 
-Independent Researcher
-
-Adjunct Fellow\
-School of Mathematics and Statistics\
+Research Associate\
+Climate Change Research Centre\
 University of New South Wales\
 Sydney, NSW, Australia\
 ~~~
