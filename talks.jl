@@ -128,6 +128,14 @@ function format_talk(talk::Dict)
              </li>
              """
     end
+    # pptx
+    if haskey(talk, "pptx") && isfile(talk["pptx"][2:end])
+        ts = """$(ts)
+             <li>
+                 $(entry_to_list_buttonicon(talk,"pptx"; iconstyle="fa-solid", icon="fa-file-powerpoint", text="PowerPoint"))
+             </li>
+             """
+    end
     # repo
     if haskey(talk, "repo")
         ts = """$(ts)
