@@ -88,8 +88,8 @@
 - title: Iron Source Attribution and the Age of Dissolved Iron in the Ocean
   author:
     - Mark Holzer
-    - Marina Frants
     - Benoît Pasquier
+    - Marina Frants
   seminar:
     name: Ocean Sciences Meeting
     place: New Orleans, Louisiana, USA
@@ -298,7 +298,7 @@
     - Milan Klöwer
     - Ali Ramadan
     - Gregory L. Wagner
-    - Constantinou Navid
+    - Navid Constantinou
   # author       = {Forget, Gaël and Pasquier, Beno\^{i}t and Barth, Alexander and Klöwer, Milan and Ramadan, Ali and Wagner, Gregory L. and Constantinou Navid and others},
   # howpublished = {workshop},
   date: 2020-02-17
@@ -436,10 +436,10 @@
   doi: 10.7185/gold2023.20635
 
 
-- title: Optimal parameters for the ocean's nutrient, Californiarbon, and oxygen cycles compensate for circulation biases but replumb the biological pump
+- title: Optimal parameters for the ocean's nutrient, carbon, and oxygen cycles compensate for circulation biases but replumb the biological pump
   seminar:
     name: AMOS National Conference
-    place: Canberra, CT, Australia
+    place: Canberra, ACT, Australia
   author:
     - Benoît Pasquier
     - Mark Holzer
@@ -460,7 +460,7 @@
 - title: The Ocean's Carbon and Oxygen Cycles in Future Steady-State Climate Scenarios
   seminar:
     name: Ocean Sciences Meeting
-    place: New Orleans, LA,
+    place: New Orleans, LA, USA
   author:
     - Benoît Pasquier
     - Mark Holzer
@@ -527,3 +527,93 @@
     name: COSIMA Working Group Meeting
     place: Online
   date: 2025-04-10
+
+- title: Diagnosing the ocean's sequestration efficiency using ACCESS-ESM1.5 transport matrices
+  author:
+    - Benoît Pasquier
+    - Richard J. Matear
+    - Matthew A. Chamberlain
+    - Tilo Ziehn
+    - David K. Hutchinson
+    - François W. Primeau
+    - Yi Liu
+    - Ann Bardin
+  key: ACCESS2025
+  seminar:
+    name: ACCESS Community Workshop
+    place: Melbourne, VIC, Australia
+  date: 2025-09-01
+  pptx: /talks/ACCESS_2025.pptx
+  abstract: >
+    Carbon dioxide removal (CDR) is required to limit global warming to 2°C, and many scientific institutions are investigating marine CDR (mCDR) strategies. Naturally, mCDR efficiency strongly depends on the sequestration efficiency of the ocean and is controlled by the time that water at depth takes to travel to the ocean surface. However, this transit can take hundreds if not thousands of years, as it occurs through many pathways characterized by long-tailed transit-time distributions (TTDs). While climate models can be used for simulating TTDs, multi-millennial simulations are typically prohibitively expensive. Here I will introduce an idealized but computationally efficient methodological framework based on transport matrices for computing TTDs from climate-model archives. We specifically applied this framework to simulate 3000 years of TTDs across the 40 members of the CMIP6 ACCESS-ESM1.5 archives for different ocean circulation climatologies. But this work should be of interest to anyone running long ocean tracer simulations, involved in mCDR research, or more broadly curious about efficient transport-matrix-based diagnostics of ocean transport in climate models.
+
+- title: Diagnosing the Ocean's Sequestration Efficiency Using Transport Matrices Built from Climate-Model Archives
+  author:
+    - Benoît Pasquier
+    - Richard J. Matear
+    - Matthew A. Chamberlain
+    - Tilo Ziehn
+    - David K. Hutchinson
+    - François W. Primeau
+    - Yi Liu
+    - Ann Bardin
+  key: OSM2026
+  seminar:
+    name: Ocean Sciences Meeting
+    place: Online
+  date: 2026-02-01
+  keynote: /talks/OSM_2026_recorded_talk.key
+  video: https://youtu.be/-vSYZXgtTDc
+  abstract: >
+    Marine Carbon Dioxide Removal (mCDR) efficiency strongly depends on the sequestration efficiency of the ocean, which is controlled by the time that water at depth takes to travel to the ocean surface. However, this transit can take hundreds if not thousands of years, as it occurs through many pathways characterized by long-tailed transit-time distributions (TTDs). And while climate models can be used for simulating TTDs, multi-millennial simulations are typically prohibitively expensive. Here we introduce an idealized but computationally efficient methodological framework based on transport matrices for computing TTDs from climate-model archives. We specifically applied this framework to simulate 3000 years of TTDs across the 40 members of the CMIP6 ACCESS-ESM1.5 archives for the decadal mean ocean circulation climatologies of the 2030s and 2090s. We found that the highest sequestration efficiencies are located on abyssal plains isolated from the deep branches of the conveyor belt, such as the North Pacific Basins, where less than 10% of water reaches the surface after 1000 years. We also found that the climate-warming induced slowdown of the 2090s deep ocean circulation extends return times by about 30%, which exceeds internal climate variability (~20%). We will discuss the strengths and caveats of this approach and ongoing work to apply it to a broad range of CMIP models. This should be of interest to anyone running long ocean tracer simulations, involved in mCDR research, or more broadly curious about efficient transport-matrix-based diagnostics of ocean transport in climate models.
+
+- title: "Resolving the Top-Down/Bottom-Up Debate: A Basin-Specific Nd Isotope Cycle"
+  author:
+    - Paige M. Wise
+    - Benoît Pasquier
+    - Seth G. John
+    - Sophia K. V. Hines
+  key: OSM2026_PMW
+  seminar:
+    name: Ocean Sciences Meeting
+    place: Glasgow, Scotland
+  date: 2026-02-01
+  abstract: >
+    A central debate in marine geochemistry opposes "top-down" (surface source dominated) and "bottom-up" (sedimentary source dominated) hypotheses to explain controls on the neodymium (Nd) isotope cycle, with important implications for its use as a paleoceanographic proxy. To quantify these competing processes, we developed a computationally efficient, data-constrained model of the marine Nd cycle: the Global Neodymium Ocean Model (GNOM). Our best-fit model accurately captures Nd isotope and concentration variability throughout the global oceans, and it allows us to disentangle the influence of different Nd sources globally. Our results demonstrate that the relative importance of Nd sources is basin specific. Atlantic Nd isotope distributions are controlled by surface sources (rivers and dust), confirming their utility as a proxy for water-mass mixing. In contrast, Pacific Nd isotope ratios are strongly influenced by benthic fluxes at all depths, but particularly shallow, reactive sediments with extreme isotopic compositions. This process links Pacific εNd records to residence time rather than water mass mixing. In addition, we find that Nd is not strongly scavenged onto particulate organic carbon, dust, or biogenic silica, offering support to previous suggestions that other particle types, such as iron and manganese oxides, are the dominant scavengers of Nd. These findings quantify the mechanisms of trace element input and cycling, offering a new, process-based interpretative framework for Nd isotope records throughout the global ocean.
+
+- title: Simulated Ocean Oxygen under Miocene Boundary Conditions
+  author:
+    - James Berg
+    - David K. Hutchinson
+    - Katrin Meissner
+    - Benoît Pasquier
+    - Mark Holzer
+    - Alexandra Auderset
+  key: EGU2026_JB
+  seminar:
+    name: EGU General Assembly 2026
+    place: Vienna, Austria
+  date: 2026-03-01
+  doi: 10.5194/egusphere-egu26-5952
+  abstract: >
+    Investigating changes in ocean oxygenation during past warm climates advances our process understanding of biogeochemical and physical dynamics in the ocean and may inform our predictions of future changes. The Miocene Climatic Optimum (MCO) was a warm climate episode ~15, million years ago (Ma), with high atmospheric CO<sub>2</sub> concentrations that are comparable to end-of-century predictions for mid-range future emission scenarios. Proxy records suggest that the Oxygen Minimum Zone (OMZ) in the Eastern Tropical Pacific (ETP) was small or non-existent during the high-CO<sub>2</sub> MCO, and only expanded when CO<sub>2</sub> declined after 15 Ma. In contrast, the OMZ in the Eastern Pacific was already extensive in the recent preindustrial era, and is currently expanding further with increasing CO<sub>2</sub>, due to ocean warming and stratification. Despite the importance of understanding the controls on Pacific OMZ extent under warm conditions, there are no existing model investigations of these opposing OMZ dynamics. Here, we use a climate model with an offline biogeochemical framework to investigate ocean oxygen concentrations during the Miocene for a range of CO<sub>2</sub> concentrations and two different topographic configurations. We compare results to available physical and biogeochemical proxies and assess which combination of boundary conditions best replicates recorded proxy trends. We find that for higher CO<sub>2</sub> concentrations, oxygen declines globally and OMZs expand, particularly in the Atlantic Ocean. However, for one of the topographic configurations, OMZs in the ETP contract under higher CO<sub>2</sub> concentrations. This contraction can be attributed to regionally reduced export production and remineralization rates, which are caused by weaker upwelling due to a southward shifted Hadley cell and correspondingly weaker southern hemisphere trade winds. This atmospheric response is driven by hemispheric asymmetries in warming due to changes in large scale ocean circulation. These results emphasize the complexity and spatial heterogeneity of the marine oxygen response to climate change.
+
+- title: "Research opportunities and risks with AI: a focus on AI coding"
+  author:
+    - Alex Sen Gupta
+    - Benoît Pasquier
+    - Neil Malan
+  key: CCRCFun2026
+  seminar:
+    name: UNSW CCRC Fun Seminar
+    place: Sydney, NSW, Australia
+  date: 2026-04-01
+  pptx: /talks/CCRC_FunSeminar_2026.pptx
+  abstract: >
+    AI is transforming how we do research. These tools can synthesise literature, generate and run code, build simulations, analyse data, and explain complex concepts. Agentic systems go further — executing complex multi-step workflows with minimal human oversight. Capabilities have advanced dramatically since late 2022, and researchers who don't develop fluency with these tools face a growing competitive disadvantage.<br />
+
+    But here's the rub! The same tools that accelerate our work pose serious risks to the development and maintenance of the skills we need to do research, and, critically, to check whether the AI got it right.<br />
+
+    This talk focuses on AI-assisted coding: what's now possible, which tools to use, and how to structure workflows that actually make you more productive. Through real-world examples, we'll look at what these tools can do in practice. At the same time, we'll confront the uncomfortable question of how to stop our skills from wasting away, because an AI that codes for you is only useful if you can still tell when it's wrong. The goal is to use AI to sharpen our capabilities, not to turn us into cheerfully dependent automata who've outsourced their thinking to a chatbot!<br />
+
+    Alex will run an interactive discussion with help from Neil Malan and Benoit Pasquier.
