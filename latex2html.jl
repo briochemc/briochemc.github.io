@@ -4,6 +4,7 @@
 function latex2html(abstract)
     replace(abstract,
         "\\%" => "%",
+        "\\textasciitilde" => "~",
         "--" => "–",
         "\\," => "&thinsp;",
         "\$m = 6\$" => "<i>m</i> = 6",

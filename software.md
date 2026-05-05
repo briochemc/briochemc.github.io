@@ -8,17 +8,9 @@
 
 <!-- @def title = "Software" -->
 
-<!-- ## Citable software -->
-
-{{bibliography software data/bibliography.yaml}}
-
-<!-- ## Software contributions -->
-
 {{bibliography softwareowner data/bibliography.yaml}}
 
-<!-- ## Minor software contributions -->
-
-{{bibliography softwarecontribution data/bibliography.yaml}}
+{{bibliography softwarecontributor data/bibliography.yaml}}
 
 
 
