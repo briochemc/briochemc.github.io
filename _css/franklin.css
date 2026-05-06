@@ -421,10 +421,10 @@ code {
   z-index: 0;
   pointer-events: none;
   background-image:
-    url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 50 260' preserveAspectRatio='none'><path d='M0 0 L12 0 Q24 65 12 130 T12 260 L0 260 Z' fill='%23f7fcfb'/><path d='M12 0 Q24 65 12 130 T12 260' fill='none' stroke='%23bfe9e3' stroke-width='1'/></svg>"),
-    url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 50 180' preserveAspectRatio='none'><path d='M0 0 L22 0 Q30 45 22 90 T22 180 L0 180 Z' fill='%23fafdfc'/><path d='M22 0 Q30 45 22 90 T22 180' fill='none' stroke='%23bfe9e3' stroke-width='1'/></svg>"),
-    url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 50 124' preserveAspectRatio='none'><path d='M0 0 L29 0 Q34.6 31 29 62 T29 124 L0 124 Z' fill='%23fcfefe'/><path d='M29 0 Q34.6 31 29 62 T29 124' fill='none' stroke='%23bfe9e3' stroke-width='1'/></svg>"),
-    url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 50 88' preserveAspectRatio='none'><path d='M0 0 L34 0 Q38 22 34 44 T34 88 L0 88 Z' fill='%23ffffff'/><path d='M34 0 Q38 22 34 44 T34 88' fill='none' stroke='%23bfe9e3' stroke-width='1'/></svg>");
+    url("data:image/svg+xml;utf8,%3Csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20viewBox=%270,0,50,260%27%20preserveAspectRatio=%27none%27%3E%3Cpath%20d=%27M0,0L12,0Q24,65,12,130T12,260L0,260Z%27%20fill=%27%23f7fcfb%27/%3E%3Cpath%20d=%27M12,0Q24,65,12,130T12,260%27%20fill=%27none%27%20stroke=%27%23bfe9e3%27%20stroke-width=%271%27/%3E%3C/svg%3E"),
+    url("data:image/svg+xml;utf8,%3Csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20viewBox=%270,0,50,180%27%20preserveAspectRatio=%27none%27%3E%3Cpath%20d=%27M0,0L22,0Q30,45,22,90T22,180L0,180Z%27%20fill=%27%23fafdfc%27/%3E%3Cpath%20d=%27M22,0Q30,45,22,90T22,180%27%20fill=%27none%27%20stroke=%27%23bfe9e3%27%20stroke-width=%271%27/%3E%3C/svg%3E"),
+    url("data:image/svg+xml;utf8,%3Csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20viewBox=%270,0,50,124%27%20preserveAspectRatio=%27none%27%3E%3Cpath%20d=%27M0,0L29,0Q34.6,31,29,62T29,124L0,124Z%27%20fill=%27%23fcfefe%27/%3E%3Cpath%20d=%27M29,0Q34.6,31,29,62T29,124%27%20fill=%27none%27%20stroke=%27%23bfe9e3%27%20stroke-width=%271%27/%3E%3C/svg%3E"),
+    url("data:image/svg+xml;utf8,%3Csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20viewBox=%270,0,50,88%27%20preserveAspectRatio=%27none%27%3E%3Cpath%20d=%27M0,0L34,0Q38,22,34,44T34,88L0,88Z%27%20fill=%27%23ffffff%27/%3E%3Cpath%20d=%27M34,0Q38,22,34,44T34,88%27%20fill=%27none%27%20stroke=%27%23bfe9e3%27%20stroke-width=%271%27/%3E%3C/svg%3E");
   background-repeat: repeat-y;
   background-size: 50px 260px, 50px 180px, 50px 124px, 50px 88px;
   background-position: 3px 0, 3px -45px, 3px -62px, 3px -66px;
