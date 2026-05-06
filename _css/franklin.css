@@ -403,5 +403,55 @@ code {
   background: cornflowerblue;
 }
 
+/* ==================================================================
+    SIDE BAR EDGE WAVES
+================================================================== */
 
+.side-bar {
+  position: relative;
+}
+
+.side-bar::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: calc(100% - 10px);
+  width: 53px;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+  background-image:
+    url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 50 260' preserveAspectRatio='none'><path d='M0 0 L12 0 Q24 65 12 130 T12 260 L0 260 Z' fill='%23f7fcfb'/><path d='M12 0 Q24 65 12 130 T12 260' fill='none' stroke='%23bfe9e3' stroke-width='1'/></svg>"),
+    url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 50 180' preserveAspectRatio='none'><path d='M0 0 L22 0 Q30 45 22 90 T22 180 L0 180 Z' fill='%23fafdfc'/><path d='M22 0 Q30 45 22 90 T22 180' fill='none' stroke='%23bfe9e3' stroke-width='1'/></svg>"),
+    url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 50 124' preserveAspectRatio='none'><path d='M0 0 L29 0 Q34.6 31 29 62 T29 124 L0 124 Z' fill='%23fcfefe'/><path d='M29 0 Q34.6 31 29 62 T29 124' fill='none' stroke='%23bfe9e3' stroke-width='1'/></svg>"),
+    url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 50 88' preserveAspectRatio='none'><path d='M0 0 L34 0 Q38 22 34 44 T34 88 L0 88 Z' fill='%23ffffff'/><path d='M34 0 Q38 22 34 44 T34 88' fill='none' stroke='%23bfe9e3' stroke-width='1'/></svg>");
+  background-repeat: repeat-y;
+  background-size: 50px 260px, 50px 180px, 50px 124px, 50px 88px;
+  background-position: 3px 0, 3px -45px, 3px -62px, 3px -66px;
+  will-change: background-position, transform;
+  animation:
+    sidebar-edge-slide 32s linear infinite,
+    sidebar-edge-bob 8s ease-in-out infinite;
+}
+
+@keyframes sidebar-edge-slide {
+  from { background-position-y: 0, -45px, -62px, -66px; }
+  to   { background-position-y: -520px, -405px, -310px, -242px; }
+}
+
+@keyframes sidebar-edge-bob {
+  0%, 100% { transform: translateX(0); }
+  50%      { transform: translateX(3px); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .side-bar::after { animation: none; }
+}
+
+.title-short { display: none; }
+
+@media (max-width: 49.99rem) {
+  .title-full { display: none; }
+  .title-short { display: inline; }
+}
 
