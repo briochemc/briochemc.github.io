@@ -422,12 +422,14 @@ code {
   pointer-events: none;
   background-image:
     url("data:image/svg+xml;utf8,%3Csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20viewBox=%270,0,50,260%27%20preserveAspectRatio=%27none%27%3E%3Cpath%20d=%27M0,0L12,0Q24,65,12,130T12,260L0,260Z%27%20fill=%27%23f7fcfb%27/%3E%3Cpath%20d=%27M12,0Q24,65,12,130T12,260%27%20fill=%27none%27%20stroke=%27%23bfe9e3%27%20stroke-width=%271%27/%3E%3C/svg%3E"),
-    url("data:image/svg+xml;utf8,%3Csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20viewBox=%270,0,50,180%27%20preserveAspectRatio=%27none%27%3E%3Cpath%20d=%27M0,0L22,0Q30,45,22,90T22,180L0,180Z%27%20fill=%27%23fafdfc%27/%3E%3Cpath%20d=%27M22,0Q30,45,22,90T22,180%27%20fill=%27none%27%20stroke=%27%23bfe9e3%27%20stroke-width=%271%27/%3E%3C/svg%3E"),
-    url("data:image/svg+xml;utf8,%3Csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20viewBox=%270,0,50,124%27%20preserveAspectRatio=%27none%27%3E%3Cpath%20d=%27M0,0L29,0Q34.6,31,29,62T29,124L0,124Z%27%20fill=%27%23fcfefe%27/%3E%3Cpath%20d=%27M29,0Q34.6,31,29,62T29,124%27%20fill=%27none%27%20stroke=%27%23bfe9e3%27%20stroke-width=%271%27/%3E%3C/svg%3E"),
-    url("data:image/svg+xml;utf8,%3Csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20viewBox=%270,0,50,88%27%20preserveAspectRatio=%27none%27%3E%3Cpath%20d=%27M0,0L34,0Q38,22,34,44T34,88L0,88Z%27%20fill=%27%23ffffff%27/%3E%3Cpath%20d=%27M34,0Q38,22,34,44T34,88%27%20fill=%27none%27%20stroke=%27%23bfe9e3%27%20stroke-width=%271%27/%3E%3C/svg%3E");
+    url("data:image/svg+xml;utf8,%3Csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20viewBox=%270,0,50,180%27%20preserveAspectRatio=%27none%27%3E%3Cpath%20d=%27M0,0L22,0Q30,45,22,90T22,180L0,180Z%27%20fill=%27%23f9fdfc%27/%3E%3Cpath%20d=%27M22,0Q30,45,22,90T22,180%27%20fill=%27none%27%20stroke=%27%23bfe9e3%27%20stroke-width=%271%27/%3E%3C/svg%3E"),
+    url("data:image/svg+xml;utf8,%3Csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20viewBox=%270,0,50,124%27%20preserveAspectRatio=%27none%27%3E%3Cpath%20d=%27M0,0L29,0Q34.6,31,29,62T29,124L0,124Z%27%20fill=%27%23fafdfd%27/%3E%3Cpath%20d=%27M29,0Q34.6,31,29,62T29,124%27%20fill=%27none%27%20stroke=%27%23bfe9e3%27%20stroke-width=%271%27/%3E%3C/svg%3E"),
+    url("data:image/svg+xml;utf8,%3Csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20viewBox=%270,0,50,88%27%20preserveAspectRatio=%27none%27%3E%3Cpath%20d=%27M0,0L34,0Q38,22,34,44T34,88L0,88Z%27%20fill=%27%23fcfefd%27/%3E%3Cpath%20d=%27M34,0Q38,22,34,44T34,88%27%20fill=%27none%27%20stroke=%27%23bfe9e3%27%20stroke-width=%271%27/%3E%3C/svg%3E"),
+    url("data:image/svg+xml;utf8,%3Csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20viewBox=%270,0,50,62%27%20preserveAspectRatio=%27none%27%3E%3Cpath%20d=%27M0,0L37,0Q40,15.5,37,31T37,62L0,62Z%27%20fill=%27%23fdfefe%27/%3E%3Cpath%20d=%27M37,0Q40,15.5,37,31T37,62%27%20fill=%27none%27%20stroke=%27%23bfe9e3%27%20stroke-width=%271%27/%3E%3C/svg%3E"),
+    url("data:image/svg+xml;utf8,%3Csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20viewBox=%270,0,50,44%27%20preserveAspectRatio=%27none%27%3E%3Cpath%20d=%27M0,0L40,0Q42,11,40,22T40,44L0,44Z%27%20fill=%27%23ffffff%27/%3E%3Cpath%20d=%27M40,0Q42,11,40,22T40,44%27%20fill=%27none%27%20stroke=%27%23bfe9e3%27%20stroke-width=%271%27/%3E%3C/svg%3E");
   background-repeat: repeat-y;
-  background-size: 50px 260px, 50px 180px, 50px 124px, 50px 88px;
-  background-position: 3px 0, 3px -45px, 3px -62px, 3px -66px;
+  background-size: 50px 260px, 50px 180px, 50px 124px, 50px 88px, 50px 62px, 50px 44px;
+  background-position: 3px -73px, 3px -27px, 3px -91px, 3px -53px, 3px -39px, 3px -19px;
   will-change: background-position, transform;
   animation:
     sidebar-edge-slide 32s linear infinite,
@@ -435,8 +437,8 @@ code {
 }
 
 @keyframes sidebar-edge-slide {
-  from { background-position-y: 0, -45px, -62px, -66px; }
-  to   { background-position-y: -520px, -405px, -310px, -242px; }
+  from { background-position-y: -73px, -27px, -91px, -53px, -39px, -19px; }
+  to   { background-position-y: 447px, 333px, 157px, 123px, 85px, 69px; }
 }
 
 @keyframes sidebar-edge-bob {
