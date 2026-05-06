@@ -326,11 +326,11 @@ function hfun_bibliography(params)
                     """
     end
     title = if types == ["article"]
-        "<h2>Peer-reviewed articles ($(length(reduced_library)))</h2>"
+        """<h2 id="peer-reviewed-articles"><a href="#peer-reviewed-articles" class="header-anchor">Peer-reviewed articles ($(length(reduced_library)))</a></h2>"""
     elseif types == ["softwareowner"]
-        "<h2>Software I own ($(length(reduced_library)))</h2>"
+        """<h2 id="software-i-own"><a href="#software-i-own" class="header-anchor">Software I own ($(length(reduced_library)))</a></h2>"""
     elseif types == ["softwarecontributor"]
-        "<h2>Software I contributed to ($(length(reduced_library)))</h2>"
+        """<h2 id="software-i-contributed-to"><a href="#software-i-contributed-to" class="header-anchor">Software I contributed to ($(length(reduced_library)))</a></h2>"""
     else
         ""
     end

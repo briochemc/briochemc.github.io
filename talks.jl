@@ -68,7 +68,7 @@ function hfun_talks(params::Vector{String}=String[])
     s = "$s \n</ol>" # close old list
     # add title
     s = """
-    <h1>Talks / Posters ($(length(sorted_talks)))</h1>
+    <h1 id="talks-posters"><a href="#talks-posters" class="header-anchor">Talks / Posters ($(length(sorted_talks)))</a></h1>
 
     $s
     """
