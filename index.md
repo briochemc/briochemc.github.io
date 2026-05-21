@@ -36,7 +36,7 @@ When possible, I also spent time developing open-source packages.
 An overarching theme of my research is the interplay between the ocean's circulation and biogeochemical tracers.
 These tracers include macronutrients, like phosphate and nitrate, but also trace metals such as iron, nickel, or cadmium, which together sustain all life in the ocean.
 I have also been interested in carbon, which the ocean stores in huge quantities, and in oxygen, which fish need to survive.
-Furthermore, I have been working with tracers of the ocean circulation, such as neodymium isotopes, which record past ocean circulation patterns, and more abstract tracers such as the water age (which measures ocean ventilation), the time to reemergence (whcih controls ocean carbon sequestration), or the upstream exposure time to respiration (which controls oxygen levels).
+Furthermore, I have been working with tracers of the ocean circulation, such as neodymium isotopes, which record past ocean circulation patterns, and more abstract tracers such as the water age (which measures ocean ventilation), the time to reemergence (which controls ocean carbon sequestration), or the upstream exposure time to respiration (which controls oxygen levels).
 However, all of these tracers are predicted to respond dramatically to climate change, possibly threatening many marine ecosystems, with impacts on global food security.
 This is why I want to contribute to the fight against global warming and its adverse effects.
 
@@ -45,7 +45,7 @@ This is why I want to contribute to the fight against global warming and its adv
 In my latest research, I have been taking a closer look at the response of these tracers to climate change.
 As a Postdoctoral Research Associate at the [University of New South Wales (UNSW)](https://www.unsw.edu.au/) in Sydney, I built a marine biogeochemistry model and looked at the response of the ocean's carbon and oxygen cycles to global warming (with [Associate Professor Mark Holzer](https://web.maths.unsw.edu.au/~markholzer/)).
 More recently, as a Contract Researcher for the [CarbonLock Future Science Platform](https://research.csiro.au/carbonlock/) of [CSIRO](https://www.csiro.au/) (Australia's National Science Agency), I combined cutting edge transport-matrix methods to estimate the sequestration efficiency of the deep ocean and its response to climate change from climate-model archives (with [Dr. Richard Matear](https://people.csiro.au/M/R/Richard-Matear)).
-As a Research Associate at the Climate Change Research Centre (CCRC) with of UNSW, I am currently exploring the application of transport-matrix methods to different climate and ocean models (with [Associate Professor Laurie Menviel]()).
+As a Research Associate at the Climate Change Research Centre (CCRC) of UNSW, I am currently exploring the application of transport-matrix methods to different climate and ocean models (with [Associate Professor Laurie Menviel]()).
 See my [Publications](publications) for an up-to-date publication record.
 
 <!-- ~~~
