@@ -617,3 +617,15 @@
     This talk focuses on AI-assisted coding: what's now possible, which tools to use, and how to structure workflows that actually make you more productive. Through real-world examples, we'll look at what these tools can do in practice. At the same time, we'll confront the uncomfortable question of how to stop our skills from wasting away, because an AI that codes for you is only useful if you can still tell when it's wrong. The goal is to use AI to sharpen our capabilities, not to turn us into cheerfully dependent automata who've outsourced their thinking to a chatbot!<br />
 
     Alex will run an interactive discussion with help from Neil Malan and Benoit Pasquier.
+
+- title: "Fully equilibrated ventilation tracers across ACCESS-OM2 experiments: an ongoing journey"
+  author:
+    - Benoît Pasquier
+  key: ACEAS2026
+  seminar:
+    name: ACEAS Seminar Series
+    place: online
+  date: 2026-06-02
+  keynote: /talks/ACEAS_2026.key
+  abstract: >
+    Southern Ocean ventilation controls how heat, carbon, and tracers from the surface around Antarctica mix into the global deep ocean. A suite of recent ACCESS-OM2-01 experiments (0.1° resolution) perturbing winds and meltwater give insight into how Southern Ocean ventilation might change with global warming. Typical diagnostics such as dye tracers and young, non-equilibrated age fields characterise the early stages of ventilation change. But these cannot resolve the long-term equilibrium response that take millennia to fully develop. To fill this gap, I am developing a pipeline that combines GPU acceleration, distributed (MPI) parallelism, and a Newton-Krylov solver with a transport-matrix preconditioner to simulate equilibrated ventilation tracers and diagnostics from existing simulation outputs. The pipeline can currently deliver equilibrated ventilation diagnostics at 1° and 0.25° but not at 0.1° yet. I will present preliminary results showing how equilibrated deep-ocean ventilation varies across ACCESS-OM2-1 and OM2-025 and with recent circulation changes from OMIP2 ACCESS-OM2 archives. I will close on the state of the extension to 0.1°: either first equilibrated results, or the implementation work that still separates the current pipeline from that goal.
