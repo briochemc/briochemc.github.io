@@ -224,7 +224,7 @@
   author:
     - Mark Holzer
     - Benoît Pasquier
-    - Tim DeVries
+    - Timothy DeVries
     - Mark Brzezinski
   date: 2019-06-13
   key: AMOS2019_MH
@@ -621,6 +621,13 @@
 - title: "Fully equilibrated ventilation tracers across ACCESS-OM2 experiments: an ongoing journey"
   author:
     - Benoît Pasquier
+    - Laurie Menviel
+    - Gregory L. Wagner
+    - Simone Silvestri
+    - Alexis Montoison
+    - Taimoor Sohail
+    - Andrew Kiss
+    - François W. Primeau
   key: ACEAS2026
   seminar:
     name: ACEAS Seminar Series
