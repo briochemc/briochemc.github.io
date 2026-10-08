@@ -6,6 +6,7 @@ using Dates
 fig = Figure(size = (610, 800))
 
 years = 2001:5:2026
+lastyear_shown = 2027 # last (empty) row shown on the timeline
 
 ax = Axis(fig[1, 1];
     xticks = (1:12, string.(first.(Dates.monthname.(1:12)))),
@@ -17,7 +18,7 @@ ax = Axis(fig[1, 1];
     xtickwidth = 0,
     ytickwidth = 0,
     # limits = (0.5, 12.5, first(years) - 0.5, year(Dates.now()) + 0.5),
-    limits = (1 - 4.5, 12 + 4.5, first(years) - 0.5, last(years) + 0.5),
+    limits = (1 - 4.5, 12 + 4.5, first(years) - 0.5, lastyear_shown + 0.5),
     topspinevisible = false,
     rightspinevisible = false,
     bottomspinevisible = false,
@@ -75,7 +76,8 @@ COLORS = Dict(
 )
 
 jobs = [
-    (start = "Sep 2025", finish = "Jul 2026", job = "Research\nAssociate", at = "CCRC UNSW", isintern = false),
+    (start = "Jun 2026", finish = "Dec 2026", job = "Lecturer (EF)\nCCRC", at = "", isintern = false),
+    (start = "Sep 2025", finish = "May 2026", job = "Research\nAssociate", at = "CCRC UNSW", isintern = false),
     (start = "Sep 2024", finish = "Feb 2025", job = "Contract\nResearcher", at = "CSIRO", isintern = false),
     # (start = "Aug 2024", finish = "Present", job = "Adjunct Fellow", at = "UNSW", isintern = false),
     (start = "Oct 2021", finish = "Aug 2024", job = "Research\nAssociate", at = "Maths UNSW", isintern = false),
@@ -108,7 +110,7 @@ colors = cgrad(:tableau_superfishel_stone, categorical = true)
 
 # dates = get_date("Jan $(first(years))"):Month(1):get_date("Present")
 firstdate = get_date(first(jobs).start)
-lastdate = get_date(last(jobs).finish)
+lastdate = max(get_date(last(jobs).finish), Date(lastyear_shown, 12))
 dates = firstdate:Month(1):lastdate
 x = month.(dates)
 y = year.(dates)
@@ -148,6 +150,9 @@ Nlabels = sum(x -> !x.isintern, jobs)
 # end
 # You can tell I tried a few color palettes :) Ice fire it is!
 COLORS2 = cgrad(:seaborn_icefire_gradient, 16; categorical = true)[1 .+ [2, 1, 2, 3, 13, 4, 12, 5, 11, 10, 9, 7]]
+# Dark purple for the Lecturer (EF) position, chosen to sit between the icefire blues and reds
+# (#542E78 with HSL lightness raised from 0.33 to 0.55, same hue and saturation)
+COLORS2 = [COLORS2..., Makie.to_color("#8E59BF")]
 # COLORS2 = cgrad(:Troy, 10; categorical = true, rev = true)[[5, 4, 3, 2, 6, 1, 7, 8, 9, 10]]
 # COLORS2 = cgrad(:diverging_bkr_55_10_c35_n256, 10; categorical = true, rev = true)[[1, 2, 3, 4, 10, 5, 9, 8, 7, 6]]
 # COLORS2 = cgrad(:diverging_bky_60_10_c30_n256, 10; categorical = true, rev = true)[[1, 2, 3, 4, 10, 5, 9, 8, 7, 6]]
@@ -171,7 +176,8 @@ for (ijob, job) in enumerate(jobs)
         # scatter!(ax, x, y; markeroptions..., marker, color)
         scatter!(ax, x, y; markeroptions..., marker, color, strokecolor = (4 * color + RGBAf(0,0,0,1)) / 5, strokewidth = 2)
         sep = maximum(y) - minimum(y) == 0 ? " " : "\n"
-        mybracket!(ax, cond, y, color, rich(rich(job.job, font = :bold), sep, rich(job.at)))
+        # bracket! only accepts a plain String for its label in current Makie versions
+        mybracket!(ax, cond, y, color, rstrip(job.job * sep * job.at))
         cond = !cond
         colorcount += 1
     end
@@ -181,7 +187,7 @@ end
 #     text!(ax, 6.5, year; text = "$year", align = (:center, :center))
 # end
 text!(ax, 0.5, 2001; text = "2001", align = (:left, :center))
-text!(ax, 12.5, 2026; text = "2026", align = (:right, :center))
+text!(ax, 12.5, lastyear_shown; text = "$lastyear_shown", align = (:right, :center))
 
 save("_assets/timeline.svg", fig)
 fig
