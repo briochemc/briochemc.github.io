@@ -119,6 +119,13 @@ NAMES = Dict(
     "Liu" => "Yi Liu",
     "Bardin" => "Ann Bardin",
     "Wise" => "Paige M. Wise",
+    "Berg" => "James R. Berg",
+    "Meissner" => "Katrin J. Meissner",
+    "Auderset" => "Alexandra Auderset",
+    "Bernish" => "Margaret Bernish",
+    "Gao" => "Meng Gao",
+    "Kim" => "Jongsun Kim",
+    "Inomura" => "Keisuke Inomura",
 )
 
 function bibentry2dict2(bibentry, NAMES)
@@ -126,7 +133,10 @@ function bibentry2dict2(bibentry, NAMES)
     # for names I use BibInternal.names_to_strings
     if hasproperty(bibentry, :authors) && !isempty(bibentry.authors)
         # @show bibentry.authors
-        names = [replace(a.last, NAMES...) for a in bibentry.authors]
+        # Exact match on the last name (a substring replace would turn
+        # "Hutchinson" into "David A. Hutchinson" via the "Hutchins" key).
+        # Fall back to "First Middle Last" for names not in NAMES.
+        names = [get(NAMES, a.last, join(filter(!isempty, [a.first, a.middle, a.last]), " ")) for a in bibentry.authors]
         d["author"] = names
     end
     hasproperty(bibentry, :editors) && !isempty(bibentry.editors) && (d["editor"] = names_to_strings(bibentry.editors))
@@ -275,7 +285,7 @@ gettitle(a) = a["title"]
     isless_bibtex(a,b)
 
 """
-function isless_bibtex(a::Dict,b::Dict)
+function isless_bibtex(a::AbstractDict,b::AbstractDict)
     # #load either publication date or year
     # date_a = parse(Date, string( get(a, "publication_date", a["year"]) ))
     # date_b = parse(Date, string( get(b, "publication_date", b["year"]) ))

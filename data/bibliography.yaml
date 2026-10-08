@@ -132,6 +132,23 @@
 
 
 
+"Anthonisz_etal_BGD_2026":
+    abstract: >
+        The speed and magnitude of anthropogenic climate change is unprecedented in the last 66 million years. To understand the potential impacts of these changes we must look to past abrupt warming events in the Earth's history. Proxy evidence suggests that some rapid warming events in the Earth's past have resulted in highly stratified ocean states and Oceanic Anoxic Events (OAEs), when large parts of the ocean became oxygen depleted and resulted in elevated extinction rates. Earth System Models (ESMs) typically struggle to represent highly stratified equilibrium states. Here we present three simulations under Miocene Climatic Optimum boundary conditions (MCO, ~16.9–14.7 million years ago; Ma) with three different <i>p</i>CO<sub>2</sub> (1×, 2× or 3× preindustrial (PI)) using the Australian Earth System model (ACCESS-ESM1.5). When <i>p</i>CO<sub>2</sub> was raised to 2× or 3× PI <i>p</i>CO<sub>2</sub>, circulation became dramatically altered due to cold initial conditions, resulting in a temperature-driven stratification which was stable for over 2000 years of integration. We then used a novel spin-up technique known as Anderson Acceleration (AA) to efficiently equilibrate the ocean biogeochemical fields, allowing us to investigate the equilibrium biogeochemical response to a stratified ocean state. While our high-CO<sub>2</sub> MCO simulations are still in a transient state of deep ocean warming, which although not representative of MCO equilibrium, can give us some insight into equilibrium biogeochemistry, including dissolved oxygen, in a mostly stagnant abyssal ocean. Surprisingly, we do not find large scale deep anoxia or hypoxia due to a shoaling of the remineralisation depth.
+    author:
+        - Benjamin W. Anthonisz
+        - David K. Hutchinson
+        - Katrin J. Meissner
+        - Samar Khatiwala
+        - Benoît Pasquier
+    doi: 10.5194/egusphere-2026-3378
+    pdf: /pdfs/Anthonisz_etal_BGD_2026.pdf
+    journaltitle: "EGUsphere (preprint, under review for Biogeosciences)"
+    title: "A Warm Stagnant Ocean Leads to Deep-Ocean Deoxygenation without Widespread Anoxia"
+    biblatextype: online
+    year: 2026
+    expecteddate: 2026-09-01
+
 "Pasquier_Primeau_SISC_2021":
     abstract: >
         Steady-state systems of nonlinear partial differential equations (PDEs) are common in engineering and the biogeosciences.
@@ -572,7 +589,29 @@
 # Software
 #
 
+"ClimateWidgets":
+    author:
+        - Benoît Pasquier
+    biblatextype: softwareowner
+    github: https://github.com/briochemc/ClimateWidgets
+    title: "ClimateWidgets"
+    journaltitle: "Interactive climate widgets built with Observable Framework (made for CLIM1001/GENS0401)."
 
+"academic-llm-guide":
+    author:
+        - Benoît Pasquier
+    biblatextype: softwareowner
+    github: https://github.com/briochemc/academic-llm-guide
+    title: "academic-llm-guide"
+    journaltitle: "A short, dated guide to generative AI tools for academic research and teaching."
+
+"ACCESS-OM2_x_Oceananigans":
+    author:
+        - Benoît Pasquier
+    biblatextype: softwareowner
+    github: https://github.com/TMIP-code/ACCESS-OM2_x_Oceananigans
+    title: "ACCESS-OM2_x_Oceananigans"
+    journaltitle: "Work-in-progress code for the fastest pipeline for spinning-up tracers offline using Newton–Krylov solvers and running on multiple GPUs."
 
 "OceanTransportMatrixBuilder.jl":
     author:

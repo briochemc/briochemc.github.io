@@ -4,8 +4,9 @@
 
 **Benoît Pasquier**
 
-Research Associate\
+Lecturer (Education Focused)\
 Climate Change Research Centre\
+School of Biological, Earth and Environmental Sciences\
 University of New South Wales\
 Sydney, NSW, Australia\
 ~~~

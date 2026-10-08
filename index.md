@@ -19,7 +19,8 @@
 <!-- @def title = "about" -->
 
 I am a scientist with broad scientific training and expertise in modelling biogeochemical tracers in the ocean.
-As a postdoc during the past few years, I have worked on the ocean's nutrients, carbon, and oxygen cycles, and on their response to climate change.
+As a postdoc for about a decade, I have worked on the ocean's nutrients, carbon, and oxygen cycles, and on their response to climate change.
+Since June 2026, I am a Lecturer (Education Focused) at the Climate Change Research Centre (CCRC) of UNSW, where I now split my time between teaching and research.
 <!-- Today I am looking for a new project and want to put my skills at the service of the fight against climate change.
 So [contact me](contact) if you have a project aligned with my profile! -->
 
@@ -28,7 +29,7 @@ I spent most of my time thinking about the fascinating mechanisms that drive the
 To improve our understanding, I built numerical models of tracers in the ocean.
 This required engaging with a diverse range of research fields including biology, geology, chemistry, and physics.
 It also required deep knowledge of advanced mathematical and computational tools.
-My education —both as mathematician and engineer— helped me develop new ideas and methods to tackle challenging questions in Ocean Science.
+My education, both as mathematician and engineer, helped me develop new ideas and methods to tackle challenging questions in Ocean Science.
 I have always carefully thought about data visualisation, and about effectively communicating somewhat complex ideas.
 When possible, I also spent time developing open-source packages.
 
@@ -45,8 +46,9 @@ This is why I want to contribute to the fight against global warming and its adv
 In my latest research, I have been taking a closer look at the response of these tracers to climate change.
 As a Postdoctoral Research Associate at the [University of New South Wales (UNSW)](https://www.unsw.edu.au/) in Sydney, I built a marine biogeochemistry model and looked at the response of the ocean's carbon and oxygen cycles to global warming (with [Associate Professor Mark Holzer](https://web.maths.unsw.edu.au/~markholzer/)).
 More recently, as a Contract Researcher for the [CarbonLock Future Science Platform](https://research.csiro.au/carbonlock/) of [CSIRO](https://www.csiro.au/) (Australia's National Science Agency), I combined cutting edge transport-matrix methods to estimate the sequestration efficiency of the deep ocean and its response to climate change from climate-model archives (with [Dr. Richard Matear](https://people.csiro.au/M/R/Richard-Matear)).
-As a Research Associate at the Climate Change Research Centre (CCRC) of UNSW, I am currently exploring the application of transport-matrix methods to different climate and ocean models (with [Associate Professor Laurie Menviel]()).
-See my [Publications](publications) for an up-to-date publication record.
+Then, as a Research Associate at the CCRC of UNSW (with Professor Laurie Menviel), I explored the application of transport-matrix methods to high-resolution ocean models and helped start the Transport Matrix Intercomparison Project (TMIP).
+As a Lecturer (Education Focused) at the CCRC since June 2026, I am redesigning CLIM1001/GENS0401, one of UNSW's largest courses, while continuing this transport-matrix research and the coordination of TMIP.
+See my [Publications](publications) for an up-to-date publication record, and my [Teaching](teaching) page for the rest.
 
 <!-- ~~~
 <img src="/assets/O2minjl_demo.svg" title="Current Location" style="width:100% !important; padding:0 !important"><br>
@@ -61,7 +63,7 @@ Modified from <a href=publications/#peer-reviewed_articles>Pasquier et al., JGR:
 ## Resume
 
 For details, see my likely up-to-date [CV in PDF format](pdfs/CV_benoit_pasquier.pdf).
-For a visual summary, see the timeline below, which provides a month-by-month overview of my resume going back 25 years.
+For a visual summary, see the timeline below, which provides a month-by-month overview of my resume going back 26 years.
 
 ~~~
 <img src="/assets/timeline.svg" title="Visual Resume" style="width:100% !important; padding:0 !important; border:0 !important; margin:0 !important"><br>
