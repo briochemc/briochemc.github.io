@@ -16,6 +16,12 @@
     {"start": "2025-09", "end": "2026-05", "title": "Research Associate", "at": "CCRC UNSW", "kind": "job"},
     {"start": "2026-06", "end": "2026-12", "title": "Lecturer (EF)", "at": "CCRC UNSW", "kind": "job"}
   ],
+  "diplomas": [
+    {"date": "2007-07", "title": "MSc", "venue": "École Polytechnique"},
+    {"date": "2008-07", "title": "MSc", "venue": "Dauphine / ENSAE"},
+    {"date": "2010-12", "title": "MSc", "venue": "UNSW"},
+    {"date": "2017-09", "title": "PhD", "venue": "Maths UNSW"}
+  ],
   "internships": [
     {"start": "2004-09", "end": "2005-02", "title": "IT Intern", "at": "Bioforce"},
     {"start": "2006-07", "end": "2006-07", "title": "Assembly Line Worker", "at": "Mecaplast"},

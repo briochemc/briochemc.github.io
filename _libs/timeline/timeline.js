@@ -1,15 +1,17 @@
 // Interactive CV timeline: a "snake" band of months, one row per year, that turns around
 // at the end of each row so consecutive months stay contiguous. Positions are coloured
-// segments along the band; clicking one opens a detail panel under the figure. Papers and
-// talks can be shown as markers on the band (toggles above the figure): hovering a marker
-// shows a popup, clicking it goes to that entry on the publications or talks page.
+// segments along the band; hovering one shows its name. Papers, talks and diplomas can be
+// shown as markers on the band (toggles above the figure): hovering a marker shows a popup,
+// clicking a paper or talk goes to that entry on the publications or talks page.
 //
 // Proof of concept. Plain ES module, no dependencies, so it can be imported from this site
 // (Franklin copies `_libs/` to `/libs/`) or from anywhere else. `createTimeline` returns a
 // DOM node; the auto-mount at the bottom replaces the static SVG fallback on the page.
 
 const MONTH_LETTERS = "JFMAMJJASOND";
-const BAND = 0.36;             // band width, in cells (a cell is one month, 1 x 1)
+const PITCH = 0.7;             // vertical distance between year rows, in cells (a month is 1 wide)
+const BAND = 0.28;             // band width, in cells
+const GAP = 0.12;              // trimmed off each end of a position so neighbours stay separated
 const LIGHT = "#e4e4e4";       // unfilled band, and the year/month labels
 const MARKER_R = BAND * 0.65;  // marker radius: a little wider than the band
 
@@ -22,11 +24,13 @@ const PALETTE = [
   "#8E59BF",
 ];
 
-// Marker kinds: which list in items.json, the label on the toggle, the page each entry
-// lives on (entries carry a `key` that is the anchor id on that page), and the shape.
+// Marker kinds: which list in `items`, the toggle label, the word for one of them in the
+// popup, the page each entry lives on (entries carry a `key` that is the anchor on that
+// page; no page means the marker is not a link), and the shape.
 const KINDS = [
-  {id: "papers", label: "Papers", page: "/publications/#", shape: "circle"},
-  {id: "talks", label: "Talks and posters", page: "/talks/#", shape: "diamond"},
+  {id: "papers", label: "Papers", one: "Paper", page: "/publications/#", shape: "star"},
+  {id: "talks", label: "Talks/Posters", one: "Talk/Poster", page: "/talks/#", shape: "square"},
+  {id: "diplomas", label: "Diplomas", one: "Diploma", page: null, shape: "circle"},
 ];
 
 const monthIndex = (ym, firstYear) => {
@@ -54,21 +58,40 @@ const htmlEl = (name, style, parent, text) => {
   return node;
 };
 
+// A marker shape centred on (cx, cy) with "radius" r, as an SVG path's d attribute.
+function shapePath(shape, cx, cy, r) {
+  switch (shape) {
+    case "star": {
+      const R = r * 1.3, ri = R * 0.45;
+      return Array.from({length: 10}, (_, i) => {
+        const a = -Math.PI / 2 + i * Math.PI / 5, rr = i % 2 ? ri : R;
+        return `${i ? "L" : "M"}${cx + rr * Math.cos(a)},${cy + rr * Math.sin(a)}`;
+      }).join("") + "Z";
+    }
+    case "square": {
+      const h = r * 0.85;
+      return `M${cx - h},${cy - h}H${cx + h}V${cy + h}H${cx - h}Z`;
+    }
+    default: // circle
+      return `M${cx - r},${cy}A${r},${r} 0 1 0 ${cx + r},${cy}A${r},${r} 0 1 0 ${cx - r},${cy}Z`;
+  }
+}
+
 export function createTimeline({firstYear, lastYear, positions, internships = [], items = {}}) {
   const nYears = lastYear - firstYear + 1;
   const nMonths = nYears * 12;
 
-  // Geometry, in cells: rows have pitch 1, turns have radius 0.5, the left margin holds
-  // the year labels and the right margin just clears the turns.
-  const LM = 2.5;
-  const RM = 0.5 + MARKER_R + 0.1;
-  const TOP = 1.0;
+  // Geometry, in cells: rows have pitch PITCH, turns have radius PITCH / 2, the left margin
+  // holds the year labels and the right margin just clears the turns.
+  const LM = 2.8;
+  const RM = PITCH / 2 + MARKER_R + 0.1;
+  const TOP = 0.8;
   const vbWidth = 12 + LM + RM;
-  const vbHeight = nYears + TOP + MARKER_R;
+  const vbHeight = nYears * PITCH + TOP + MARKER_R;
 
   // Row k holds year firstYear + k, counted from the bottom; even rows run left to right.
   const rowOf = m => Math.floor(m / 12);
-  const rowY = k => TOP + (nYears - 1 - k) + 0.5;
+  const rowY = k => TOP + (nYears - 1 - k) * PITCH + PITCH / 2;
   const leftToRight = k => k % 2 === 0;
   // x at fraction f in [0, 1] through month m, in the travel direction.
   const cellX = (m, f) => {
@@ -76,30 +99,47 @@ export function createTimeline({firstYear, lastYear, positions, internships = []
     return LM + (leftToRight(rowOf(m)) ? j + f : 12 - j - f);
   };
 
-  // SVG path along the band's centreline from the start of month m0 to the end of m1.
-  function bandPath(m0, m1) {
-    const r0 = rowOf(m0), r1 = rowOf(m1);
-    let d = `M${cellX(m0, 0)},${rowY(r0)}`;
+  // SVG path along the band's centreline from fraction f0 through month m0 to fraction f1
+  // through month m1 (defaults: the whole of both months).
+  function bandPath(m0, m1, f0 = 0, f1 = 1) {
+    const r0 = rowOf(m0), r1 = rowOf(m1), r = PITCH / 2;
+    let d = `M${cellX(m0, f0)},${rowY(r0)}`;
     for (let k = r0; k <= r1; k++) {
-      const xEnd = k === r1 ? cellX(m1, 1) : cellX(k * 12 + 11, 1);
+      const xEnd = k === r1 ? cellX(m1, f1) : cellX(k * 12 + 11, 1);
       d += `L${xEnd},${rowY(k)}`;
       if (k < r1) {
         // Half-turn up into the next row. Rightward turns are anticlockwise on screen.
         const sweep = leftToRight(k) ? 0 : 1;
-        d += `A0.5,0.5 0 0 ${sweep} ${xEnd},${rowY(k + 1)}`;
+        d += `A${r},${r} 0 0 ${sweep} ${xEnd},${rowY(k + 1)}`;
       }
     }
     return d;
   }
 
+  // Where each position's band starts and ends within its first and last month. Two
+  // positions that overlap by exactly one month split it in half; then every position is
+  // trimmed by GAP at both ends so neighbours are separated by a sliver of gray. Longer
+  // overlaps are left alone (the later one is simply drawn on top).
+  const span = positions.map(p => ({
+    m0: monthIndex(p.start, firstYear), m1: monthIndex(p.end, firstYear), f0: 0, f1: 1,
+  }));
+  for (const a of span) for (const b of span) {
+    if (a !== b && a.m1 === b.m0 && a.m0 < b.m0) { a.f1 = 0.5; b.f0 = 0.5; }
+  }
+  for (const s of span) {
+    if (s.m1 > s.m0 || s.f1 - s.f0 > 3 * GAP) { s.f0 += GAP; s.f1 -= GAP; }
+  }
+
   // --- DOM skeleton -------------------------------------------------------------------
   const root = htmlEl("div", "position:relative;width:100%;font-family:inherit;");
   root.className = "cv-timeline";
-  // Markers: no native focus ring (see the note on segments), a bolder stroke instead.
+  // Hover feedback. No native focus rings: Chrome draws them on SVG shapes in user units,
+  // which the viewBox scales into huge blobs.
   htmlEl("style", "", root,
+    `.cv-timeline .cv-seg{stroke-width:${BAND};outline:none;transition:stroke-width .15s}` +
+    `.cv-timeline .cv-seg:hover{stroke-width:${BAND * 1.25}}` +
     ".cv-timeline .cv-marker{outline:none}" +
-    ".cv-timeline .cv-marker:hover circle,.cv-timeline .cv-marker:hover path," +
-    ".cv-timeline .cv-marker:focus circle,.cv-timeline .cv-marker:focus path{stroke-width:0.1}");
+    ".cv-timeline .cv-marker:hover path,.cv-timeline .cv-marker:focus path{stroke-width:0.1}");
 
   const toggles = htmlEl("div",
     "display:flex;gap:1.2em;flex-wrap:wrap;font-size:0.85em;color:#555;margin:0 0 0.4em;", root);
@@ -117,10 +157,21 @@ export function createTimeline({firstYear, lastYear, positions, internships = []
     "border-radius:4px;font-size:0.8em;line-height:1.3;pointer-events:none;z-index:2;" +
     "box-shadow:0 2px 8px rgba(0,0,0,.25);", root);
 
-  const panel = htmlEl("div",
-    "display:none;margin:0.6rem 0 0;padding:0.6rem 0.9rem;border-left:3px solid #ccc;" +
-    "background:#f7f7f7;border-radius:4px;font-size:0.9em;line-height:1.35;", root);
-  panel.className = "cv-timeline-detail";
+  // Popup with the given lines, horizontally centred on x and sitting above y (root px).
+  function showPopup(lines, x, y) {
+    popup.replaceChildren();
+    for (const [text, style] of lines) if (text) htmlEl("div", style, popup, text);
+    popup.style.display = "block";
+    const rw = root.getBoundingClientRect().width;
+    popup.style.left = `${Math.max(0, Math.min(rw - popup.offsetWidth, x - popup.offsetWidth / 2))}px`;
+    popup.style.top = `${y - popup.offsetHeight - 8}px`;
+  }
+  const hidePopup = () => { popup.style.display = "none"; };
+  // Popup anchored to an element's box.
+  function popupAt(el, lines) {
+    const rr = root.getBoundingClientRect(), er = el.getBoundingClientRect();
+    showPopup(lines, er.left + er.width / 2 - rr.left, er.top - rr.top);
+  }
 
   // --- Static drawing -------------------------------------------------------------------
   svgEl("path", {
@@ -130,15 +181,15 @@ export function createTimeline({firstYear, lastYear, positions, internships = []
 
   for (let k = 0; k < nYears; k++) {
     svgEl("text", {
-      x: LM - 0.7, y: rowY(k), "text-anchor": "end", "dominant-baseline": "central",
-      "font-size": 0.45, fill: LIGHT,
+      x: LM - 1.0, y: rowY(k), "text-anchor": "end", "dominant-baseline": "central",
+      "font-size": 0.38, fill: LIGHT,
     }, svg).textContent = String(firstYear + k);
   }
   const topRow = nYears - 1;
   for (let j = 0; j < 12; j++) {
     svgEl("text", {
       x: cellX(topRow * 12 + j, 0.5), y: TOP - 0.35, "text-anchor": "middle",
-      "font-size": 0.4, fill: LIGHT,
+      "font-size": 0.34, fill: LIGHT,
     }, svg).textContent = MONTH_LETTERS[j];
   }
 
@@ -147,63 +198,32 @@ export function createTimeline({firstYear, lastYear, positions, internships = []
       d: bandPath(monthIndex(it.start, firstYear), monthIndex(it.end, firstYear)),
       fill: "none", stroke: "#bbb", "stroke-width": BAND * 0.35,
     }, svg);
-    svgEl("title", {}, p).textContent =
-      `${it.title}, ${it.at} (${monthLabel(it.start)} – ${monthLabel(it.end)})`;
+    p.addEventListener("mousemove", e => {
+      const rr = root.getBoundingClientRect();
+      showPopup([[it.title, "font-weight:600;"], [it.at, "color:#ddd;"]], e.clientX - rr.left, e.clientY - rr.top - 12);
+    });
+    p.addEventListener("mouseleave", hidePopup);
   }
 
-  // --- Positions and their detail panel ---------------------------------------------------
-  let selected = null;
-
-  function showDetail(p, color) {
-    const m0 = monthIndex(p.start, firstYear), m1 = monthIndex(p.end, firstYear);
-    const months = m1 - m0 + 1;
-    const dur = months >= 12
-      ? `${Math.floor(months / 12)} yr${months >= 24 ? "s" : ""}${months % 12 ? ` ${months % 12} mo` : ""}`
-      : `${months} mo`;
-    panel.style.borderLeftColor = color;
-    panel.replaceChildren();
-    htmlEl("div", "font-weight:600;", panel, `${p.title} · ${p.at}`);
-    htmlEl("div", "color:#666;font-size:0.92em;", panel,
-      `${monthLabel(p.start)} – ${monthLabel(p.end)} · ${dur}`);
-    htmlEl("div", "margin-top:0.4em;color:#444;font-size:0.92em;", panel,
-      "Placeholder for more about this period (diplomas, software, links).");
-    panel.style.display = "block";
-  }
-
-  function deselect() {
-    if (selected) selected.setAttribute("stroke-width", BAND);
-    selected = null;
-    panel.style.display = "none";
-  }
-
-  const segments = positions.map((p, i) => {
+  // --- Positions: hover shows the name -----------------------------------------------------
+  positions.forEach((p, i) => {
     const color = p.color ?? PALETTE[i % PALETTE.length];
+    const {m0, m1, f0, f1} = span[i];
     const seg = svgEl("path", {
-      d: bandPath(monthIndex(p.start, firstYear), monthIndex(p.end, firstYear)),
-      fill: "none", stroke: color, "stroke-width": BAND,
-      // outline:none because Chrome draws its focus ring on SVG shapes in user units, which
-      // the viewBox scales into a huge blob; the thicker stroke marks the selection instead.
-      style: "cursor:pointer;transition:stroke-width .15s;outline:none;",
-      tabindex: 0, role: "button",
+      d: bandPath(m0, m1, f0, f1),
+      fill: "none", stroke: color,
       "aria-label": `${p.title}, ${p.at}`,
     }, svg);
-    svgEl("title", {}, seg).textContent =
-      `${p.title}, ${p.at} (${monthLabel(p.start)} – ${monthLabel(p.end)})`;
-    const select = () => {
-      if (selected === seg) return deselect();
-      deselect();
-      selected = seg;
-      seg.setAttribute("stroke-width", BAND * 1.3);
-      showDetail(p, color);
-    };
-    seg.addEventListener("click", select);
-    seg.addEventListener("keydown", e => {
-      if (e.key === "Enter" || e.key === " ") { e.preventDefault(); select(); }
+    seg.classList.add("cv-seg");
+    // A segment can span several rows, so the popup follows the pointer rather than the box.
+    seg.addEventListener("mousemove", e => {
+      const rr = root.getBoundingClientRect();
+      showPopup([[p.title, "font-weight:600;"], [p.at, "color:#ddd;"]], e.clientX - rr.left, e.clientY - rr.top - 12);
     });
-    return seg;
+    seg.addEventListener("mouseleave", hidePopup);
   });
 
-  // --- Markers for papers and talks ---------------------------------------------------------
+  // --- Markers for papers, talks and diplomas ---------------------------------------------
   // All markers live in one layer above the positions. Entries that share a month are
   // spread evenly across that month's cell so they do not sit on top of each other.
   const markerLayer = svgEl("g", {}, svg);
@@ -217,36 +237,25 @@ export function createTimeline({firstYear, lastYear, positions, internships = []
     }
   }
 
-  function showPopup(markerEl, kind, it) {
-    popup.replaceChildren();
-    htmlEl("div", "color:#bbb;font-size:0.85em;", popup, `${kind.label} · ${monthLabel(it.date)}`);
-    htmlEl("div", "font-weight:600;", popup, it.title);
-    if (it.venue) htmlEl("div", "color:#ddd;", popup, it.venue);
-    popup.style.display = "block";
-    const rr = root.getBoundingClientRect(), mr = markerEl.getBoundingClientRect();
-    const cx = mr.left + mr.width / 2 - rr.left;
-    const left = Math.max(0, Math.min(rr.width - popup.offsetWidth, cx - popup.offsetWidth / 2));
-    popup.style.left = `${left}px`;
-    popup.style.top = `${mr.top - rr.top - popup.offsetHeight - 8}px`;
-  }
-  const hidePopup = () => { popup.style.display = "none"; };
-
   const markerGroups = new Map(KINDS.map(k => [k.id, []]));
   for (const [m, list] of byMonth) {
     list.forEach(({kind, it}, i) => {
       const cx = cellX(m, (i + 0.5) / list.length), cy = rowY(rowOf(m));
-      const link = svgEl("a", {href: kind.page + it.key, style: "cursor:pointer;"}, markerLayer);
+      const link = kind.page && it.key
+        ? svgEl("a", {href: kind.page + it.key, style: "cursor:pointer;"}, markerLayer)
+        : svgEl("g", {}, markerLayer);
       link.classList.add("cv-marker", `cv-marker-${kind.id}`);
-      const common = {fill: "#fff", stroke: "#222", "stroke-width": 0.05};
-      if (kind.shape === "circle") {
-        svgEl("circle", {cx, cy, r: MARKER_R, ...common}, link);
-      } else {
-        const r = MARKER_R * 1.15;
-        svgEl("path", {d: `M${cx},${cy - r}L${cx + r},${cy}L${cx},${cy + r}L${cx - r},${cy}Z`, ...common}, link);
-      }
-      svgEl("title", {}, link).textContent = `${it.title} (${monthLabel(it.date)})`;
-      link.addEventListener("mouseenter", () => showPopup(link, kind, it));
-      link.addEventListener("focus", () => showPopup(link, kind, it));
+      svgEl("path", {
+        d: shapePath(kind.shape, cx, cy, MARKER_R),
+        fill: "#fff", stroke: "#222", "stroke-width": 0.05, "stroke-linejoin": "round",
+      }, link);
+      const lines = [
+        [`${kind.one}, ${monthLabel(it.date)}`, "color:#bbb;font-size:0.85em;"],
+        [it.title, "font-weight:600;"],
+        [it.venue, "color:#ddd;"],
+      ];
+      link.addEventListener("mouseenter", () => popupAt(link, lines));
+      link.addEventListener("focus", () => popupAt(link, lines));
       link.addEventListener("mouseleave", hidePopup);
       link.addEventListener("blur", hidePopup);
       markerGroups.get(kind.id).push(link);
@@ -259,11 +268,9 @@ export function createTimeline({firstYear, lastYear, positions, internships = []
     box.type = "checkbox";
     box.checked = true;
     box.dataset.kind = kind.id;
-    const n = markerGroups.get(kind.id).length;
-    const icon = svgEl("svg", {viewBox: "-1 -1 2 2", width: "0.8em", height: "0.8em", style: "overflow:visible;"}, label);
-    if (kind.shape === "circle") svgEl("circle", {r: 0.85, fill: "#fff", stroke: "#222", "stroke-width": 0.18}, icon);
-    else svgEl("path", {d: "M0,-1L1,0L0,1L-1,0Z", fill: "#fff", stroke: "#222", "stroke-width": 0.18}, icon);
-    label.append(`${kind.label} (${n})`);
+    const icon = svgEl("svg", {viewBox: "-1.2 -1.2 2.4 2.4", width: "0.9em", height: "0.9em", style: "overflow:visible;"}, label);
+    svgEl("path", {d: shapePath(kind.shape, 0, 0, 0.85), fill: "#fff", stroke: "#222", "stroke-width": 0.16, "stroke-linejoin": "round"}, icon);
+    label.append(`${kind.label} (${markerGroups.get(kind.id).length})`);
     const apply = () => {
       for (const el of markerGroups.get(kind.id)) el.style.display = box.checked ? "" : "none";
     };
@@ -275,11 +282,12 @@ export function createTimeline({firstYear, lastYear, positions, internships = []
 }
 
 // Auto-mount: if the page has a #cv-timeline container, render into it, replacing whatever
-// fallback it holds (the static SVG). The data files sit next to this module.
+// fallback it holds (the static SVG). The data files sit next to this module: jobs.json has
+// the positions and diplomas, items.json the papers and talks.
 const host = document.getElementById("cv-timeline");
 if (host) {
   const load = f => fetch(new URL(f, import.meta.url)).then(r => r.json());
   Promise.all([load("jobs.json"), load("items.json").catch(() => ({}))])
-    .then(([data, items]) => host.replaceChildren(createTimeline({...data, items})))
+    .then(([data, items]) => host.replaceChildren(createTimeline({...data, items: {...items, diplomas: data.diplomas}})))
     .catch(err => console.error("cv-timeline: could not render, keeping fallback", err));
 }
