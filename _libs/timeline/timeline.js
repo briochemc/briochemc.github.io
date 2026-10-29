@@ -19,7 +19,8 @@ const LIGHT = "#e4e4e4";       // unfilled band
 const LABEL = "#c4c4c4";       // year labels, and the month names inside the band
 const SHOW_MONTHS = false;     // month names centred inside the band on every row
 const MARKER_R = 0.075;        // marker radius, in cells
-const BANG = 0.24;             // font size of the "!" flagging first-author papers, in cells
+const ME = "rgb(214, 81, 8)";  // the colour of my name on the publications page (names.jl)
+const ME_NAME = "Pasquier";    // last name to paint with ME in the author lists
 
 // Position colours follow Crameri's managua colormap (as in ColorSchemes.jl) from the
 // first study to the latest academic job: education takes the first half (yellow to dark
@@ -35,10 +36,10 @@ const COLORS = {
 
 // Marker kinds: which list in `items`, the legend label, the word for one of them in the
 // popup, the page each entry lives on (entries carry a `key` that is the anchor on that
-// page), the shape, and whether it is outlined and flagged with an exclamation mark.
+// page), the shape, and whether it is flagged (painted in ME instead of black).
 const KINDS = [
+  {id: "papersOther", label: "Papers", one: "Paper", page: "/publications/#", shape: "star"},
   {id: "papersFirst", label: "First-author papers", one: "First-author paper", page: "/publications/#", shape: "star", flag: true},
-  {id: "papersOther", label: "Other papers", one: "Paper", page: "/publications/#", shape: "star"},
   {id: "talks", label: "Talks/Posters", one: "Talk/Poster", page: "/talks/#", shape: "circle"},
 ];
 
@@ -86,16 +87,23 @@ function shapePath(shape, cx, cy, r) {
   }
 }
 
-// A marker (black shape, plus a "!" for flagged kinds) centred on (cx, cy), appended to
-// `parent`. Used for the figure and, at its own scale, for the legend.
-function marker(parent, kind, cx, cy, r, bang = BANG) {
-  svgEl("path", {d: shapePath(kind.shape, cx, cy, r), fill: "#000"}, parent);
-  if (kind.flag) {
-    svgEl("text", {
-      x: cx + r * 1.4 + 0.02 * bang, y: cy, "font-size": bang, "font-weight": "700", fill: "#000",
-      "dominant-baseline": "central",
-    }, parent).textContent = "!";
+// A marker (filled shape, black or ME for flagged kinds) centred on (cx, cy), appended to
+// `parent`. Used for the figure and the legend.
+function marker(parent, kind, cx, cy, r) {
+  svgEl("path", {d: shapePath(kind.shape, cx, cy, r), fill: kind.flag ? ME : "#000"}, parent);
+}
+
+// Black or white, whichever reads better on a fill given as #rgb, #rrggbb or rgb(r, g, b).
+function contrast(fill) {
+  let r, g, b;
+  const m = fill.match(/rgb\((\d+),\s*(\d+),\s*(\d+)\)/);
+  if (m) [r, g, b] = m.slice(1).map(Number);
+  else {
+    const h = fill.length === 4 ? [...fill.slice(1)].map(c => c + c).join("") : fill.slice(1);
+    [r, g, b] = [0, 2, 4].map(i => parseInt(h.slice(i, i + 2), 16));
   }
+  const lin = c => { c /= 255; return c <= 0.03928 ? c / 12.92 : ((c + 0.055) / 1.055) ** 2.4; };
+  return 0.2126 * lin(r) + 0.7152 * lin(g) + 0.0722 * lin(b) > 0.3 ? "#000" : "#fff";
 }
 
 export function createTimeline({firstYear, lastYear, positions, groups = {}, items = {}}) {
@@ -184,10 +192,15 @@ export function createTimeline({firstYear, lastYear, positions, groups = {}, ite
     "border-radius:4px;font-size:0.8em;line-height:1.3;pointer-events:none;z-index:2;" +
     "box-shadow:0 2px 8px rgba(0,0,0,.25);", root);
 
-  // Popup with the given lines, horizontally centred on x and sitting above y (root px).
+  // Popup with the given lines (text, or a ready-made element), horizontally centred on x
+  // and sitting above y (root px).
   function showPopup(lines, x, y) {
     popup.replaceChildren();
-    for (const [text, style] of lines) if (text) htmlEl("div", style, popup, text);
+    for (const [content, style] of lines) {
+      if (!content) continue;
+      if (content instanceof Node) { content.style.cssText = style; popup.appendChild(content); }
+      else htmlEl("div", style, popup, content);
+    }
     popup.style.display = "block";
     const rw = root.getBoundingClientRect().width;
     popup.style.left = `${Math.max(0, Math.min(rw - popup.offsetWidth, x - popup.offsetWidth / 2))}px`;
@@ -206,26 +219,62 @@ export function createTimeline({firstYear, lastYear, positions, groups = {}, ite
   };
 
   // --- Static drawing -------------------------------------------------------------------
-  svgEl("path", {d: bandOutline(0, nMonths - 1), fill: LIGHT}, svg);
+  const band = svgEl("path", {d: bandOutline(0, nMonths - 1), fill: LIGHT}, svg);
 
+  const yearText = [];
   for (let k = 0; k < nYears; k++) {
-    svgEl("text", {
+    yearText.push(svgEl("text", {
       x: LM - 1.0, y: rowY(k), "text-anchor": "end", "dominant-baseline": "central",
       "font-size": 0.38, fill: LABEL,
-    }, svg).textContent = String(firstYear + k);
+    }, svg));
+    yearText[k].textContent = String(firstYear + k);
   }
   // Month names centred inside the band on every row, following each row's direction.
-  // Drawn in their own layer so they sit above the coloured positions. Off by default
-  // (SHOW_MONTHS): they are hard to read on the light bands.
+  // Drawn in their own layer so they sit above the coloured positions. Hidden unless
+  // SHOW_MONTHS (they are hard to read on the light bands), except that the month under
+  // the pointer is shown while hovering the band.
   const monthLayer = svgEl("g", {style: "pointer-events:none;"});
-  for (let k = 0; k < (SHOW_MONTHS ? nYears : 0); k++) {
+  const monthText = [];
+  for (let k = 0; k < nYears; k++) {
+    monthText.push([]);
     for (let j = 0; j < 12; j++) {
-      svgEl("text", {
+      const t = svgEl("text", {
         x: cellX(k * 12 + j, 0.5), y: rowY(k), "text-anchor": "middle",
         "dominant-baseline": "central", "font-size": 0.19, fill: LABEL,
-      }, monthLayer).textContent = MONTHS[j];
+        ...(SHOW_MONTHS ? {} : {display: "none"}),
+      }, monthLayer);
+      t.textContent = MONTHS[j];
+      monthText[k].push(t);
     }
   }
+
+  // --- Hover highlight of the year and month under the pointer ----------------------------
+  let lit = null;
+  function clearHighlight() {
+    if (!lit) return;
+    yearText[lit.k].setAttribute("fill", LABEL);
+    const t = monthText[lit.k][lit.j];
+    t.setAttribute("fill", LABEL);
+    if (!SHOW_MONTHS) t.setAttribute("display", "none");
+    lit = null;
+  }
+  // Paints the year of the row under the pointer black and shows that month's name in
+  // black or white, whichever reads on `fill`, the colour of the band under the pointer.
+  function highlightAt(e, fill) {
+    const sr = svg.getBoundingClientRect(), s = sr.width / vbWidth;
+    const x = (e.clientX - sr.left) / s, y = (e.clientY - sr.top) / s;
+    const k = Math.max(0, Math.min(nYears - 1, nYears - 1 - Math.floor((y - TOP) / PITCH)));
+    const jx = Math.max(0, Math.min(11, Math.floor(x - LM)));
+    const j = leftToRight(k) ? jx : 11 - jx;
+    if (lit && (lit.k !== k || lit.j !== j)) clearHighlight();
+    lit = {k, j};
+    yearText[k].setAttribute("fill", "#000");
+    const t = monthText[k][j];
+    t.setAttribute("fill", contrast(fill));
+    t.removeAttribute("display");
+  }
+  band.addEventListener("mousemove", e => highlightAt(e, LIGHT));
+  band.addEventListener("mouseleave", clearHighlight);
 
   // --- Positions ------------------------------------------------------------------------
   // Where each position's band starts and ends within its first and last month. Two
@@ -255,8 +304,9 @@ export function createTimeline({firstYear, lastYear, positions, groups = {}, ite
       "aria-label": `${p.title}, ${p.at}`,
     }, svg);
     seg.classList.add("cv-seg");
-    seg.addEventListener("mousemove", popupAtPointer([[p.title, "font-weight:600;"], [p.at, "color:#ddd;"]]));
-    seg.addEventListener("mouseleave", hidePopup);
+    const showJob = popupAtPointer([[p.title, "font-weight:600;"], [p.at, "color:#ddd;"]]);
+    seg.addEventListener("mousemove", e => { showJob(e); highlightAt(e, color); });
+    seg.addEventListener("mouseleave", () => { hidePopup(); clearHighlight(); });
   });
   svg.appendChild(monthLayer);
 
@@ -283,11 +333,17 @@ export function createTimeline({firstYear, lastYear, positions, groups = {}, ite
         : svgEl("g", {}, markerLayer);
       link.classList.add("cv-marker", `cv-marker-${kind.id}`);
       marker(link, kind, cx, cy, MARKER_R);
+      // Author list: last names only (the last word of each name), mine in ME.
+      const authors = htmlEl("div");
+      (it.authors ?? []).forEach((a, n) => {
+        const last = a.trim().split(/\s+/).pop();
+        if (n) authors.append(", ");
+        htmlEl("span", last === ME_NAME ? `color:${ME};` : "", authors, last);
+      });
       const lines = [
         [`${kind.one}, ${monthLabel(it.date)}`, "color:#bbb;font-size:0.85em;"],
         [it.title, "font-weight:600;"],
-        // Last names only (the last word of each name)
-        [(it.authors ?? []).map(a => a.trim().split(/\s+/).pop()).join(", "), "color:#ddd;font-size:0.92em;"],
+        [authors.childNodes.length ? authors : "", "color:#ddd;font-size:0.92em;"],
         [it.venue, "color:#ddd;"],
       ];
       link.addEventListener("mouseenter", () => popupAt(link, lines));
@@ -308,7 +364,7 @@ export function createTimeline({firstYear, lastYear, positions, groups = {}, ite
     box.type = "checkbox";
     box.checked = true;
     box.dataset.kind = kind.id;
-    const a = MARKER_R * 1.7, w = 2 * a + (kind.flag ? MARKER_R * 1.4 + BANG * 0.7 : 0), h = 2 * a;
+    const a = MARKER_R * 1.7, w = 2 * a, h = 2 * a;
     const icon = svgEl("svg", {viewBox: `${-a} ${-a} ${w} ${h}`, style: "overflow:visible;display:block;"}, label);
     marker(icon, kind, 0, 0, MARKER_R);
     icons.push({icon, w, h});
