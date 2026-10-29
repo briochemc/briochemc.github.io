@@ -17,6 +17,7 @@ const GAP = 0.09;              // trimmed off each end of a position so neighbou
 const TIP = BAND * Math.sqrt(3) / 4;  // length of the point / notch at a band's ends
 const LIGHT = "#e4e4e4";       // unfilled band
 const LABEL = "#c4c4c4";       // year labels, and the month names inside the band
+const SHOW_MONTHS = false;     // month names centred inside the band on every row
 const MARKER_R = 0.075;        // marker radius, in cells
 const BANG = 0.24;             // font size of the "!" flagging first-author papers, in cells
 
@@ -214,9 +215,10 @@ export function createTimeline({firstYear, lastYear, positions, groups = {}, ite
     }, svg).textContent = String(firstYear + k);
   }
   // Month names centred inside the band on every row, following each row's direction.
-  // Drawn in their own layer so they sit above the coloured positions.
+  // Drawn in their own layer so they sit above the coloured positions. Off by default
+  // (SHOW_MONTHS): they are hard to read on the light bands.
   const monthLayer = svgEl("g", {style: "pointer-events:none;"});
-  for (let k = 0; k < nYears; k++) {
+  for (let k = 0; k < (SHOW_MONTHS ? nYears : 0); k++) {
     for (let j = 0; j < 12; j++) {
       svgEl("text", {
         x: cellX(k * 12 + j, 0.5), y: rowY(k), "text-anchor": "middle",
