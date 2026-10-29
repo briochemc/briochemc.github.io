@@ -190,10 +190,50 @@ people:
         title: "Dr."
         url: "https://www.soest.hawaii.edu/oceanography/profile/Garcia-Catherine/"
 
-    Weilei Wang:
+    Paige M. Wise:
+        affiliation: "University of Southern California (USC), Los Angeles, CA, USA"
+        name:
+            full: "Paige M. Wise"
+            short: "P. M. Wise"
+            bib: "Wise, P. M."
+        orcid: 0009-0001-1898-826X
+        title: ""
+        url: "http://www.mtel.rocks/people.html"
+
+    Tilo Ziehn:
+        affiliation: "Commonwealth Scientific and Industrial Research Organisation, Aspendale, VIC, Australia"
+        name:
+            full: "Tilo Ziehn"
+            short: "T. Ziehn"
+            bib: "Ziehn, T."
+        orcid: 0000-0001-9873-9775
+        title: "Dr."
+        url: "https://people.csiro.au/Z/T/Tilo-Ziehn"
+
+    David K. Hutchinson:
+        affiliation: "University of New South Wales, Sydney, Australia"
+        name:
+            full: "David K. Hutchinson"
+            short: "D. K. Hutchinson"
+            bib: "Hutchinson, D. K."
+        orcid: 0000-0001-9385-4782
+        title: "Dr."
+        url: "https://www.unsw.edu.au/staff/david-hutchinson"
+
+    Yi Liu:
+        affiliation: "Princeton, NJ, USA"
+        name:
+            full: "Yi Liu"
+            short: "Y. Liu"
+            bib: "Liu, Y."
+        # orcid: 0000-0001-9385-4782
+        title: "Dr."
+        url: "https://cdeutsch.princeton.edu/people/yi-liu"
+
+    Wei-Lei Wang:
         affiliation: "Xiamen University: Xiamen, Fujian, China"
         name:
-            full: "Weilei Wang"
+            full: "Wei-Lei Wang"
             short: "C. Wang"
             bib: "Wang, C."
         orcid: 0000-0002-3201-7224
@@ -324,7 +364,7 @@ people:
         affiliation: "National Oceanography Centre, Southampton, UK"
         name:
             full: "Barry B. Cael"
-            short: "B. B. Cael"
+            short: "Barry B. Cael"
             bib: "Cael, B. B."
         orcid: 0000-0002-3201-7224
         title: "Associate Professor"
