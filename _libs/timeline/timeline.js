@@ -341,11 +341,14 @@ export function createTimeline({firstYear, lastYear, positions, groups = {}, ite
         if (n) authors.append(", ");
         htmlEl("span", last === ME_NAME ? `color:${ME};` : "", authors, last);
       });
+      // Last line: "Journal (2016)" for papers, "Meeting, Talk/Poster (Feb 2016)" for talks.
+      const tail = kind.id === "talks"
+        ? [it.venue, `${kind.one} (${monthLabel(it.date)})`].filter(Boolean).join(", ")
+        : `${it.venue ? it.venue + " " : ""}(${it.date.slice(0, 4)})`;
       const lines = [
-        [`${kind.one}, ${monthLabel(it.date)}`, "color:#bbb;font-size:0.85em;"],
         [it.title, "font-weight:600;"],
         [authors.childNodes.length ? authors : "", "color:#ddd;font-size:0.92em;"],
-        [it.venue, "color:#ddd;"],
+        [tail, "color:#ddd;"],
       ];
       link.addEventListener("mouseenter", () => popupAt(link, lines));
       link.addEventListener("focus", () => popupAt(link, lines));
