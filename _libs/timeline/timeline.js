@@ -186,10 +186,9 @@ export function createTimeline({firstYear, lastYear, positions, internships = []
       "font-size": 0.38, fill: LIGHT,
     }, svg).textContent = String(firstYear + k);
   }
-  // Month names tucked under the two bottom rows, which run in opposite directions, so the
-  // reader sees how the snake turns. (Internships in `internships` are not drawn, as in the
-  // Makie figure.)
-  for (const k of [0, 1]) {
+  // Month names tucked under every row, following each row's direction. (Internships in
+  // `internships` are not drawn, as in the Makie figure.)
+  for (let k = 0; k < nYears; k++) {
     for (let j = 0; j < 12; j++) {
       svgEl("text", {
         x: cellX(k * 12 + j, 0.5), y: rowY(k) + BAND / 2 + 0.22, "text-anchor": "middle",
