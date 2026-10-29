@@ -8,7 +8,7 @@
 //
 // Proof of concept. Plain ES module, no dependencies, so it can be imported from this site
 // (Franklin copies `_libs/` to `/libs/`) or from anywhere else. `createTimeline` returns a
-// DOM node; the auto-mount at the bottom replaces the static SVG fallback on the page.
+// DOM node; the auto-mount at the bottom fills the empty #cv-timeline container on the page.
 
 const MONTHS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 const PITCH = 0.62;            // vertical distance between year rows, in cells (a month is 1 wide)
@@ -453,7 +453,7 @@ export function createTimeline({firstYear, lastYear, positions, groups = {}, ite
 }
 
 // Auto-mount: if the page has a #cv-timeline container, render into it, replacing whatever
-// fallback it holds (the static SVG). The data files sit next to this module: jobs.json has
+// it holds. The data files sit next to this module: jobs.json has
 // the positions and groups, items.json the papers and talks (split here by first authorship).
 const host = document.getElementById("cv-timeline");
 if (host) {
@@ -463,5 +463,5 @@ if (host) {
       ...data,
       items: {papersFirst: papers.filter(p => p.first), papersOther: papers.filter(p => !p.first), talks},
     })))
-    .catch(err => console.error("cv-timeline: could not render, keeping fallback", err));
+    .catch(err => console.error("cv-timeline: could not render", err));
 }
