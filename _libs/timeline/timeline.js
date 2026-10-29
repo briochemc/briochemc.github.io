@@ -231,17 +231,27 @@ export function createTimeline({firstYear, lastYear, positions, internships = []
   }
 
   const markerGroups = new Map(KINDS.map(k => [k.id, []]));
+  // A diploma's fraction through its month: the end edge of the position it concludes.
+  const diplomaFx = it => {
+    const pi = positions.findIndex(p => p.end === it.date && p.kind === "education");
+    return pi >= 0 ? span[pi].f1 : 1 - GAP;
+  };
+
   for (const [m, list] of byMonth) {
     const spread = list.filter(x => x.kind.id !== "diplomas");
+    const diploma = list.find(x => x.kind.id === "diplomas");
+    // Range of the cell the spread markers may use: the whole cell, or, when a diploma is
+    // pinned in this month, the larger of the two parts on either side of it.
+    let lo = 0, hi = 1;
+    if (diploma && spread.length) {
+      const fd = diplomaFx(diploma.it), c = 2.2 * MARKER_R;
+      if (fd - c >= 1 - (fd + c)) hi = fd - c; else lo = fd + c;
+      if (hi - lo < c) { if (lo > 0) hi = lo + c; else lo = hi - c; }
+    }
     list.forEach(({kind, it}) => {
-      let fx;
-      if (kind.id === "diplomas") {
-        const pi = positions.findIndex(p => p.end === it.date && p.kind === "education");
-        fx = pi >= 0 ? span[pi].f1 : 1 - GAP;
-      } else {
-        const i = spread.findIndex(x => x.it === it);
-        fx = (i + 0.5) / spread.length;
-      }
+      const fx = kind.id === "diplomas"
+        ? diplomaFx(it)
+        : lo + (spread.findIndex(x => x.it === it) + 0.5) / spread.length * (hi - lo);
       const cx = cellX(m, fx), cy = rowY(rowOf(m));
       const link = kind.page && it.key
         ? svgEl("a", {href: kind.page + it.key, style: "cursor:pointer;"}, markerLayer)
