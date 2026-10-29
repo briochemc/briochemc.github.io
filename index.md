@@ -60,25 +60,6 @@ Modified from <a href=publications/#peer-reviewed_articles>Pasquier et al., JGR:
 ~~~ -->
 
 
-## Resume
-
-For details, see my likely up-to-date [CV in PDF format](pdfs/CV_benoit_pasquier.pdf).
-For a visual summary, see the timeline below, which provides a month-by-month overview of my resume going back 26 years, or its [interactive version](/resume/).
-
-~~~
-<img src="/assets/timeline.svg" title="Visual Resume" style="width:100% !important; padding:0 !important; border:0 !important; margin:0 !important"><br>
-<center><small>
-Summary visualisation of the past 25 years of my educational and professional life.<br>
-Made with Makie.jl (code available <a href=https://github.com/briochemc/briochemc.github.io>on GitHub</a>).
-</small></center>
-<br>
-~~~
-
-
-
-
-
-
 Our duty as scientists is to make sure we understand our environment well enough to prepare for its abrupt change and prevent the worst outcomes.
 I commend my fellow sea-going oceanographers, who play a crucial role in this pursuit by providing us with an ever-growing set of critically important observational data.
 As a mathematically inclined oceanographer, I am committed to putting my skills and energy towards answering the profound science questions posed by our changing environment and towards educating the next generation of scientists that will eventually take over.

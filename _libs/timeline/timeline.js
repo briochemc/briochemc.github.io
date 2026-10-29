@@ -11,22 +11,26 @@
 // DOM node; the auto-mount at the bottom replaces the static SVG fallback on the page.
 
 const MONTHS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
-const PITCH = 0.85;            // vertical distance between year rows, in cells (a month is 1 wide)
+const PITCH = 0.62;            // vertical distance between year rows, in cells (a month is 1 wide)
 const BAND = 0.28;             // band width, in cells
-const GAP = 0.12;              // trimmed off each end of a position so neighbours stay separated
+const GAP = 0.09;              // trimmed off each end of a position so neighbours stay separated
 const TIP = BAND * Math.sqrt(3) / 4;  // length of the point / notch at a band's ends
-const LIGHT = "#e4e4e4";       // unfilled band, and the year/month labels
-const INK = "#8a8a8a";         // brackets, their labels, and marker fill
-const MARKER_R = 0.15;         // marker radius, in cells
+const LIGHT = "#e4e4e4";       // unfilled band
+const LABEL = "#c4c4c4";       // year labels, and the month names inside the band
+const MARKER_R = 0.075;        // marker radius, in cells
+const BANG = 0.24;             // font size of the "!" flagging first-author papers, in cells
 
-// Same colours as timeline.jl: seaborn's icefire gradient sampled at 16 points and picked
-// by hand there, in the order the positions are listed in jobs.json (sorted by start date).
-// The last one is the purple added for the Lecturer position.
-const PALETTE = [
-  "#5AA7CD", "#8DC6D0", "#5AA7CD", "#3885D0", "#EB753A", "#465EBE",
-  "#D34936", "#444282", "#AB3043", "#782C3F", "#4A252E", "#212026",
-  "#8E59BF",
-];
+// Position colours follow Crameri's managua colormap (as in ColorSchemes.jl) from the
+// first study to the latest academic job: education takes the first half (yellow to dark
+// purple, sampled evenly from 0 to 0.45), academic jobs the second half (dark purple to
+// cyan, sampled evenly from 0.55 to 1), each in chronological order. The centre is skipped
+// on both sides so the last study and the first job do not share the same dark purple.
+// Private-sector jobs are black.
+const COLORS = {
+  education: ["#FFCF67", "#DC9955", "#B96B46", "#91443B", "#652A3D"],
+  academic: ["#4F305B", "#4C4B87", "#556EAD", "#6292C9", "#71BAE4", "#81E7FF"],
+  private: ["#000"],
+};
 
 // Marker kinds: which list in `items`, the legend label, the word for one of them in the
 // popup, the page each entry lives on (entries carry a `key` that is the anchor on that
@@ -66,7 +70,7 @@ const htmlEl = (name, style, parent, text) => {
 function shapePath(shape, cx, cy, r) {
   switch (shape) {
     case "star": {
-      const R = r * 1.3, ri = R * 0.45;
+      const R = r * 1.5, ri = R * 0.45;
       return Array.from({length: 10}, (_, i) => {
         const a = -Math.PI / 2 + i * Math.PI / 5, rr = i % 2 ? ri : R;
         return `${i ? "L" : "M"}${cx + rr * Math.cos(a)},${cy + rr * Math.sin(a)}`;
@@ -81,16 +85,13 @@ function shapePath(shape, cx, cy, r) {
   }
 }
 
-// A marker (shape, plus outline and "!" for flagged kinds) centred on (cx, cy), appended
-// to `parent`. Used for the figure and, scaled down, for the legend.
-function marker(parent, kind, cx, cy, r) {
-  svgEl("path", {
-    d: shapePath(kind.shape, cx, cy, r), fill: INK,
-    ...(kind.flag ? {stroke: "#000", "stroke-width": r * 0.25, "stroke-linejoin": "round"} : {}),
-  }, parent);
+// A marker (black shape, plus a "!" for flagged kinds) centred on (cx, cy), appended to
+// `parent`. Used for the figure and, at its own scale, for the legend.
+function marker(parent, kind, cx, cy, r, bang = BANG) {
+  svgEl("path", {d: shapePath(kind.shape, cx, cy, r), fill: "#000"}, parent);
   if (kind.flag) {
     svgEl("text", {
-      x: cx + r * 1.5, y: cy, "font-size": r * 2.2, "font-weight": "700", fill: "#000",
+      x: cx + r * 1.4 + 0.02 * bang, y: cy, "font-size": bang, "font-weight": "700", fill: "#000",
       "dominant-baseline": "central",
     }, parent).textContent = "!";
   }
@@ -102,14 +103,12 @@ export function createTimeline({firstYear, lastYear, positions, groups = {}, ite
   const B = BAND / 2;
 
   // Geometry, in cells: rows have pitch PITCH, turns have radius PITCH / 2. The left
-  // margin holds the year labels, the right margin clears the turns, and the annotation
-  // area beyond it holds the group brackets.
+  // margin holds the year labels and the right margin clears the turns.
   const LM = 2.8;
   const RM = PITCH / 2 + TIP + 0.1;
-  const RA = 2.8;
   const TOP = 0.3;
-  const BOTTOM = 0.4;            // room for the month labels under the bottom row
-  const vbWidth = LM + 12 + RM + RA;
+  const BOTTOM = 0.2;
+  const vbWidth = LM + 12 + RM;
   const vbHeight = nYears * PITCH + TOP + BOTTOM;
 
   // Row k holds year firstYear + k, counted from the bottom; even rows run left to right.
@@ -211,14 +210,18 @@ export function createTimeline({firstYear, lastYear, positions, groups = {}, ite
   for (let k = 0; k < nYears; k++) {
     svgEl("text", {
       x: LM - 1.0, y: rowY(k), "text-anchor": "end", "dominant-baseline": "central",
-      "font-size": 0.38, fill: LIGHT,
+      "font-size": 0.38, fill: LABEL,
     }, svg).textContent = String(firstYear + k);
-    // Month names tucked under every row, following each row's direction.
+  }
+  // Month names centred inside the band on every row, following each row's direction.
+  // Drawn in their own layer so they sit above the coloured positions.
+  const monthLayer = svgEl("g", {style: "pointer-events:none;"});
+  for (let k = 0; k < nYears; k++) {
     for (let j = 0; j < 12; j++) {
       svgEl("text", {
-        x: cellX(k * 12 + j, 0.5), y: rowY(k) + B + 0.19, "text-anchor": "middle",
-        "font-size": 0.2, fill: LIGHT,
-      }, svg).textContent = MONTHS[j];
+        x: cellX(k * 12 + j, 0.5), y: rowY(k), "text-anchor": "middle",
+        "dominant-baseline": "central", "font-size": 0.19, fill: LABEL,
+      }, monthLayer).textContent = MONTHS[j];
     }
   }
 
@@ -237,8 +240,13 @@ export function createTimeline({firstYear, lastYear, positions, groups = {}, ite
     if (s.m1 > s.m0 || s.f1 - s.f0 > 3 * GAP) { s.f0 += GAP; s.f1 -= GAP; }
   }
 
+  // Colour: the n-th position of a group gets the group's n-th colour (positions are
+  // listed chronologically), cycling if a group has more positions than colours.
+  const seen = {};
   positions.forEach((p, i) => {
-    const color = p.color ?? PALETTE[i % PALETTE.length];
+    const list = COLORS[p.group] ?? COLORS.private;
+    seen[p.group] = (seen[p.group] ?? 0) + 1;
+    const color = p.color ?? list[(seen[p.group] - 1) % list.length];
     const {m0, m1, f0, f1} = span[i];
     const seg = svgEl("path", {
       d: bandOutline(m0, m1, f0, f1), fill: color, stroke: color,
@@ -248,45 +256,7 @@ export function createTimeline({firstYear, lastYear, positions, groups = {}, ite
     seg.addEventListener("mousemove", popupAtPointer([[p.title, "font-weight:600;"], [p.at, "color:#ddd;"]]));
     seg.addEventListener("mouseleave", hidePopup);
   });
-
-  // --- Group brackets on the right ----------------------------------------------------------
-  // One bracket per group spanning its first to last position (in months, using the
-  // trimmed ends). Groups whose spans overlap go in separate columns. When a group ends in
-  // the same row another begins, the brackets stop short of that row's centre on each side.
-  const extents = new Map();
-  positions.forEach((p, i) => {
-    if (!p.group) return;
-    const s = span[i], g = extents.get(p.group) ?? {id: p.group, start: Infinity, end: -Infinity};
-    g.start = Math.min(g.start, s.m0 + s.f0);
-    g.end = Math.max(g.end, s.m1 + s.f1);
-    extents.set(p.group, g);
-  });
-  const brackets = [...extents.values()].sort((a, b) => a.start - b.start);
-  const colEnd = [];
-  for (const g of brackets) {
-    g.startRow = rowOf(Math.floor(g.start));
-    g.endRow = rowOf(Math.min(nMonths - 1, Math.floor(g.end)));
-    let c = colEnd.findIndex(e => e < g.start);
-    if (c < 0) { c = colEnd.length; colEnd.push(0); }
-    colEnd[c] = g.end;
-    g.col = c;
-  }
-  for (const g of brackets) {
-    const before = brackets.some(o => o !== g && o.endRow === g.startRow && o.end <= g.start);
-    const after = brackets.some(o => o !== g && o.startRow === g.endRow && o.start >= g.end);
-    const y0 = rowY(g.startRow) + (before ? -0.08 : B);   // bottom end (earlier)
-    const y1 = rowY(g.endRow) - (after ? -0.08 : B);      // top end (later)
-    const x = LM + 12 + RM + 0.15 + g.col * 1.05, tick = 0.15;
-    svgEl("path", {
-      d: `M${x - tick},${y0}L${x},${y0}L${x},${y1}L${x - tick},${y1}`,
-      fill: "none", stroke: INK, "stroke-width": 0.04,
-    }, svg);
-    const tx = x + 0.3, ty = (y0 + y1) / 2;
-    svgEl("text", {
-      x: tx, y: ty, transform: `rotate(-90 ${tx} ${ty})`, "text-anchor": "middle",
-      "dominant-baseline": "central", "font-size": 0.36, fill: INK,
-    }, svg).textContent = groups[g.id] ?? g.id;
-  }
+  svg.appendChild(monthLayer);
 
   // --- Markers for papers and talks ---------------------------------------------------------
   // Markers sit just above the band. Entries that share a month are spread evenly across
@@ -314,7 +284,8 @@ export function createTimeline({firstYear, lastYear, positions, groups = {}, ite
       const lines = [
         [`${kind.one}, ${monthLabel(it.date)}`, "color:#bbb;font-size:0.85em;"],
         [it.title, "font-weight:600;"],
-        [(it.authors ?? []).join(", "), "color:#ddd;font-size:0.92em;"],
+        // Last names only (the last word of each name)
+        [(it.authors ?? []).map(a => a.trim().split(/\s+/).pop()).join(", "), "color:#ddd;font-size:0.92em;"],
         [it.venue, "color:#ddd;"],
       ];
       link.addEventListener("mouseenter", () => popupAt(link, lines));
@@ -334,7 +305,7 @@ export function createTimeline({firstYear, lastYear, positions, groups = {}, ite
     box.dataset.kind = kind.id;
     const w = kind.flag ? 3.4 : 2.4;
     const icon = svgEl("svg", {viewBox: `-1.2 -1.2 ${w} 2.4`, width: `${w / 2.4 * 0.9}em`, height: "0.9em", style: "overflow:visible;"}, label);
-    marker(icon, kind, 0, 0, 0.75);
+    marker(icon, kind, 0, 0, 0.75, 1.7);
     label.append(`${kind.label} (${markerGroups.get(kind.id).length})`);
     // The site's CSS hides checkboxes (it uses one for the mobile menu), so the label's
     // opacity shows the state instead.
