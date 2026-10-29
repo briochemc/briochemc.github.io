@@ -12,7 +12,8 @@
 
 const MONTHS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 const PITCH = 0.62;            // vertical distance between year rows, in cells (a month is 1 wide)
-const BAND = 0.28;             // band width, in cells
+const BAND = 0.224;            // band width, in cells
+const DARK = "#333";           // markers, and the popup background
 const GAP = 0.09;              // trimmed off each end of a position so neighbours stay separated
 const TIP = BAND * Math.sqrt(3) / 4;  // length of the point / notch at a band's ends
 const LIGHT = "#e4e4e4";       // unfilled band
@@ -39,7 +40,7 @@ const COLORS = {
 // page), the shape, and whether it is flagged (painted in ME instead of black).
 const KINDS = [
   {id: "papersOther", label: "Papers", one: "Paper", page: "/publications/#", shape: "star"},
-  {id: "papersFirst", label: "First-author papers", one: "First-author paper", page: "/publications/#", shape: "star", flag: true},
+  {id: "papersFirst", label: "First-author papers", one: "Paper", page: "/publications/#", shape: "star", flag: true},
   {id: "talks", label: "Talks/Posters", one: "Talk/Poster", page: "/talks/#", shape: "circle"},
 ];
 
@@ -90,7 +91,7 @@ function shapePath(shape, cx, cy, r) {
 // A marker (filled shape, black or ME for flagged kinds) centred on (cx, cy), appended to
 // `parent`. Used for the figure and the legend.
 function marker(parent, kind, cx, cy, r) {
-  svgEl("path", {d: shapePath(kind.shape, cx, cy, r), fill: kind.flag ? ME : "#000"}, parent);
+  svgEl("path", {d: shapePath(kind.shape, cx, cy, r), fill: kind.flag ? ME : DARK}, parent);
 }
 
 // Black or white, whichever reads better on a fill given as #rgb, #rrggbb or rgb(r, g, b).
@@ -188,12 +189,12 @@ export function createTimeline({firstYear, lastYear, positions, groups = {}, ite
     "display:flex;gap:1.2em;flex-wrap:wrap;font-size:0.85em;color:#555;margin:0.6em 0 0;", root);
 
   const popup = htmlEl("div",
-    "display:none;position:absolute;max-width:24em;padding:0.4em 0.6em;background:#222;color:#fff;" +
+    `display:none;position:absolute;max-width:24em;padding:0.4em 0.6em;background:${DARK};color:#fff;` +
     "border-radius:4px;font-size:0.8em;line-height:1.3;pointer-events:none;z-index:2;" +
     "box-shadow:0 2px 8px rgba(0,0,0,.25);", root);
 
   // Popup with the given lines (text, or a ready-made element), horizontally centred on x
-  // and sitting above y (root px).
+  // and sitting below y (root px).
   function showPopup(lines, x, y) {
     popup.replaceChildren();
     for (const [content, style] of lines) {
@@ -204,18 +205,18 @@ export function createTimeline({firstYear, lastYear, positions, groups = {}, ite
     popup.style.display = "block";
     const rw = root.getBoundingClientRect().width;
     popup.style.left = `${Math.max(0, Math.min(rw - popup.offsetWidth, x - popup.offsetWidth / 2))}px`;
-    popup.style.top = `${y - popup.offsetHeight - 8}px`;
+    popup.style.top = `${y + 8}px`;
   }
   const hidePopup = () => { popup.style.display = "none"; };
-  // Popup anchored to an element's box.
+  // Popup anchored under an element's box.
   function popupAt(el, lines) {
     const rr = root.getBoundingClientRect(), er = el.getBoundingClientRect();
-    showPopup(lines, er.left + er.width / 2 - rr.left, er.top - rr.top);
+    showPopup(lines, er.left + er.width / 2 - rr.left, er.bottom - rr.top);
   }
   // Popup following the pointer (for bands, which can span several rows).
   const popupAtPointer = lines => e => {
     const rr = root.getBoundingClientRect();
-    showPopup(lines, e.clientX - rr.left, e.clientY - rr.top - 12);
+    showPopup(lines, e.clientX - rr.left, e.clientY - rr.top + 12);
   };
 
   // --- Static drawing -------------------------------------------------------------------
@@ -225,7 +226,7 @@ export function createTimeline({firstYear, lastYear, positions, groups = {}, ite
   for (let k = 0; k < nYears; k++) {
     yearText.push(svgEl("text", {
       x: LM - 1.0, y: rowY(k), "text-anchor": "end", "dominant-baseline": "central",
-      "font-size": 0.38, fill: LABEL,
+      "font-size": 0.304, fill: LABEL,
     }, svg));
     yearText[k].textContent = String(firstYear + k);
   }
