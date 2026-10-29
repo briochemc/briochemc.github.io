@@ -8,7 +8,7 @@
 // (Franklin copies `_libs/` to `/libs/`) or from anywhere else. `createTimeline` returns a
 // DOM node; the auto-mount at the bottom replaces the static SVG fallback on the page.
 
-const MONTH_LETTERS = "JFMAMJJASOND";
+const MONTHS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 const PITCH = 0.7;             // vertical distance between year rows, in cells (a month is 1 wide)
 const BAND = 0.28;             // band width, in cells
 const GAP = 0.12;              // trimmed off each end of a position so neighbours stay separated
@@ -85,9 +85,10 @@ export function createTimeline({firstYear, lastYear, positions, internships = []
   // holds the year labels and the right margin just clears the turns.
   const LM = 2.8;
   const RM = PITCH / 2 + MARKER_R + 0.1;
-  const TOP = 0.8;
+  const TOP = MARKER_R + 0.05;
+  const BOTTOM = 0.4;            // room for the month labels under the bottom row
   const vbWidth = 12 + LM + RM;
-  const vbHeight = nYears * PITCH + TOP + MARKER_R;
+  const vbHeight = nYears * PITCH + TOP + BOTTOM;
 
   // Row k holds year firstYear + k, counted from the bottom; even rows run left to right.
   const rowOf = m => Math.floor(m / 12);
@@ -185,24 +186,16 @@ export function createTimeline({firstYear, lastYear, positions, internships = []
       "font-size": 0.38, fill: LIGHT,
     }, svg).textContent = String(firstYear + k);
   }
-  const topRow = nYears - 1;
-  for (let j = 0; j < 12; j++) {
-    svgEl("text", {
-      x: cellX(topRow * 12 + j, 0.5), y: TOP - 0.35, "text-anchor": "middle",
-      "font-size": 0.34, fill: LIGHT,
-    }, svg).textContent = MONTH_LETTERS[j];
-  }
-
-  for (const it of internships) {
-    const p = svgEl("path", {
-      d: bandPath(monthIndex(it.start, firstYear), monthIndex(it.end, firstYear)),
-      fill: "none", stroke: "#bbb", "stroke-width": BAND * 0.35,
-    }, svg);
-    p.addEventListener("mousemove", e => {
-      const rr = root.getBoundingClientRect();
-      showPopup([[it.title, "font-weight:600;"], [it.at, "color:#ddd;"]], e.clientX - rr.left, e.clientY - rr.top - 12);
-    });
-    p.addEventListener("mouseleave", hidePopup);
+  // Month names tucked under the two bottom rows, which run in opposite directions, so the
+  // reader sees how the snake turns. (Internships in `internships` are not drawn, as in the
+  // Makie figure.)
+  for (const k of [0, 1]) {
+    for (let j = 0; j < 12; j++) {
+      svgEl("text", {
+        x: cellX(k * 12 + j, 0.5), y: rowY(k) + BAND / 2 + 0.22, "text-anchor": "middle",
+        "font-size": 0.2, fill: LIGHT,
+      }, svg).textContent = MONTHS[j];
+    }
   }
 
   // --- Positions: hover shows the name -----------------------------------------------------
@@ -224,8 +217,9 @@ export function createTimeline({firstYear, lastYear, positions, internships = []
   });
 
   // --- Markers for papers, talks and diplomas ---------------------------------------------
-  // All markers live in one layer above the positions. Entries that share a month are
-  // spread evenly across that month's cell so they do not sit on top of each other.
+  // All markers live in one layer above the positions. A diploma sits exactly on the end
+  // edge of the position it concludes. Other entries that share a month are spread evenly
+  // across that month's cell so they do not sit on top of each other.
   const markerLayer = svgEl("g", {}, svg);
   const byMonth = new Map();
   for (const kind of KINDS) {
@@ -239,8 +233,17 @@ export function createTimeline({firstYear, lastYear, positions, internships = []
 
   const markerGroups = new Map(KINDS.map(k => [k.id, []]));
   for (const [m, list] of byMonth) {
-    list.forEach(({kind, it}, i) => {
-      const cx = cellX(m, (i + 0.5) / list.length), cy = rowY(rowOf(m));
+    const spread = list.filter(x => x.kind.id !== "diplomas");
+    list.forEach(({kind, it}) => {
+      let fx;
+      if (kind.id === "diplomas") {
+        const pi = positions.findIndex(p => p.end === it.date && p.kind === "education");
+        fx = pi >= 0 ? span[pi].f1 : 1 - GAP;
+      } else {
+        const i = spread.findIndex(x => x.it === it);
+        fx = (i + 0.5) / spread.length;
+      }
+      const cx = cellX(m, fx), cy = rowY(rowOf(m));
       const link = kind.page && it.key
         ? svgEl("a", {href: kind.page + it.key, style: "cursor:pointer;"}, markerLayer)
         : svgEl("g", {}, markerLayer);
