@@ -2,9 +2,9 @@
 // at the end of each row so consecutive months stay contiguous. Positions are coloured
 // bands along the snake, each ending in a point and starting with a notch, so they read as
 // arrows pointing forward in time; hovering one shows its name. Papers and talks sit as
-// markers just above the band (toggles in the legend below the figure): hovering a marker
-// shows a popup, clicking it goes to that entry on the publications or talks page. Brackets
-// on the right group the positions (education, private sector, academia).
+// markers just above the band (toggles in the legend below the figure); hovering a marker
+// shows a popup. Clicking (or tapping) a position or a marker pins its popup until the next
+// click anywhere, so the details can also be read on a touch screen.
 //
 // Proof of concept. Plain ES module, no dependencies, so it can be imported from this site
 // (Franklin copies `_libs/` to `/libs/`) or from anywhere else. `createTimeline` returns a
@@ -36,12 +36,11 @@ const COLORS = {
 };
 
 // Marker kinds: which list in `items`, the legend label, the word for one of them in the
-// popup, the page each entry lives on (entries carry a `key` that is the anchor on that
-// page), the shape, and whether it is flagged (painted in ME instead of black).
+// popup, the shape, and whether it is flagged (painted in ME instead of black).
 const KINDS = [
-  {id: "papersOther", label: "Papers", one: "Paper", page: "/publications/#", shape: "star"},
-  {id: "papersFirst", label: "First-author papers", one: "Paper", page: "/publications/#", shape: "star", flag: true},
-  {id: "talks", label: "Talks/Posters", one: "Talk/Poster", page: "/talks/#", shape: "circle"},
+  {id: "papersOther", label: "Papers", one: "Paper", shape: "star"},
+  {id: "papersFirst", label: "First-author papers", one: "Paper", shape: "star", flag: true},
+  {id: "talks", label: "Talks/Posters", one: "Talk/Poster", shape: "circle"},
 ];
 
 const monthIndex = (ym, firstYear) => {
@@ -114,13 +113,12 @@ export function createTimeline({firstYear, lastYear, positions, groups = {}, ite
 
   // Geometry, in cells: rows have pitch PITCH, turns have radius PITCH / 2. The left
   // margin holds the year labels and the right margin clears the turns; the same blank
-  // EDGE on both sides keeps years + snake centred. The top holds the title, the bottom
-  // the name.
+  // EDGE on both sides keeps years + snake centred. The top holds the title and the name.
   const EDGE = 0.9;
   const LM = EDGE + 1.7;
   const RM = PITCH / 2 + TIP + 0.1;
   const TOP = 1.1;
-  const BOTTOM = 0.45;
+  const BOTTOM = 0.2;
   const vbWidth = LM + 12 + RM + EDGE;
   const vbHeight = nYears * PITCH + TOP + BOTTOM;
 
@@ -175,10 +173,11 @@ export function createTimeline({firstYear, lastYear, positions, groups = {}, ite
   // Hover feedback. No native focus rings: Chrome draws them on SVG shapes in user units,
   // which the viewBox scales into huge blobs.
   htmlEl("style", "", root,
-    ".cv-timeline .cv-seg{stroke-width:0;outline:none;transition:stroke-width .15s}" +
-    `.cv-timeline .cv-seg:hover{stroke-width:${BAND * 0.25}}` +
-    ".cv-timeline .cv-marker{outline:none}" +
-    ".cv-timeline .cv-marker:hover path,.cv-timeline .cv-marker:focus path{fill:#000}");
+    ".cv-timeline .cv-seg{stroke-width:0;outline:none;cursor:pointer;transition:stroke-width .15s}" +
+    `.cv-timeline .cv-seg:hover,.cv-timeline .cv-seg.cv-pinned{stroke-width:${BAND * 0.25}}` +
+    ".cv-timeline .cv-marker{outline:none;cursor:pointer}" +
+    ".cv-timeline .cv-marker:hover path,.cv-timeline .cv-marker:focus path," +
+    ".cv-timeline .cv-marker.cv-pinned path{fill:#000}");
 
   const svg = svgEl("svg", {
     viewBox: `0 0 ${vbWidth} ${vbHeight}`,
@@ -196,9 +195,15 @@ export function createTimeline({firstYear, lastYear, positions, groups = {}, ite
     "border-radius:4px;font-size:0.8em;line-height:1.3;pointer-events:none;z-index:2;" +
     "box-shadow:0 2px 8px rgba(0,0,0,.25);", root);
 
+  // The popup follows the pointer until a click pins it to the clicked element: while one
+  // is pinned, hovering changes nothing. Clicking the same element again, or anywhere
+  // else, unpins it. On a touch screen a tap is a hover followed by a click, so tapping
+  // pins and tapping elsewhere clears.
+  let pinned = null;
   // Popup with the given lines (text, or a ready-made element), horizontally centred on x
   // and sitting below y (root px).
-  function showPopup(lines, x, y) {
+  function showPopup(lines, x, y, force = false) {
+    if (pinned && !force) return;
     popup.replaceChildren();
     for (const [content, style] of lines) {
       if (!content) continue;
@@ -210,16 +215,32 @@ export function createTimeline({firstYear, lastYear, positions, groups = {}, ite
     popup.style.left = `${Math.max(0, Math.min(rw - popup.offsetWidth, x - popup.offsetWidth / 2))}px`;
     popup.style.top = `${y + 8}px`;
   }
-  const hidePopup = () => { popup.style.display = "none"; };
+  const hidePopup = () => { if (!pinned) popup.style.display = "none"; };
+  function unpin() {
+    if (!pinned) return;
+    pinned.classList.remove("cv-pinned");
+    pinned = null;
+    popup.style.display = "none";
+  }
+  // Pins the popup to `el`, drawn by `show(force)`; a second click on `el` unpins instead.
+  function togglePin(el, show) {
+    const again = pinned === el;
+    unpin();
+    if (again) return;
+    pinned = el;
+    el.classList.add("cv-pinned");
+    show(true);
+  }
+  document.addEventListener("click", unpin);
   // Popup anchored under an element's box.
-  function popupAt(el, lines) {
+  function popupAt(el, lines, force) {
     const rr = root.getBoundingClientRect(), er = el.getBoundingClientRect();
-    showPopup(lines, er.left + er.width / 2 - rr.left, er.bottom - rr.top);
+    showPopup(lines, er.left + er.width / 2 - rr.left, er.bottom - rr.top, force);
   }
   // Popup following the pointer (for bands, which can span several rows).
-  const popupAtPointer = lines => e => {
+  const popupAtPointer = lines => (e, force) => {
     const rr = root.getBoundingClientRect();
-    showPopup(lines, e.clientX - rr.left, e.clientY - rr.top + 12);
+    showPopup(lines, e.clientX - rr.left, e.clientY - rr.top + 12, force);
   };
 
   // --- Static drawing -------------------------------------------------------------------
@@ -228,7 +249,7 @@ export function createTimeline({firstYear, lastYear, positions, groups = {}, ite
     "font-size": 0.55, "font-weight": "700", fill: DARK,
   }, svg).textContent = "Interactive timeline CV";
   svgEl("text", {
-    x: LM + 12 + RM, y: vbHeight - 0.12, "text-anchor": "end", "font-size": 0.2, fill: LABEL,
+    x: vbWidth / 2, y: 0.92, "text-anchor": "middle", "font-size": 0.2, fill: LABEL,
   }, svg).textContent = "Benoît Pasquier";
 
   const band = svgEl("path", {d: bandOutline(0, nMonths - 1), fill: LIGHT}, svg);
@@ -325,6 +346,7 @@ export function createTimeline({firstYear, lastYear, positions, groups = {}, ite
     const showJob = popupAtPointer([[p.title, "font-weight:600;"], [p.at, "color:#ddd;"]]);
     seg.addEventListener("mousemove", e => { showJob(e); highlightAt(e, color); });
     seg.addEventListener("mouseleave", () => { hidePopup(); clearHighlight(); });
+    seg.addEventListener("click", e => { e.stopPropagation(); togglePin(seg, force => showJob(e, force)); });
   });
 
   // Short job labels ("PhD", "Postdoc", ...) inside the band at the start of each position,
@@ -363,9 +385,7 @@ export function createTimeline({firstYear, lastYear, positions, groups = {}, ite
   for (const [m, list] of byMonth) {
     list.forEach(({kind, it}, i) => {
       const cx = cellX(m, (i + 0.5) / list.length), cy = rowY(rowOf(m)) - B - 0.04 - MARKER_R;
-      const link = kind.page && it.key
-        ? svgEl("a", {href: kind.page + it.key, style: "cursor:pointer;"}, markerLayer)
-        : svgEl("g", {}, markerLayer);
+      const link = svgEl("g", {tabindex: "0", role: "button"}, markerLayer);
       link.classList.add("cv-marker", `cv-marker-${kind.id}`);
       marker(link, kind, cx, cy, MARKER_R);
       // Author list: last names only (the last word of each name), mine in ME.
@@ -388,6 +408,9 @@ export function createTimeline({firstYear, lastYear, positions, groups = {}, ite
       link.addEventListener("focus", () => popupAt(link, lines));
       link.addEventListener("mouseleave", hidePopup);
       link.addEventListener("blur", hidePopup);
+      const pin = e => { e.stopPropagation(); togglePin(link, force => popupAt(link, lines, force)); };
+      link.addEventListener("click", pin);
+      link.addEventListener("keydown", e => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); pin(e); } });
       markerGroups.get(kind.id).push(link);
     });
   }
