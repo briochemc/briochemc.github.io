@@ -299,15 +299,19 @@ export function createTimeline({firstYear, lastYear, positions, groups = {}, ite
   }
 
   // --- Legend (with toggles) under the figure ---------------------------------------------------
+  // Legend icons are drawn in the figure's own units and sized in pixels from the figure's
+  // current scale, so they match the markers exactly at any width.
+  const icons = [];
   for (const kind of KINDS) {
     const label = htmlEl("label", "display:flex;align-items:center;gap:0.35em;cursor:pointer;", legend);
     const box = htmlEl("input", "margin:0;", label);
     box.type = "checkbox";
     box.checked = true;
     box.dataset.kind = kind.id;
-    const w = kind.flag ? 3.4 : 2.4;
-    const icon = svgEl("svg", {viewBox: `-1.2 -1.2 ${w} 2.4`, width: `${w / 2.4 * 0.9}em`, height: "0.9em", style: "overflow:visible;"}, label);
-    marker(icon, kind, 0, 0, 0.75, 1.7);
+    const a = MARKER_R * 1.7, w = 2 * a + (kind.flag ? MARKER_R * 1.4 + BANG * 0.7 : 0), h = 2 * a;
+    const icon = svgEl("svg", {viewBox: `${-a} ${-a} ${w} ${h}`, style: "overflow:visible;display:block;"}, label);
+    marker(icon, kind, 0, 0, MARKER_R);
+    icons.push({icon, w, h});
     label.append(`${kind.label} (${markerGroups.get(kind.id).length})`);
     // The site's CSS hides checkboxes (it uses one for the mobile menu), so the label's
     // opacity shows the state instead.
@@ -318,6 +322,15 @@ export function createTimeline({firstYear, lastYear, positions, groups = {}, ite
     box.addEventListener("change", apply);
     apply();
   }
+  const sizeIcons = () => {
+    const s = svg.getBoundingClientRect().width / vbWidth;
+    for (const {icon, w, h} of icons) {
+      icon.setAttribute("width", w * s);
+      icon.setAttribute("height", h * s);
+    }
+  };
+  new ResizeObserver(sizeIcons).observe(root);
+  sizeIcons();
 
   return root;
 }
