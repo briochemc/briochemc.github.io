@@ -1,0 +1,26 @@
+{
+  "firstYear": 2001,
+  "lastYear": 2027,
+  "positions": [
+    {"start": "2001-08", "end": "2004-07", "title": "Preparatory Classes", "at": "Lycée Masséna", "kind": "education"},
+    {"start": "2004-08", "end": "2007-07", "title": "MSc", "at": "École Polytechnique", "kind": "education"},
+    {"start": "2007-08", "end": "2008-07", "title": "MSc", "at": "Dauphine / ENSAE", "kind": "education"},
+    {"start": "2008-07", "end": "2009-06", "title": "Trader Intern", "at": "Société Générale", "kind": "job"},
+    {"start": "2010-01", "end": "2010-12", "title": "MSc", "at": "UNSW", "kind": "education"},
+    {"start": "2011-05", "end": "2012-08", "title": "Proposal Engineer", "at": "Suez Water", "kind": "job"},
+    {"start": "2013-01", "end": "2017-09", "title": "PhD", "at": "Maths UNSW", "kind": "education"},
+    {"start": "2017-09", "end": "2019-09", "title": "Postdoctoral Research Scholar", "at": "UCI", "kind": "job"},
+    {"start": "2019-11", "end": "2021-10", "title": "Postdoctoral Researcher", "at": "USC", "kind": "job"},
+    {"start": "2021-10", "end": "2024-08", "title": "Research Associate", "at": "Maths UNSW", "kind": "job"},
+    {"start": "2024-09", "end": "2025-02", "title": "Contract Researcher", "at": "CSIRO", "kind": "job"},
+    {"start": "2025-09", "end": "2026-05", "title": "Research Associate", "at": "CCRC UNSW", "kind": "job"},
+    {"start": "2026-06", "end": "2026-12", "title": "Lecturer (EF)", "at": "CCRC UNSW", "kind": "job"}
+  ],
+  "internships": [
+    {"start": "2004-09", "end": "2005-02", "title": "IT Intern", "at": "Bioforce"},
+    {"start": "2006-07", "end": "2006-07", "title": "Assembly Line Worker", "at": "Mecaplast"},
+    {"start": "2007-04", "end": "2007-07", "title": "Mathematics Research Intern", "at": "École Polytechnique"},
+    {"start": "2016-06", "end": "2016-12", "title": "Mathematics Tutor", "at": "UNSW"},
+    {"start": "2017-03", "end": "2017-08", "title": "Casual Research Assistant", "at": "UNSW"}
+  ]
+}

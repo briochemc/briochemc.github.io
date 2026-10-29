@@ -66,10 +66,14 @@ For details, see my likely up-to-date [CV in PDF format](pdfs/CV_benoit_pasquier
 For a visual summary, see the timeline below, which provides a month-by-month overview of my resume going back 26 years.
 
 ~~~
-<img src="/assets/timeline.svg" title="Visual Resume" style="width:100% !important; padding:0 !important; border:0 !important; margin:0 !important"><br>
+<div id="cv-timeline">
+<img src="/assets/timeline.svg" title="Visual Resume" style="width:100% !important; padding:0 !important; border:0 !important; margin:0 !important">
+</div>
+<script type="module" src="/libs/timeline/timeline.js"></script>
+<br>
 <center><small>
 Summary visualisation of the past 25 years of my educational and professional life.<br>
-Made with Makie.jl (code available <a href=https://github.com/briochemc/briochemc.github.io>on GitHub</a>).
+Click a position for details. Interactive version in plain JavaScript; the static fallback is made with Makie.jl (code available <a href=https://github.com/briochemc/briochemc.github.io>on GitHub</a>).
 </small></center>
 <br>
 ~~~
