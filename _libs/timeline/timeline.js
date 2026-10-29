@@ -113,12 +113,15 @@ export function createTimeline({firstYear, lastYear, positions, groups = {}, ite
   const B = BAND / 2;
 
   // Geometry, in cells: rows have pitch PITCH, turns have radius PITCH / 2. The left
-  // margin holds the year labels and the right margin clears the turns.
-  const LM = 2.8;
+  // margin holds the year labels and the right margin clears the turns; the same blank
+  // EDGE on both sides keeps years + snake centred. The top holds the title, the bottom
+  // the name.
+  const EDGE = 0.9;
+  const LM = EDGE + 1.7;
   const RM = PITCH / 2 + TIP + 0.1;
-  const TOP = 0.3;
-  const BOTTOM = 0.2;
-  const vbWidth = LM + 12 + RM;
+  const TOP = 1.1;
+  const BOTTOM = 0.45;
+  const vbWidth = LM + 12 + RM + EDGE;
   const vbHeight = nYears * PITCH + TOP + BOTTOM;
 
   // Row k holds year firstYear + k, counted from the bottom; even rows run left to right.
@@ -186,7 +189,7 @@ export function createTimeline({firstYear, lastYear, positions, groups = {}, ite
   }, root);
 
   const legend = htmlEl("div",
-    "display:flex;gap:1.2em;flex-wrap:wrap;font-size:0.85em;color:#555;margin:0.6em 0 0;", root);
+    "display:flex;justify-content:center;gap:1.2em;flex-wrap:wrap;font-size:0.85em;color:#555;margin:0.6em 0 0;", root);
 
   const popup = htmlEl("div",
     `display:none;position:absolute;max-width:24em;padding:0.4em 0.6em;background:${DARK};color:#fff;` +
@@ -220,6 +223,14 @@ export function createTimeline({firstYear, lastYear, positions, groups = {}, ite
   };
 
   // --- Static drawing -------------------------------------------------------------------
+  svgEl("text", {
+    x: vbWidth / 2, y: 0.45, "text-anchor": "middle", "dominant-baseline": "central",
+    "font-size": 0.55, "font-weight": "700", fill: DARK,
+  }, svg).textContent = "Interactive timeline CV";
+  svgEl("text", {
+    x: LM + 12 + RM, y: vbHeight - 0.12, "text-anchor": "end", "font-size": 0.2, fill: LABEL,
+  }, svg).textContent = "Benoît Pasquier";
+
   const band = svgEl("path", {d: bandOutline(0, nMonths - 1), fill: LIGHT}, svg);
 
   const yearText = [];
@@ -250,6 +261,7 @@ export function createTimeline({firstYear, lastYear, positions, groups = {}, ite
   }
 
   // --- Hover highlight of the year and month under the pointer ----------------------------
+  const jobLabels = [];   // {t, m0, m1}: label element and the months it covers, filled below
   let lit = null;
   function clearHighlight() {
     if (!lit) return;
@@ -257,6 +269,7 @@ export function createTimeline({firstYear, lastYear, positions, groups = {}, ite
     const t = monthText[lit.k][lit.j];
     t.setAttribute("fill", LABEL);
     if (!SHOW_MONTHS) t.setAttribute("display", "none");
+    for (const l of jobLabels) l.t.style.opacity = "1";
     lit = null;
   }
   // Paints the year of the row under the pointer black and shows that month's name in
@@ -273,6 +286,9 @@ export function createTimeline({firstYear, lastYear, positions, groups = {}, ite
     const t = monthText[k][j];
     t.setAttribute("fill", contrast(fill));
     t.removeAttribute("display");
+    // A job label sitting on the shown month fades out so the two do not clash.
+    const m = k * 12 + j;
+    for (const l of jobLabels) l.t.style.opacity = m >= l.m0 && m <= l.m1 ? "0" : "1";
   }
   band.addEventListener("mousemove", e => highlightAt(e, LIGHT));
   band.addEventListener("mouseleave", clearHighlight);
@@ -294,11 +310,12 @@ export function createTimeline({firstYear, lastYear, positions, groups = {}, ite
 
   // Colour: the n-th position of a group gets the group's n-th colour (positions are
   // listed chronologically), cycling if a group has more positions than colours.
-  const seen = {};
+  const seen = {}, colors = [];
   positions.forEach((p, i) => {
     const list = COLORS[p.group] ?? COLORS.private;
     seen[p.group] = (seen[p.group] ?? 0) + 1;
     const color = p.color ?? list[(seen[p.group] - 1) % list.length];
+    colors.push(color);
     const {m0, m1, f0, f1} = span[i];
     const seg = svgEl("path", {
       d: bandOutline(m0, m1, f0, f1), fill: color, stroke: color,
@@ -308,6 +325,23 @@ export function createTimeline({firstYear, lastYear, positions, groups = {}, ite
     const showJob = popupAtPointer([[p.title, "font-weight:600;"], [p.at, "color:#ddd;"]]);
     seg.addEventListener("mousemove", e => { showJob(e); highlightAt(e, color); });
     seg.addEventListener("mouseleave", () => { hidePopup(); clearHighlight(); });
+  });
+
+  // Short job labels ("PhD", "Postdoc", ...) inside the band at the start of each position,
+  // reading forward in time, in the month font, in black or white to suit the band.
+  const LABEL_SIZE = 0.19, LABEL_INSET = TIP + 0.1;
+  positions.forEach((p, i) => {
+    if (!p.label) return;
+    const {m0, f0} = span[i], k = rowOf(m0);
+    const t = svgEl("text", {
+      x: cellX(m0, f0 + LABEL_INSET), y: rowY(k), "text-anchor": leftToRight(k) ? "start" : "end",
+      "dominant-baseline": "central", "font-size": LABEL_SIZE, fill: contrast(colors[i]),
+      style: "transition:opacity .15s;",
+    }, monthLayer);
+    t.textContent = p.label;
+    // Months the label covers, from an estimate of its width (the SVG is not laid out yet).
+    const width = p.label.length * LABEL_SIZE * 0.6;
+    jobLabels.push({t, m0, m1: Math.min(m0 + Math.ceil(f0 + LABEL_INSET + width) - 1, nMonths - 1)});
   });
   svg.appendChild(monthLayer);
 
