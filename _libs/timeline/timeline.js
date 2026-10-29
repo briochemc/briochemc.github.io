@@ -179,6 +179,17 @@ export function createTimeline({firstYear, lastYear, positions, internships = []
     d: bandPath(0, nMonths - 1),
     fill: "none", stroke: LIGHT, "stroke-width": BAND,
   }, svg);
+  // The band is an arrow pointing forward in time: an equilateral arrowhead on its far
+  // end, and a notch (a white triangle cut into it) on its near end. Both triangles have
+  // the band width as their base and point forward.
+  const arrow = (x, y, dir, fill) => {
+    const h = BAND * Math.sqrt(3) / 2;
+    svgEl("path", {
+      d: `M${x},${y - BAND / 2}L${x + dir * h},${y}L${x},${y + BAND / 2}Z`, fill,
+    }, svg);
+  };
+  arrow(cellX(0, 0), rowY(0), leftToRight(0) ? 1 : -1, "#fff");
+  arrow(cellX(nMonths - 1, 1), rowY(nYears - 1), leftToRight(nYears - 1) ? 1 : -1, LIGHT);
 
   for (let k = 0; k < nYears; k++) {
     svgEl("text", {
