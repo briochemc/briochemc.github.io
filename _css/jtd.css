@@ -313,6 +313,14 @@ input[type=checkbox]:checked ~ #side-menu { display: block; }
   .side-bar .footer {
     width: 100%;
     box-sizing: border-box;
+    /* The footer is absolutely positioned over the whole header row on narrow
+       screens (since .side-bar became position: relative), which would swallow
+       taps on the title and the MENU label. Let taps pass through except on
+       the icon links themselves. */
+    pointer-events: none;
+  }
+  .side-bar .footer a {
+    pointer-events: auto;
   }
 }
 
